@@ -36,6 +36,7 @@ ExportedObj/
 # ========================
 *.csproj
 *.sln
+*.slnx
 *.unityproj
 *.suo
 *.tmp
