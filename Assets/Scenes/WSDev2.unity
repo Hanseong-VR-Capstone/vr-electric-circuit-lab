@@ -563,109 +563,109 @@ MonoBehaviour:
     m_AlignBytes: 16
   groupID: 1
   m_CollisionMaterial: {fileID: 0}
-  m_SurfaceCollisions: 1
+  m_SurfaceCollisions: 0
   m_MassScale: 1
-  m_SelfCollisions: 0
-  restLength_: 2
+  m_SelfCollisions: 1
+  restLength_: 1.9999998
   elements:
   - particle1: 0
     particle2: 1
-    restLength: 0.09962541
+    restLength: 0.09794736
     constraintForce: 0
     tearResistance: 0
   - particle1: 1
     particle2: 2
-    restLength: 0.09922719
+    restLength: 0.10190421
     constraintForce: 0
     tearResistance: 0
   - particle1: 2
     particle2: 3
-    restLength: 0.099974155
+    restLength: 0.099826574
     constraintForce: 0
     tearResistance: 0
   - particle1: 3
     particle2: 4
-    restLength: 0.10019004
+    restLength: 0.10011679
     constraintForce: 0
     tearResistance: 0
   - particle1: 4
     particle2: 5
-    restLength: 0.1002481
+    restLength: 0.0994162
     constraintForce: 0
     tearResistance: 0
   - particle1: 5
     particle2: 6
-    restLength: 0.10030466
+    restLength: 0.09989032
     constraintForce: 0
     tearResistance: 0
   - particle1: 6
     particle2: 7
-    restLength: 0.10032031
+    restLength: 0.10032928
     constraintForce: 0
     tearResistance: 0
   - particle1: 7
     particle2: 8
-    restLength: 0.09996164
+    restLength: 0.10047594
     constraintForce: 0
     tearResistance: 0
   - particle1: 8
     particle2: 9
-    restLength: 0.09998883
+    restLength: 0.09990568
     constraintForce: 0
     tearResistance: 0
   - particle1: 9
     particle2: 10
-    restLength: 0.10015962
+    restLength: 0.10018758
     constraintForce: 0
     tearResistance: 0
   - particle1: 10
     particle2: 11
-    restLength: 0.100159414
+    restLength: 0.10018772
     constraintForce: 0
     tearResistance: 0
   - particle1: 11
     particle2: 12
-    restLength: 0.09998909
+    restLength: 0.099905506
     constraintForce: 0
     tearResistance: 0
   - particle1: 12
     particle2: 13
-    restLength: 0.09996152
+    restLength: 0.10047585
     constraintForce: 0
     tearResistance: 0
   - particle1: 13
     particle2: 14
-    restLength: 0.10032031
+    restLength: 0.10032946
     constraintForce: 0
     tearResistance: 0
   - particle1: 14
     particle2: 15
-    restLength: 0.10030469
+    restLength: 0.09989065
     constraintForce: 0
     tearResistance: 0
   - particle1: 15
     particle2: 16
-    restLength: 0.1002481
+    restLength: 0.09941661
     constraintForce: 0
     tearResistance: 0
   - particle1: 16
     particle2: 17
-    restLength: 0.10019004
+    restLength: 0.10011548
     constraintForce: 0
     tearResistance: 0
   - particle1: 17
     particle2: 18
-    restLength: 0.099974275
+    restLength: 0.099826396
     constraintForce: 0
     tearResistance: 0
   - particle1: 18
     particle2: 19
-    restLength: 0.09922725
+    restLength: 0.101905465
     constraintForce: 0
     tearResistance: 0
   - particle1: 19
     particle2: 20
-    restLength: 0.09962535
+    restLength: 0.09794694
     constraintForce: 0
     tearResistance: 0
   _aerodynamicsEnabled: 1
@@ -698,8 +698,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Obi::Obi.ObiParticleAttachment
   m_Actor: {fileID: 828578948}
   m_Target: {fileID: 1705278063}
-  m_ParticleGroup: {fileID: -8522737557645481096, guid: 54fe67b296ff846449f10a1eb1b62bb4, type: 2}
-  m_AttachmentType: 1
+  m_ParticleGroup: {fileID: 4936770693634308168, guid: 54fe67b296ff846449f10a1eb1b62bb4, type: 2}
+  m_AttachmentType: 0
   m_ConstrainOrientation: 0
   m_Projection: 0
   m_Compliance: 0
@@ -719,57 +719,11 @@ MonoBehaviour:
   m_Actor: {fileID: 828578948}
   m_Target: {fileID: 1322945110}
   m_ParticleGroup: {fileID: 5053903519887648329, guid: 54fe67b296ff846449f10a1eb1b62bb4, type: 2}
-  m_AttachmentType: 1
+  m_AttachmentType: 0
   m_ConstrainOrientation: 0
   m_Projection: 0
   m_Compliance: 0
   breakThreshold: Infinity
---- !u!1 &934193170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 934193172}
-  - component: {fileID: 934193171}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &934193171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934193170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &934193172
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934193170}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1322945109
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,6 +739,7 @@ GameObject:
   - component: {fileID: 1322945114}
   - component: {fileID: 1322945115}
   - component: {fileID: 1322945116}
+  - component: {fileID: 1322945117}
   m_Layer: 0
   m_Name: left(rod)
   m_TagString: Untagged
@@ -801,7 +756,7 @@ Transform:
   m_GameObject: {fileID: 1322945109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.016, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -926,7 +881,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -942,7 +897,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Obi::Obi.ObiRigidbody
-  kinematicForParticles: 0
+  kinematicForParticles: 1
+--- !u!114 &1322945117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322945109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.Grabbable
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 0}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 0}
+  _maxGrabPoints: -1
+  _rigidbody: {fileID: 1322945115}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
 --- !u!1 &1705278062
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +936,7 @@ GameObject:
   - component: {fileID: 1705278067}
   - component: {fileID: 1705278068}
   - component: {fileID: 1705278069}
+  - component: {fileID: 1705278070}
   m_Layer: 0
   m_Name: right(rod)
   m_TagString: Untagged
@@ -974,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 1705278062}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.016, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1099,7 +1078,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1115,7 +1094,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Obi::Obi.ObiRigidbody
-  kinematicForParticles: 0
+  kinematicForParticles: 1
+--- !u!114 &1705278070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705278062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.Grabbable
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 0}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 0}
+  _maxGrabPoints: -1
+  _rigidbody: {fileID: 1705278068}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
+  _forceKinematicDisabled: 0
+--- !u!1 &1850842517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850842519}
+  - component: {fileID: 1850842518}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1850842518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850842517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &1850842519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850842517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944311502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,4 +1361,4 @@ SceneRoots:
   - {fileID: 1978465822}
   - {fileID: 8971996}
   - {fileID: 103461037}
-  - {fileID: 934193172}
+  - {fileID: 1850842519}
