@@ -77,8 +77,28 @@ namespace VRCircuit.Evaluation
 
             AddWireEdges(graph);
             AddSwitchEdges(graph);
+            AddLedEdges(graph);
 
             return graph;
+        }
+        private void AddLedEdges(Dictionary<string, HashSet<string>> graph)
+        {
+            for (int i = 0; i < context.Leds.Count; i++)
+            {
+                CircuitLed led = context.Leds[i];
+                if (led == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(led.AnodePinId, out string nodeA) ||
+                    !TryGetNodeIdFromPin(led.CathodePinId, out string nodeB))
+                {
+                    continue;
+                }
+
+                AddUndirectedEdge(graph, nodeA, nodeB);
+            }
         }
 
         private void AddWireEdges(Dictionary<string, HashSet<string>> graph)
