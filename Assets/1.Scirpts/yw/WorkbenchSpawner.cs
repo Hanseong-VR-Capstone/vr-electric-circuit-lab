@@ -11,6 +11,11 @@ public class WorkbenchSpawner : MonoBehaviour
     [Tooltip("플레이어 앞 거리")]
     [SerializeField] private float forwardDistance = 0.8f;
 
+    public void Start()
+    {
+        SpawnWorkbench();
+    }
+
     public void SpawnWorkbench()
     {
         Transform eye = cameraRig.centerEyeAnchor;
