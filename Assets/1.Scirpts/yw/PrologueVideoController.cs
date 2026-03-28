@@ -1,4 +1,5 @@
 using Oculus.Interaction.Locomotion;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -12,6 +13,13 @@ public class PrologueVideoController : MonoBehaviour
     [SerializeField] private GameObject livingRoom;
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject cinematicScreen;
+
+    private WorkbenchSpawner spawner;
+
+    private void Awake()
+    {
+        spawner = GetComponent<WorkbenchSpawner>();
+    }
 
     void Start()
     {
@@ -37,5 +45,12 @@ public class PrologueVideoController : MonoBehaviour
 
         RenderSettings.skybox = spaceSkybox;
         DynamicGI.UpdateEnvironment();
+        StartCoroutine(SpawnAfterTeleport());
+    }
+
+    private IEnumerator SpawnAfterTeleport()
+    {
+        yield return null; // 1프레임 대기
+        spawner.SpawnWorkbench();
     }
 }

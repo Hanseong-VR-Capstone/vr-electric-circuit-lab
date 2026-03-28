@@ -11,17 +11,11 @@ public class WorkbenchSpawner : MonoBehaviour
     [Tooltip("플레이어 앞 거리")]
     [SerializeField] private float forwardDistance = 0.8f;
 
-    public void Start()
-    {
-        SpawnWorkbench();
-    }
-
     public void SpawnWorkbench()
     {
         Transform eye = cameraRig.centerEyeAnchor;
         float eyeHeight = eye.position.y;
 
-        // 작업대 위치: 플레이어 앞, 눈높이 비율만큼 아래
         Vector3 forward = Vector3.ProjectOnPlane(eye.forward, Vector3.up).normalized;
         Vector3 spawnPos = new Vector3(
             eye.position.x + forward.x * forwardDistance,
@@ -29,6 +23,9 @@ public class WorkbenchSpawner : MonoBehaviour
             eye.position.z + forward.z * forwardDistance
         );
 
-        Instantiate(workbenchPrefab, spawnPos, Quaternion.LookRotation(forward));
+        Quaternion baseRotation = Quaternion.LookRotation(forward);
+        Quaternion spawnRotation = baseRotation * Quaternion.Euler(0, 90, 0);
+
+        Instantiate(workbenchPrefab, spawnPos, spawnRotation);
     }
 }
