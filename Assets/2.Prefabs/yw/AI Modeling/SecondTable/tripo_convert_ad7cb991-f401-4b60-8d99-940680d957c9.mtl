@@ -1,0 +1,16 @@
+# Blender 5.0.1 MTL File: 'None'
+# www.blender.org
+
+newmtl tripo_mat_ad7cb991-f401-4b60-8d99-940680d957c9
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd tripo_image_ad7cb991-f401-4b60-8d99-940680d957c9_0_0.jpg
+map_Ns touchscreenkiosk3dmodel_roughness.JPEG
+map_Pr touchscreenkiosk3dmodel_roughness.JPEG
+map_refl touchscreenkiosk3dmodel_metallic.JPEG
+map_Pm touchscreenkiosk3dmodel_metallic.JPEG
+map_Bump -bm 1.000000 tripo_image_ad7cb991-f401-4b60-8d99-940680d957c9_0_3.jpg

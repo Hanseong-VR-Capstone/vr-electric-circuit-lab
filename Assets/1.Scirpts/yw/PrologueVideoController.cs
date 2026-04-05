@@ -13,6 +13,7 @@ public class PrologueVideoController : MonoBehaviour
     [SerializeField] private GameObject livingRoom;
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject cinematicScreen;
+    [SerializeField] private GameObject skipButton; // 추가
 
     private WorkbenchSpawner spawner;
 
@@ -31,9 +32,21 @@ public class PrologueVideoController : MonoBehaviour
 
     void OnVideoEnd(VideoPlayer vp)
     {
+        HandlePrologueEnd();
+    }
+
+    public void OnSkipButtonPressed() // Skip 버튼 OnClick에 연결
+    {
+        videoPlayer.loopPointReached -= OnVideoEnd; // 중복 호출 방지
+        HandlePrologueEnd();
+    }
+
+    private void HandlePrologueEnd()
+    {
         livingRoom.SetActive(true);
         spawnPoint.SetActive(false);
         cinematicScreen.SetActive(false);
+        skipButton.SetActive(false); // 추가
 
         LocomotionEvent teleportEvent = new LocomotionEvent(
             0,
@@ -50,7 +63,7 @@ public class PrologueVideoController : MonoBehaviour
 
     private IEnumerator SpawnAfterTeleport()
     {
-        yield return null; // 1프레임 대기
+        yield return null;
         spawner.SpawnWorkbench();
     }
 }
