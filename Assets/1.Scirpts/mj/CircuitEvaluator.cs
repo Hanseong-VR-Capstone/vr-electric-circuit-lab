@@ -14,43 +14,127 @@ namespace VRCircuit.Evaluation
 
         public CircuitState Evaluate()
         {
-            if (context == null)
+            if (!TryGetBatteryTerminalNodeIds(out string plusNodeId, out string minusNodeId))
             {
                 return CircuitState.Open;
+            }
+
+            return EvaluateStateFromResolvedBattery(plusNodeId, minusNodeId);
+        }
+
+        // Returns the first battery voltage as the educational supply voltage.
+        public float GetPrimaryBatteryVoltage()
+        {
+            CircuitBattery battery = GetPrimaryBattery();
+            if (battery == null)
+            {
+                return 0f;
+            }
+
+            return battery.Voltage;
+        }
+
+        // Uses LED count as the current simplified load unit.
+        public int CountActiveLoads()
+        {
+            if (context == null)
+            {
+                return 0;
+            }
+
+            int loadCount = 0;
+
+            for (int i = 0; i < context.Leds.Count; i++)
+            {
+                CircuitLed led = context.Leds[i];
+                if (led == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(led.AnodePinId, out _) ||
+                    !TryGetNodeIdFromPin(led.CathodePinId, out _))
+                {
+                    continue;
+                }
+
+                loadCount++;
+            }
+
+            return loadCount;
+        }
+
+        // Educational simplification: divide supply voltage equally across loads.
+        public float CalculateSeriesVoltagePerLoad()
+        {
+            float batteryVoltage = GetPrimaryBatteryVoltage();
+            int loadCount = CountActiveLoads();
+
+            if (batteryVoltage <= 0f || loadCount <= 0)
+            {
+                return 0f;
+            }
+
+            return batteryVoltage / loadCount;
+        }
+
+        // Educational simplification: each parallel branch gets full battery voltage.
+        public float CalculateParallelBranchVoltage()
+        {
+            return GetPrimaryBatteryVoltage();
+        }
+
+        // Resolves the current battery terminal nodes from pin -> socket -> nodeId.
+        private bool TryGetBatteryTerminalNodeIds(out string plusNodeId, out string minusNodeId)
+        {
+            plusNodeId = null;
+            minusNodeId = null;
+
+            if (context == null)
+            {
+                return false;
             }
 
             CircuitBattery battery = GetPrimaryBattery();
             if (battery == null)
             {
-                return CircuitState.Open;
+                return false;
             }
 
-            if (!TryGetNodeIdFromPin(battery.PositivePinId, out string batteryPlusNode) ||
-                !TryGetNodeIdFromPin(battery.NegativePinId, out string batteryMinusNode))
+            return TryGetNodeIdFromPin(battery.PositivePinId, out plusNodeId) &&
+                   TryGetNodeIdFromPin(battery.NegativePinId, out minusNodeId);
+        }
+
+        // Keeps final state decision flow explicit and ready for later extension.
+        private CircuitState EvaluateStateFromResolvedBattery(string plusNodeId, string minusNodeId)
+        {
+            Dictionary<string, List<string>> graph = BuildNodeGraph();
+
+            if (!HasResolvedCircuitPath(plusNodeId, minusNodeId, graph))
             {
                 return CircuitState.Open;
             }
 
-            Dictionary<string, HashSet<string>> graph = BuildNodeGraph();
-
-            if (!HasPath(graph, batteryPlusNode, batteryMinusNode))
-            {
-                return CircuitState.Open;
-            }
-
-            if (IsLedOn(graph, batteryPlusNode, batteryMinusNode))
+            if (IsValidLedPath(graph, plusNodeId, minusNodeId))
             {
                 return CircuitState.LedOn;
             }
 
-            return CircuitState.Short;
+            return DecideNonLedCircuitState(plusNodeId, minusNodeId, graph);
         }
 
+        // Kept intentionally to make the decision flow in Evaluate() explicit.
+        private bool HasResolvedCircuitPath(string plusNodeId, string minusNodeId, Dictionary<string, List<string>> graph)
+        {
+            return HasCircuitPath(plusNodeId, minusNodeId, graph);
+        }
+
+        // Resolves pin -> connected socket -> nodeId.
         private bool TryGetNodeIdFromPin(string pinId, out string nodeId)
         {
             nodeId = null;
 
-            if (string.IsNullOrEmpty(pinId) || context == null)
+            if (context == null || string.IsNullOrEmpty(pinId))
             {
                 return false;
             }
@@ -71,38 +155,24 @@ namespace VRCircuit.Evaluation
             return true;
         }
 
-        private Dictionary<string, HashSet<string>> BuildNodeGraph()
+        // Builds a bidirectional graph from wires and active switches only.
+        private Dictionary<string, List<string>> BuildNodeGraph()
         {
-            Dictionary<string, HashSet<string>> graph = new Dictionary<string, HashSet<string>>();
+            Dictionary<string, List<string>> graph = new Dictionary<string, List<string>>();
 
             AddWireEdges(graph);
             AddSwitchEdges(graph);
-            AddLedEdges(graph);
 
             return graph;
         }
-        private void AddLedEdges(Dictionary<string, HashSet<string>> graph)
+
+        private void AddWireEdges(Dictionary<string, List<string>> graph)
         {
-            for (int i = 0; i < context.Leds.Count; i++)
+            if (context == null)
             {
-                CircuitLed led = context.Leds[i];
-                if (led == null)
-                {
-                    continue;
-                }
-
-                if (!TryGetNodeIdFromPin(led.AnodePinId, out string nodeA) ||
-                    !TryGetNodeIdFromPin(led.CathodePinId, out string nodeB))
-                {
-                    continue;
-                }
-
-                AddUndirectedEdge(graph, nodeA, nodeB);
+                return;
             }
-        }
 
-        private void AddWireEdges(Dictionary<string, HashSet<string>> graph)
-        {
             for (int i = 0; i < context.Wires.Count; i++)
             {
                 CircuitWire wire = context.Wires[i];
@@ -117,12 +187,17 @@ namespace VRCircuit.Evaluation
                     continue;
                 }
 
-                AddUndirectedEdge(graph, nodeA, nodeB);
+                AddBidirectionalEdge(graph, nodeA, nodeB);
             }
         }
 
-        private void AddSwitchEdges(Dictionary<string, HashSet<string>> graph)
+        private void AddSwitchEdges(Dictionary<string, List<string>> graph)
         {
+            if (context == null)
+            {
+                return;
+            }
+
             for (int i = 0; i < context.Switches.Count; i++)
             {
                 CircuitSwitch circuitSwitch = context.Switches[i];
@@ -137,82 +212,47 @@ namespace VRCircuit.Evaluation
                     continue;
                 }
 
-                AddUndirectedEdge(graph, nodeA, nodeB);
+                AddBidirectionalEdge(graph, nodeA, nodeB);
             }
         }
 
-        private void AddUndirectedEdge(Dictionary<string, HashSet<string>> graph, string nodeA, string nodeB)
+        private void AddBidirectionalEdge(Dictionary<string, List<string>> graph, string nodeA, string nodeB)
         {
             if (string.IsNullOrEmpty(nodeA) || string.IsNullOrEmpty(nodeB))
             {
                 return;
             }
 
-            AddNode(graph, nodeA);
-            AddNode(graph, nodeB);
-
-            graph[nodeA].Add(nodeB);
-            graph[nodeB].Add(nodeA);
+            AddNeighbor(graph, nodeA, nodeB);
+            AddNeighbor(graph, nodeB, nodeA);
         }
 
-        private void AddNode(Dictionary<string, HashSet<string>> graph, string nodeId)
+        private void AddNeighbor(Dictionary<string, List<string>> graph, string fromNode, string toNode)
         {
-            if (!graph.ContainsKey(nodeId))
+            if (!graph.TryGetValue(fromNode, out List<string> neighbors))
             {
-                graph[nodeId] = new HashSet<string>();
+                neighbors = new List<string>();
+                graph[fromNode] = neighbors;
+            }
+
+            if (!neighbors.Contains(toNode))
+            {
+                neighbors.Add(toNode);
             }
         }
 
-        private bool HasPath(Dictionary<string, HashSet<string>> graph, string startNode, string targetNode)
+        private bool HasCircuitPath(string batteryPlusNodeId, string batteryMinusNodeId, Dictionary<string, List<string>> graph)
         {
-            if (string.IsNullOrEmpty(startNode) || string.IsNullOrEmpty(targetNode))
+            return HasPath(batteryPlusNodeId, batteryMinusNodeId, graph);
+        }
+
+        private bool IsValidLedPath(Dictionary<string, List<string>> graph, string batteryPlusNodeId, string batteryMinusNodeId)
+        {
+            if (context == null)
             {
                 return false;
             }
 
-            if (startNode == targetNode)
-            {
-                return true;
-            }
-
-            if (!graph.ContainsKey(startNode) || !graph.ContainsKey(targetNode))
-            {
-                return false;
-            }
-
-            Queue<string> queue = new Queue<string>();
-            HashSet<string> visited = new HashSet<string>();
-
-            queue.Enqueue(startNode);
-            visited.Add(startNode);
-
-            while (queue.Count > 0)
-            {
-                string currentNode = queue.Dequeue();
-                HashSet<string> neighbors = graph[currentNode];
-
-                foreach (string neighbor in neighbors)
-                {
-                    if (visited.Contains(neighbor))
-                    {
-                        continue;
-                    }
-
-                    if (neighbor == targetNode)
-                    {
-                        return true;
-                    }
-
-                    visited.Add(neighbor);
-                    queue.Enqueue(neighbor);
-                }
-            }
-
-            return false;
-        }
-
-        private bool IsLedOn(Dictionary<string, HashSet<string>> graph, string batteryPlusNode, string batteryMinusNode)
-        {
             for (int i = 0; i < context.Leds.Count; i++)
             {
                 CircuitLed led = context.Leds[i];
@@ -221,14 +261,14 @@ namespace VRCircuit.Evaluation
                     continue;
                 }
 
-                if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNode) ||
-                    !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNode))
+                if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNodeId) ||
+                    !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNodeId))
                 {
                     continue;
                 }
 
-                bool plusToAnode = batteryPlusNode == anodeNode || HasPath(graph, batteryPlusNode, anodeNode);
-                bool cathodeToMinus = cathodeNode == batteryMinusNode || HasPath(graph, cathodeNode, batteryMinusNode);
+                bool plusToAnode = CanReach(batteryPlusNodeId, anodeNodeId, graph);
+                bool cathodeToMinus = CanReach(cathodeNodeId, batteryMinusNodeId, graph);
 
                 if (plusToAnode && cathodeToMinus)
                 {
@@ -239,9 +279,226 @@ namespace VRCircuit.Evaluation
             return false;
         }
 
+        private bool CanReach(string startNodeId, string targetNodeId, Dictionary<string, List<string>> graph)
+        {
+            if (string.IsNullOrEmpty(startNodeId) || string.IsNullOrEmpty(targetNodeId))
+            {
+                return false;
+            }
+
+            if (startNodeId == targetNodeId)
+            {
+                return true;
+            }
+
+            return HasPath(startNodeId, targetNodeId, graph);
+        }
+
+        // Excludes battery endpoints from branching judgment for clearer series/parallel checks.
+        private bool HasBranching(Dictionary<string, List<string>> graph, string startNodeId, string endNodeId)
+        {
+            if (graph == null)
+            {
+                return false;
+            }
+
+            foreach (KeyValuePair<string, List<string>> pair in graph)
+            {
+                string nodeId = pair.Key;
+                if (nodeId == startNodeId || nodeId == endNodeId)
+                {
+                    continue;
+                }
+
+                List<string> neighbors = pair.Value;
+                if (neighbors != null && neighbors.Count >= 3)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // Counts distinct simple paths with early exit for lightweight educational checks.
+        private int CountPaths(string startNode, string endNode, Dictionary<string, List<string>> graph, int maxSearch = 2)
+        {
+            if (string.IsNullOrEmpty(startNode) ||
+                string.IsNullOrEmpty(endNode) ||
+                graph == null ||
+                maxSearch <= 0)
+            {
+                return 0;
+            }
+
+            if (startNode == endNode)
+            {
+                return 1;
+            }
+
+            if (!graph.ContainsKey(startNode))
+            {
+                return 0;
+            }
+
+            HashSet<string> visited = new HashSet<string>();
+            return CountPathsDepthFirst(startNode, endNode, graph, visited, maxSearch);
+        }
+
+        private int CountPathsDepthFirst(
+            string currentNode,
+            string targetNode,
+            Dictionary<string, List<string>> graph,
+            HashSet<string> visited,
+            int remainingLimit)
+        {
+            if (remainingLimit <= 0)
+            {
+                return 0;
+            }
+
+            if (currentNode == targetNode)
+            {
+                return 1;
+            }
+
+            visited.Add(currentNode);
+
+            int pathCount = 0;
+
+            if (graph.TryGetValue(currentNode, out List<string> neighbors) && neighbors != null)
+            {
+                for (int i = 0; i < neighbors.Count; i++)
+                {
+                    string nextNode = neighbors[i];
+                    if (string.IsNullOrEmpty(nextNode) || visited.Contains(nextNode))
+                    {
+                        continue;
+                    }
+
+                    int foundCount = CountPathsDepthFirst(nextNode, targetNode, graph, visited, remainingLimit - pathCount);
+                    pathCount += foundCount;
+
+                    if (pathCount >= remainingLimit)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            visited.Remove(currentNode);
+            return pathCount;
+        }
+
+        private bool IsSeriesCircuit(string startNode, string endNode, Dictionary<string, List<string>> graph)
+        {
+            if (!HasPath(startNode, endNode, graph))
+            {
+                return false;
+            }
+
+            return !HasBranching(graph, startNode, endNode);
+        }
+
+        private bool IsParallelCircuit(string startNode, string endNode, Dictionary<string, List<string>> graph)
+        {
+            if (!HasPath(startNode, endNode, graph))
+            {
+                return false;
+            }
+
+            bool hasBranching = HasBranching(graph, startNode, endNode);
+            if (hasBranching)
+            {
+                return true;
+            }
+
+            return CountPaths(startNode, endNode, graph, 2) >= 2;
+        }
+
+        // Parallel is checked before Series. Short remains the fallback state.
+        private CircuitState DecideNonLedCircuitState(
+            string plusNodeId,
+            string minusNodeId,
+            Dictionary<string, List<string>> graph)
+        {
+            if (IsParallelCircuit(plusNodeId, minusNodeId, graph))
+            {
+                return CircuitState.Parallel;
+            }
+
+            if (IsSeriesCircuit(plusNodeId, minusNodeId, graph))
+            {
+                return CircuitState.Series;
+            }
+
+            return CircuitState.Short;
+        }
+
+        // Uses BFS for safe reachability checks.
+        private bool HasPath(string startNodeId, string targetNodeId, Dictionary<string, List<string>> graph)
+        {
+            if (string.IsNullOrEmpty(startNodeId) ||
+                string.IsNullOrEmpty(targetNodeId) ||
+                graph == null)
+            {
+                return false;
+            }
+
+            if (startNodeId == targetNodeId)
+            {
+                return true;
+            }
+
+            if (!graph.ContainsKey(startNodeId))
+            {
+                return false;
+            }
+
+            Queue<string> queue = new Queue<string>();
+            HashSet<string> visited = new HashSet<string>();
+
+            queue.Enqueue(startNodeId);
+            visited.Add(startNodeId);
+
+            while (queue.Count > 0)
+            {
+                string currentNodeId = queue.Dequeue();
+
+                if (currentNodeId == targetNodeId)
+                {
+                    return true;
+                }
+
+                if (!graph.TryGetValue(currentNodeId, out List<string> neighbors) || neighbors == null)
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < neighbors.Count; i++)
+                {
+                    string nextNodeId = neighbors[i];
+                    if (string.IsNullOrEmpty(nextNodeId) || visited.Contains(nextNodeId))
+                    {
+                        continue;
+                    }
+
+                    if (nextNodeId == targetNodeId)
+                    {
+                        return true;
+                    }
+
+                    visited.Add(nextNodeId);
+                    queue.Enqueue(nextNodeId);
+                }
+            }
+
+            return false;
+        }
+
         private CircuitBattery GetPrimaryBattery()
         {
-            if (context.Batteries.Count == 0)
+            if (context == null || context.Batteries.Count == 0)
             {
                 return null;
             }
