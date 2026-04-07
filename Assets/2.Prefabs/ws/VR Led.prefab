@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 3744481582350979796}
   - component: {fileID: 5308201572956035666}
   - component: {fileID: 7772071864521596659}
+  - component: {fileID: 8930973769926708542}
   m_Layer: 0
   m_Name: '[BuildingBlock] HandGrabInstallationRoutine'
   m_TagString: Untagged
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 1edd2e71-38aa-4ef6-8e14-26093571a331
+  instanceId: fb2274a8-a1c8-4b6e-879c-a7d764f45b82
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -445,6 +446,67 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
+--- !u!114 &8930973769926708542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5058516702845867901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.InteractableUnityEventWrapper
+  _interactableView: {fileID: 5308201572956035666}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5497697698513215484}
+        m_TargetAssemblyTypeName: LedPart, Assembly-CSharp
+        m_MethodName: OnGrabDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5497697698513215484}
+        m_TargetAssemblyTypeName: LedPart, Assembly-CSharp
+        m_MethodName: OnReleaseCheckLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7424047873022727057
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +617,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8814625598779861497}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
 --- !u!114 &5497697698513215484
 MonoBehaviour:
@@ -570,6 +632,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LedPart
   partType: 0
+  rb: {fileID: 0}
+  pins: []
+  isLocked: 0
+  isGrabbed: 0
+  lockedPosition: {x: 0, y: 0, z: 0}
+  lockedRotation: {x: 0, y: 0, z: 0, w: 0}
+  distanceGrabInteractable: {fileID: 5486554525825245978}
+  distanceHandGrabInteractable: {fileID: 9165033388035211276}
   lightEffect: {fileID: 3690694086559742928}
 --- !u!1001 &2271562483952458910
 PrefabInstance:

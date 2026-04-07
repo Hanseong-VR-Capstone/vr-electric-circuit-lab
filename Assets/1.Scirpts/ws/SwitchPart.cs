@@ -4,8 +4,9 @@ public class SwitchPart : CircuitPart
 {
     public bool isOn;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         partType = PartType.Switch;
         isOn = false;
     }

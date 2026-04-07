@@ -3,8 +3,9 @@ using UnityEngine;
 public class LedPart : CircuitPart
 {
     public ParticleSystem lightEffect;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         partType = PartType.LED;
         manageLight(false);
     }

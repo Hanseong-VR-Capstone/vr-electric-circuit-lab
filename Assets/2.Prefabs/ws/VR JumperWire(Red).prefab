@@ -231,7 +231,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 3426323781213632891}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
 --- !u!114 &2637075118378781888
 MonoBehaviour:
@@ -246,6 +246,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumperWirePart
   partType: 4
+  rb: {fileID: 0}
+  pins: []
+  isLocked: 0
+  isGrabbed: 0
+  lockedPosition: {x: 0, y: 0, z: 0}
+  lockedRotation: {x: 0, y: 0, z: 0, w: 0}
+  distanceGrabInteractable: {fileID: 4075936505918180628}
+  distanceHandGrabInteractable: {fileID: 6823433412632232016}
+  otherEnd: {fileID: 1563557134677322235}
 --- !u!1 &1475233233544895338
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +575,7 @@ GameObject:
   - component: {fileID: 8373708182688412252}
   - component: {fileID: 6147343270718764312}
   - component: {fileID: 2623344550374917498}
+  - component: {fileID: 4190284161972918598}
   m_Layer: 0
   m_Name: '[BuildingBlock] HandGrabInstallationRoutine'
   m_TagString: Untagged
@@ -601,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 2adfa475-c064-46f9-af7a-db2f9788c40b
+  instanceId: e3ae0f20-0b04-4007-87e1-0005dc24f373
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -672,6 +682,67 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
+--- !u!114 &4190284161972918598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030211268576510816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.InteractableUnityEventWrapper
+  _interactableView: {fileID: 6147343270718764312}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2637075118378781888}
+        m_TargetAssemblyTypeName: JumperWirePart, Assembly-CSharp
+        m_MethodName: OnGrabDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2637075118378781888}
+        m_TargetAssemblyTypeName: JumperWirePart, Assembly-CSharp
+        m_MethodName: OnReleaseCheckLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4840288922754405987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1499,7 @@ GameObject:
   - component: {fileID: 4851723398965246393}
   - component: {fileID: 3640914270659087513}
   - component: {fileID: 5025200424094333910}
+  - component: {fileID: 3403706393946753650}
   m_Layer: 0
   m_Name: '[BuildingBlock] HandGrabInstallationRoutine'
   m_TagString: Untagged
@@ -1463,7 +1535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 50024493-d8b0-4846-bc01-157f4d7fcfd9
+  instanceId: 358a09ec-4919-48fa-b161-54fd5b88bdcf
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -1534,6 +1606,67 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
+--- !u!114 &3403706393946753650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636960001015320461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.InteractableUnityEventWrapper
+  _interactableView: {fileID: 3640914270659087513}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1563557134677322235}
+        m_TargetAssemblyTypeName: JumperWirePart, Assembly-CSharp
+        m_MethodName: OnGrabDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1563557134677322235}
+        m_TargetAssemblyTypeName: JumperWirePart, Assembly-CSharp
+        m_MethodName: OnReleaseCheckLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8353349003185936580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,7 +1808,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 6384197260941563664}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
 --- !u!114 &1563557134677322235
 MonoBehaviour:
@@ -1690,3 +1823,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumperWirePart
   partType: 4
+  rb: {fileID: 0}
+  pins: []
+  isLocked: 0
+  isGrabbed: 0
+  lockedPosition: {x: 0, y: 0, z: 0}
+  lockedRotation: {x: 0, y: 0, z: 0, w: 0}
+  distanceGrabInteractable: {fileID: 4075936505918180628}
+  distanceHandGrabInteractable: {fileID: 6823433412632232016}
+  otherEnd: {fileID: 2637075118378781888}

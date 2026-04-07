@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 148
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &50925809467599702
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 455
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &74726029087731736
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 294
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &121974502764314484
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 112
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &138403491047467410
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 212
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &182229977147240662
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 346
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &206127550177952206
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 45
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &230096833882861909
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 80
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &235946357086282823
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 309
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &243711996676632372
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 19
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &259977894089940927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 113
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &273014892904219646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 51
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &282062720944506432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 39
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &290930419904629011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 15
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &321880382374806090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 424
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &340395631926277264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 194
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &344744537606539381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 441
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &346557257947211447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,6 +1493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 128
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &347643108513648847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 431
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &386586050526274499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,6 +1631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 87
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &421689107393645048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,6 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 101
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &436831308861223220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 63
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &439354047532084754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 33
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &445167930077106592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 287
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &447881922339043223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,6 +2012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 211
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &473250408429008212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,6 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 74
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &497357692661258788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 1
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &563929911219480684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,6 +2407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 46
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &592365854000780696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 207
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &612311351778303930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,6 +2581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 137
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &617291782189071338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,6 +2686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 348
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &640806622973335883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 278
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &647978140251835279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,6 +2824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 263
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &652949480321802883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 308
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &664187965547204625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,6 +2962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 400
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &668433016758121905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,6 +3137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 432
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &717788498091437309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,6 +3206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 286
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &718978011453337148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,6 +3275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 20
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &723016144973751363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,6 +3344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 77
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &727094422720459000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,6 +3413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 295
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &747230729131363485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3478,6 +3518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 242
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &780390807150731708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 65
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &801480074491558647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,6 +3656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 399
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &808058164689355889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,6 +3864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 134
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &833455631549490294
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,6 +3933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 315
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &849691154958472600
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,6 +4038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 136
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &854600283525167295
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,6 +4143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 133
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &911549568150165033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,6 +4212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 189
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &939383123849717231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4269,6 +4317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 313
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &987586713735839618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4373,6 +4422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 2
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1024902301187942275
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,6 +4491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 442
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1027629499265932421
 GameObject:
   m_ObjectHideFlags: 0
@@ -4509,6 +4560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 261
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1031489951920749432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4649,6 +4701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 10
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1048759309362269042
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,6 +4907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 227
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1098474901008252861
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,6 +4976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 23
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1099157716454875578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 257
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1104712706284223039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5058,6 +5114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 411
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1110558647777573132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5198,6 +5255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 232
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1169680480242230355
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,6 +5324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 439
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1201151535275449008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,6 +5393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 325
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1204811017857316384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5438,6 +5498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 324
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1220908333778654469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5506,6 +5567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 376
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1239853062355204495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,6 +5672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 412
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1254248624493263063
 GameObject:
   m_ObjectHideFlags: 0
@@ -5678,6 +5741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 160
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1258249829525504254
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 217
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1297433114191020848
 GameObject:
   m_ObjectHideFlags: 0
@@ -5814,6 +5879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 353
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1313271926969063942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,6 +5948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 198
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1326446889661366505
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,6 +6053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 329
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1353721880261066814
 GameObject:
   m_ObjectHideFlags: 0
@@ -6054,6 +6122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 459
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1362147068005547224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,6 +6191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 447
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1385838730517591480
 GameObject:
   m_ObjectHideFlags: 0
@@ -6190,6 +6260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 208
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1413382072299593378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6294,6 +6365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 293
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1450388676643162459
 GameObject:
   m_ObjectHideFlags: 0
@@ -6362,6 +6434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 81
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1453840265993099511
 GameObject:
   m_ObjectHideFlags: 0
@@ -6430,6 +6503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 299
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1461455020219133669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6532,6 +6606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 393
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1468481254791749566
 GameObject:
   m_ObjectHideFlags: 0
@@ -6600,6 +6675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 140
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1491751031747014867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,6 +6744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 96
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1494457537991986921
 GameObject:
   m_ObjectHideFlags: 0
@@ -6772,6 +6849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 382
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1510252777988006900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6840,6 +6918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 188
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1511710533368237521
 GameObject:
   m_ObjectHideFlags: 0
@@ -6944,6 +7023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 444
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1531322063967796846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7012,6 +7092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 125
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1531880767861580743
 GameObject:
   m_ObjectHideFlags: 0
@@ -7080,6 +7161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 92
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1542876158411940267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7148,6 +7230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 252
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1571683956446792179
 GameObject:
   m_ObjectHideFlags: 0
@@ -7252,6 +7335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 98
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1584999616944993921
 GameObject:
   m_ObjectHideFlags: 0
@@ -7320,6 +7404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 100
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1589574121539269129
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,6 +7473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 67
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1593013092194039625
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,6 +7578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 353
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1633513654352374487
 GameObject:
   m_ObjectHideFlags: 0
@@ -7596,6 +7683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 359
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1705126215999218715
 GameObject:
   m_ObjectHideFlags: 0
@@ -7664,6 +7752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 365
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1716458914512512207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,6 +7821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 173
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1757131276647445082
 GameObject:
   m_ObjectHideFlags: 0
@@ -7800,6 +7890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 116
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1781621023152309508
 GameObject:
   m_ObjectHideFlags: 0
@@ -7902,6 +7993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 345
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1795155127188216226
 GameObject:
   m_ObjectHideFlags: 0
@@ -8006,6 +8098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 428
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1820017392600763458
 GameObject:
   m_ObjectHideFlags: 0
@@ -8074,6 +8167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 205
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1825910455284624079
 GameObject:
   m_ObjectHideFlags: 0
@@ -8281,6 +8375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 6
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1858765473825020437
 GameObject:
   m_ObjectHideFlags: 0
@@ -8349,6 +8444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 243
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1879466186129132113
 GameObject:
   m_ObjectHideFlags: 0
@@ -8417,6 +8513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 48
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1883887510514628974
 GameObject:
   m_ObjectHideFlags: 0
@@ -8485,6 +8582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 220
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1917180281629367363
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,6 +8651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 370
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1938976754562366679
 GameObject:
   m_ObjectHideFlags: 0
@@ -8621,6 +8720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 396
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1947667955134072059
 GameObject:
   m_ObjectHideFlags: 0
@@ -8725,6 +8825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 111
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &1987663428224210969
 GameObject:
   m_ObjectHideFlags: 0
@@ -8793,6 +8894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 209
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2004744273004873511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8861,6 +8963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 457
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2020348989390966552
 GameObject:
   m_ObjectHideFlags: 0
@@ -8929,6 +9032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 191
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2041561187686456500
 GameObject:
   m_ObjectHideFlags: 0
@@ -8997,6 +9101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 383
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2067901364078915514
 GameObject:
   m_ObjectHideFlags: 0
@@ -9101,6 +9206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 14
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2081603455134715199
 GameObject:
   m_ObjectHideFlags: 0
@@ -9169,6 +9275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 310
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2105822614264306535
 GameObject:
   m_ObjectHideFlags: 0
@@ -9237,6 +9344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 126
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2106298414478559337
 GameObject:
   m_ObjectHideFlags: 0
@@ -9305,6 +9413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 417
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2108960544932252000
 GameObject:
   m_ObjectHideFlags: 0
@@ -9373,6 +9482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 410
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2110237772877128309
 GameObject:
   m_ObjectHideFlags: 0
@@ -9441,6 +9551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 204
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2130046167925234426
 GameObject:
   m_ObjectHideFlags: 0
@@ -9509,6 +9620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 240
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2163678117069996019
 GameObject:
   m_ObjectHideFlags: 0
@@ -9577,6 +9689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 373
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2170708130234074349
 GameObject:
   m_ObjectHideFlags: 0
@@ -9645,6 +9758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 176
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2198264281550945031
 GameObject:
   m_ObjectHideFlags: 0
@@ -9713,6 +9827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 94
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2198655051478826287
 GameObject:
   m_ObjectHideFlags: 0
@@ -9781,6 +9896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 230
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2212913204176610723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9849,6 +9965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 147
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2214350120706863082
 GameObject:
   m_ObjectHideFlags: 0
@@ -9953,6 +10070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 358
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2234473586900986201
 GameObject:
   m_ObjectHideFlags: 0
@@ -10021,6 +10139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 171
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2246892778939025059
 GameObject:
   m_ObjectHideFlags: 0
@@ -10089,6 +10208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 445
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2263505017370436467
 GameObject:
   m_ObjectHideFlags: 0
@@ -10157,6 +10277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 129
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2265577383486835283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10261,6 +10382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 157
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2290367947749226954
 GameObject:
   m_ObjectHideFlags: 0
@@ -10329,6 +10451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 206
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2294298257887965625
 GameObject:
   m_ObjectHideFlags: 0
@@ -10397,6 +10520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 228
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2313135999440503892
 GameObject:
   m_ObjectHideFlags: 0
@@ -10499,6 +10623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 448
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2334466547219835010
 GameObject:
   m_ObjectHideFlags: 0
@@ -10603,6 +10728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 201
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2413044341760661123
 GameObject:
   m_ObjectHideFlags: 0
@@ -10671,6 +10797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 149
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2425792856854035911
 GameObject:
   m_ObjectHideFlags: 0
@@ -10739,6 +10866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 282
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2429468449146155022
 GameObject:
   m_ObjectHideFlags: 0
@@ -10843,6 +10971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 427
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2436932025725055398
 GameObject:
   m_ObjectHideFlags: 0
@@ -10911,6 +11040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 328
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2438629595623934785
 GameObject:
   m_ObjectHideFlags: 0
@@ -10979,6 +11109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 319
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2444685426457579233
 GameObject:
   m_ObjectHideFlags: 0
@@ -11047,6 +11178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 16
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2464760429264361368
 GameObject:
   m_ObjectHideFlags: 0
@@ -11151,6 +11283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 121
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2495787985574350004
 GameObject:
   m_ObjectHideFlags: 0
@@ -11219,6 +11352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 182
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2508030048588738055
 GameObject:
   m_ObjectHideFlags: 0
@@ -11287,6 +11421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 180
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2523651232102986965
 GameObject:
   m_ObjectHideFlags: 0
@@ -11355,6 +11490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 350
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2531782706178132456
 GameObject:
   m_ObjectHideFlags: 0
@@ -11423,6 +11559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 29
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2540549909773380135
 GameObject:
   m_ObjectHideFlags: 0
@@ -11491,6 +11628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 311
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2547359864709046766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11595,6 +11733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 145
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2564076485613949651
 GameObject:
   m_ObjectHideFlags: 0
@@ -11699,6 +11838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 90
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2566527444192113957
 GameObject:
   m_ObjectHideFlags: 0
@@ -11803,6 +11943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 52
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2589620593487440126
 GameObject:
   m_ObjectHideFlags: 0
@@ -11871,6 +12012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 340
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2592756979608617700
 GameObject:
   m_ObjectHideFlags: 0
@@ -11939,6 +12081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 13
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2614729145803019113
 GameObject:
   m_ObjectHideFlags: 0
@@ -12043,6 +12186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 37
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2657387971825930998
 GameObject:
   m_ObjectHideFlags: 0
@@ -12147,6 +12291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 119
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2679849065374129324
 GameObject:
   m_ObjectHideFlags: 0
@@ -12251,6 +12396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 430
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2720940463835016158
 GameObject:
   m_ObjectHideFlags: 0
@@ -12319,6 +12465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 183
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2737390224470355667
 GameObject:
   m_ObjectHideFlags: 0
@@ -12524,6 +12671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 298
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2823446372197174307
 GameObject:
   m_ObjectHideFlags: 0
@@ -12592,6 +12740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 142
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2828499896346144075
 GameObject:
   m_ObjectHideFlags: 0
@@ -12660,6 +12809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 174
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2841463397813489792
 GameObject:
   m_ObjectHideFlags: 0
@@ -12764,6 +12914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 453
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2866584103821481603
 GameObject:
   m_ObjectHideFlags: 0
@@ -12868,6 +13019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 72
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2866903864543651832
 GameObject:
   m_ObjectHideFlags: 0
@@ -12936,6 +13088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 11
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2878722140727466033
 GameObject:
   m_ObjectHideFlags: 0
@@ -13004,6 +13157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 42
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2893255079187560292
 GameObject:
   m_ObjectHideFlags: 0
@@ -13072,6 +13226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 166
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2894733823719353397
 GameObject:
   m_ObjectHideFlags: 0
@@ -13140,6 +13295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 336
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2898766703259767402
 GameObject:
   m_ObjectHideFlags: 0
@@ -13208,6 +13364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 302
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2908533010505340310
 GameObject:
   m_ObjectHideFlags: 0
@@ -13312,6 +13469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 403
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2927560587601390648
 GameObject:
   m_ObjectHideFlags: 0
@@ -13416,6 +13574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 452
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2965161117596007062
 GameObject:
   m_ObjectHideFlags: 0
@@ -13484,6 +13643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 363
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &2965848140117240211
 GameObject:
   m_ObjectHideFlags: 0
@@ -13696,6 +13856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 3
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3046258512964537935
 GameObject:
   m_ObjectHideFlags: 0
@@ -13764,6 +13925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 249
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3081565376704823494
 GameObject:
   m_ObjectHideFlags: 0
@@ -13832,6 +13994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 312
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3083914747694838859
 GameObject:
   m_ObjectHideFlags: 0
@@ -13900,6 +14063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 235
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3095283175655182033
 GameObject:
   m_ObjectHideFlags: 0
@@ -14004,6 +14168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 226
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3103092467870427398
 GameObject:
   m_ObjectHideFlags: 0
@@ -14072,6 +14237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 97
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3114845263600699754
 GameObject:
   m_ObjectHideFlags: 0
@@ -14140,6 +14306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 99
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3117480781971810311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14242,6 +14409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 423
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3145304444225632111
 GameObject:
   m_ObjectHideFlags: 0
@@ -14310,6 +14478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 420
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3167894321456715160
 GameObject:
   m_ObjectHideFlags: 0
@@ -14414,6 +14583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 32
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3188678251007702071
 GameObject:
   m_ObjectHideFlags: 0
@@ -14482,6 +14652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 339
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3198500246541603189
 GameObject:
   m_ObjectHideFlags: 0
@@ -14586,6 +14757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 76
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3223579339415987093
 GameObject:
   m_ObjectHideFlags: 0
@@ -14765,6 +14937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 170
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3322374507805686603
 GameObject:
   m_ObjectHideFlags: 0
@@ -14833,6 +15006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 117
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3322722983061316411
 GameObject:
   m_ObjectHideFlags: 0
@@ -15043,6 +15217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 155
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3372588730009496273
 GameObject:
   m_ObjectHideFlags: 0
@@ -15111,6 +15286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 389
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3373976641488409538
 GameObject:
   m_ObjectHideFlags: 0
@@ -15179,6 +15355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 305
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3379102554182273622
 GameObject:
   m_ObjectHideFlags: 0
@@ -15283,6 +15460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 237
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3416424963166278432
 GameObject:
   m_ObjectHideFlags: 0
@@ -15387,6 +15565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 418
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3435421800261539285
 GameObject:
   m_ObjectHideFlags: 0
@@ -15491,6 +15670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 241
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3464309943398908827
 GameObject:
   m_ObjectHideFlags: 0
@@ -15559,6 +15739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 0
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3464351841999485101
 GameObject:
   m_ObjectHideFlags: 0
@@ -15663,6 +15844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 203
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3526235927913511553
 GameObject:
   m_ObjectHideFlags: 0
@@ -15731,6 +15913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 355
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3529699070042137675
 GameObject:
   m_ObjectHideFlags: 0
@@ -15799,6 +15982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 164
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3545955498627522064
 GameObject:
   m_ObjectHideFlags: 0
@@ -15867,6 +16051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 47
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3559170315335743749
 GameObject:
   m_ObjectHideFlags: 0
@@ -15935,6 +16120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 268
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3561207810108152657
 GameObject:
   m_ObjectHideFlags: 0
@@ -16003,6 +16189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 55
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3567341868789030395
 GameObject:
   m_ObjectHideFlags: 0
@@ -16071,6 +16258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 18
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3575027863499684852
 GameObject:
   m_ObjectHideFlags: 0
@@ -16139,6 +16327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 344
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3577406062689454189
 GameObject:
   m_ObjectHideFlags: 0
@@ -16207,6 +16396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 187
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3578161052590246327
 GameObject:
   m_ObjectHideFlags: 0
@@ -16275,6 +16465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 88
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3585224265200982505
 GameObject:
   m_ObjectHideFlags: 0
@@ -16343,6 +16534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 122
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3588094553798517153
 GameObject:
   m_ObjectHideFlags: 0
@@ -16483,6 +16675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 71
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3618801299369254894
 GameObject:
   m_ObjectHideFlags: 0
@@ -16551,6 +16744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 341
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3649707220098874403
 GameObject:
   m_ObjectHideFlags: 0
@@ -16619,6 +16813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 141
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3654440643724763800
 GameObject:
   m_ObjectHideFlags: 0
@@ -16687,6 +16882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 159
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3666475235845637640
 GameObject:
   m_ObjectHideFlags: 0
@@ -16755,6 +16951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 392
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3721341831155947666
 GameObject:
   m_ObjectHideFlags: 0
@@ -16823,6 +17020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 167
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3754773235582986693
 GameObject:
   m_ObjectHideFlags: 0
@@ -16891,6 +17089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 60
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3760346243455513979
 GameObject:
   m_ObjectHideFlags: 0
@@ -16959,6 +17158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 288
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3775741588653248082
 GameObject:
   m_ObjectHideFlags: 0
@@ -17027,6 +17227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 221
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3843500948284539172
 GameObject:
   m_ObjectHideFlags: 0
@@ -17131,6 +17332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 264
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3929155407339547367
 GameObject:
   m_ObjectHideFlags: 0
@@ -17235,6 +17437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 103
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3941120401068625528
 GameObject:
   m_ObjectHideFlags: 0
@@ -17303,6 +17506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 79
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3941658475507659620
 GameObject:
   m_ObjectHideFlags: 0
@@ -17371,6 +17575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 415
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3958899764881486568
 GameObject:
   m_ObjectHideFlags: 0
@@ -17511,6 +17716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 262
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3993251915570303674
 GameObject:
   m_ObjectHideFlags: 0
@@ -17579,6 +17785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 458
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3998013711336310725
 GameObject:
   m_ObjectHideFlags: 0
@@ -17647,6 +17854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 110
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &3999054794535585781
 GameObject:
   m_ObjectHideFlags: 0
@@ -17715,6 +17923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 266
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4028365294834316021
 GameObject:
   m_ObjectHideFlags: 0
@@ -17783,6 +17992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 303
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4038807067536890007
 GameObject:
   m_ObjectHideFlags: 0
@@ -17851,6 +18061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 364
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4045520758122579562
 GameObject:
   m_ObjectHideFlags: 0
@@ -17919,6 +18130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 107
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4052559679177922572
 GameObject:
   m_ObjectHideFlags: 0
@@ -18059,6 +18271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 374
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4110370888965794816
 GameObject:
   m_ObjectHideFlags: 0
@@ -18163,6 +18376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 380
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4116510485280834203
 GameObject:
   m_ObjectHideFlags: 0
@@ -18231,6 +18445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 24
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4118859827664651474
 GameObject:
   m_ObjectHideFlags: 0
@@ -18335,6 +18550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 366
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4145965020657693471
 GameObject:
   m_ObjectHideFlags: 0
@@ -18439,6 +18655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 202
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4171334455610641050
 GameObject:
   m_ObjectHideFlags: 0
@@ -18507,6 +18724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 139
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4186417606228326369
 GameObject:
   m_ObjectHideFlags: 0
@@ -18611,6 +18829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 326
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4236790337947370087
 GameObject:
   m_ObjectHideFlags: 0
@@ -18715,6 +18934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 132
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4266818523861504223
 GameObject:
   m_ObjectHideFlags: 0
@@ -18783,6 +19003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 391
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4303744090395307629
 GameObject:
   m_ObjectHideFlags: 0
@@ -18851,6 +19072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 8
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4305659596067773589
 GameObject:
   m_ObjectHideFlags: 0
@@ -18919,6 +19141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 239
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4322500812638283436
 GameObject:
   m_ObjectHideFlags: 0
@@ -18987,6 +19210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 40
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4330004434747792351
 GameObject:
   m_ObjectHideFlags: 0
@@ -19055,6 +19279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 175
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4332771787455047774
 GameObject:
   m_ObjectHideFlags: 0
@@ -19123,6 +19348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 105
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4354822635218481821
 GameObject:
   m_ObjectHideFlags: 0
@@ -19259,6 +19485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 22
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4365326284910971172
 GameObject:
   m_ObjectHideFlags: 0
@@ -19327,6 +19554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 255
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4373713030280071437
 GameObject:
   m_ObjectHideFlags: 0
@@ -19395,6 +19623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 271
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4382996592879809240
 GameObject:
   m_ObjectHideFlags: 0
@@ -19463,6 +19692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 384
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4383776051786395325
 GameObject:
   m_ObjectHideFlags: 0
@@ -19531,6 +19761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 259
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4391216494712826638
 GameObject:
   m_ObjectHideFlags: 0
@@ -19635,6 +19866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 179
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4439374584181410484
 GameObject:
   m_ObjectHideFlags: 0
@@ -19775,6 +20007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 413
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4458051964521607497
 GameObject:
   m_ObjectHideFlags: 0
@@ -19843,6 +20076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 169
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4481563423408948776
 GameObject:
   m_ObjectHideFlags: 0
@@ -19911,6 +20145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 246
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4492535240216018155
 GameObject:
   m_ObjectHideFlags: 0
@@ -19979,6 +20214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 253
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4517777453727510702
 GameObject:
   m_ObjectHideFlags: 0
@@ -20153,6 +20389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 378
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4548423619057677800
 GameObject:
   m_ObjectHideFlags: 0
@@ -20221,6 +20458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 43
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4573594281369164795
 GameObject:
   m_ObjectHideFlags: 0
@@ -20325,6 +20563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 285
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4594153004411820740
 GameObject:
   m_ObjectHideFlags: 0
@@ -20393,6 +20632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 238
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4627469171125923456
 GameObject:
   m_ObjectHideFlags: 0
@@ -20598,6 +20838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 151
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4632763393585962243
 GameObject:
   m_ObjectHideFlags: 0
@@ -20666,6 +20907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 66
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4666003127935287779
 GameObject:
   m_ObjectHideFlags: 0
@@ -20734,6 +20976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 316
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4700549971413619335
 GameObject:
   m_ObjectHideFlags: 0
@@ -20802,6 +21045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 385
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4713862868838145081
 GameObject:
   m_ObjectHideFlags: 0
@@ -20973,6 +21217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 158
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4723414104777993229
 GameObject:
   m_ObjectHideFlags: 0
@@ -21041,6 +21286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 73
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4732566959856372454
 GameObject:
   m_ObjectHideFlags: 0
@@ -21109,6 +21355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 416
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4747334711317877125
 GameObject:
   m_ObjectHideFlags: 0
@@ -21177,6 +21424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 357
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4752343719492660848
 GameObject:
   m_ObjectHideFlags: 0
@@ -21281,6 +21529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 390
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4766343683545858867
 GameObject:
   m_ObjectHideFlags: 0
@@ -21349,6 +21598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 27
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4797075231466745246
 GameObject:
   m_ObjectHideFlags: 0
@@ -21417,6 +21667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 225
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4809627423052087489
 GameObject:
   m_ObjectHideFlags: 0
@@ -21485,6 +21736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 120
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4813524435352100003
 GameObject:
   m_ObjectHideFlags: 0
@@ -21553,6 +21805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 300
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4822355837778770559
 GameObject:
   m_ObjectHideFlags: 0
@@ -21657,6 +21910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 115
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4832894323794294846
 GameObject:
   m_ObjectHideFlags: 0
@@ -21792,6 +22046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 387
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4841107806385783374
 GameObject:
   m_ObjectHideFlags: 0
@@ -21860,6 +22115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 356
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4846082484929434527
 GameObject:
   m_ObjectHideFlags: 0
@@ -21928,6 +22184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 93
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4859837811237849554
 GameObject:
   m_ObjectHideFlags: 0
@@ -21996,6 +22253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 28
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4862769132350999029
 GameObject:
   m_ObjectHideFlags: 0
@@ -22136,6 +22394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 144
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4876576487699965405
 GameObject:
   m_ObjectHideFlags: 0
@@ -22240,6 +22499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 281
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4895033066136444276
 GameObject:
   m_ObjectHideFlags: 0
@@ -22308,6 +22568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 347
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4895410160571356680
 GameObject:
   m_ObjectHideFlags: 0
@@ -22376,6 +22637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 12
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4905851803352248613
 GameObject:
   m_ObjectHideFlags: 0
@@ -22444,6 +22706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 283
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4920015967606067477
 GameObject:
   m_ObjectHideFlags: 0
@@ -22512,6 +22775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 394
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4923204634042885817
 GameObject:
   m_ObjectHideFlags: 0
@@ -22616,6 +22880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 61
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4974522110923586949
 GameObject:
   m_ObjectHideFlags: 0
@@ -22684,6 +22949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 108
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4976425246104082103
 GameObject:
   m_ObjectHideFlags: 0
@@ -22788,6 +23054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 26
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &4999939187981580581
 GameObject:
   m_ObjectHideFlags: 0
@@ -22856,6 +23123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 197
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5006762691881967682
 GameObject:
   m_ObjectHideFlags: 0
@@ -22996,6 +23264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 440
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5060977623091526204
 GameObject:
   m_ObjectHideFlags: 0
@@ -23098,6 +23367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 82
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5078688769105304914
 GameObject:
   m_ObjectHideFlags: 0
@@ -23166,6 +23436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 337
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5083038036901916355
 GameObject:
   m_ObjectHideFlags: 0
@@ -23234,6 +23505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 354
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5084097592298769114
 GameObject:
   m_ObjectHideFlags: 0
@@ -23302,6 +23574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 279
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5090261436330747826
 GameObject:
   m_ObjectHideFlags: 0
@@ -23370,6 +23643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 260
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5109835217485319208
 GameObject:
   m_ObjectHideFlags: 0
@@ -23438,6 +23712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 297
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5113816402354033205
 GameObject:
   m_ObjectHideFlags: 0
@@ -23542,6 +23817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 104
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5149394018995995463
 GameObject:
   m_ObjectHideFlags: 0
@@ -23610,6 +23886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 7
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5151509024085662526
 GameObject:
   m_ObjectHideFlags: 0
@@ -23712,6 +23989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 367
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5170309931994540970
 GameObject:
   m_ObjectHideFlags: 0
@@ -23780,6 +24058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 401
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5177459557255930501
 GameObject:
   m_ObjectHideFlags: 0
@@ -23848,6 +24127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 438
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5190506360332368558
 GameObject:
   m_ObjectHideFlags: 0
@@ -23916,6 +24196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 338
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5196523876012195103
 GameObject:
   m_ObjectHideFlags: 0
@@ -23984,6 +24265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 371
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5204403643300518772
 GameObject:
   m_ObjectHideFlags: 0
@@ -24088,6 +24370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 407
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5224312063551728861
 GameObject:
   m_ObjectHideFlags: 0
@@ -24192,6 +24475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 168
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5237706686524854220
 GameObject:
   m_ObjectHideFlags: 0
@@ -24260,6 +24544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 106
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5249594547490152431
 GameObject:
   m_ObjectHideFlags: 0
@@ -24503,6 +24788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 130
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5331245576358045900
 GameObject:
   m_ObjectHideFlags: 0
@@ -24571,6 +24857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 200
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5347938470421382913
 GameObject:
   m_ObjectHideFlags: 0
@@ -24776,6 +25063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 296
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5358764544060838082
 GameObject:
   m_ObjectHideFlags: 0
@@ -24916,6 +25204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 59
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5394347739030406759
 GameObject:
   m_ObjectHideFlags: 0
@@ -24984,6 +25273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 21
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5429412095864817899
 GameObject:
   m_ObjectHideFlags: 0
@@ -25052,6 +25342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 402
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5460529296206194910
 GameObject:
   m_ObjectHideFlags: 0
@@ -25120,6 +25411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 250
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5561582069909234832
 GameObject:
   m_ObjectHideFlags: 0
@@ -25224,6 +25516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 362
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5578469774819784303
 GameObject:
   m_ObjectHideFlags: 0
@@ -25328,6 +25621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 152
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5604959778390454708
 GameObject:
   m_ObjectHideFlags: 0
@@ -25430,6 +25724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 85
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5619031070027222837
 GameObject:
   m_ObjectHideFlags: 0
@@ -25498,6 +25793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 109
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5623330104746449150
 GameObject:
   m_ObjectHideFlags: 0
@@ -25566,6 +25862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 214
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5624488387756546800
 GameObject:
   m_ObjectHideFlags: 0
@@ -25634,6 +25931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 406
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5634710997428848069
 GameObject:
   m_ObjectHideFlags: 0
@@ -25736,6 +26034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 185
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5638399353683129340
 GameObject:
   m_ObjectHideFlags: 0
@@ -25838,6 +26137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 35
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5670079494640858070
 GameObject:
   m_ObjectHideFlags: 0
@@ -25978,6 +26278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 91
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5707627036593776267
 GameObject:
   m_ObjectHideFlags: 0
@@ -26118,6 +26419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 388
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5741477076842626356
 GameObject:
   m_ObjectHideFlags: 0
@@ -26222,6 +26524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 251
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5773432744028948792
 GameObject:
   m_ObjectHideFlags: 0
@@ -26326,6 +26629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 127
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5791818534401447034
 GameObject:
   m_ObjectHideFlags: 0
@@ -26430,6 +26734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 224
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5806279765217627705
 GameObject:
   m_ObjectHideFlags: 0
@@ -26498,6 +26803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 265
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5806303356464269758
 GameObject:
   m_ObjectHideFlags: 0
@@ -26566,6 +26872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 274
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5838445940084356757
 GameObject:
   m_ObjectHideFlags: 0
@@ -26634,6 +26941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 53
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5842838307260466608
 GameObject:
   m_ObjectHideFlags: 0
@@ -26738,6 +27046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 360
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5894407715262902945
 GameObject:
   m_ObjectHideFlags: 0
@@ -26806,6 +27115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 408
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5904604045630274101
 GameObject:
   m_ObjectHideFlags: 0
@@ -26874,6 +27184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 414
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5907344339688664215
 GameObject:
   m_ObjectHideFlags: 0
@@ -26978,6 +27289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 395
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5954984408469903314
 GameObject:
   m_ObjectHideFlags: 0
@@ -27046,6 +27358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 199
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5957256002900476680
 GameObject:
   m_ObjectHideFlags: 0
@@ -27114,6 +27427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 443
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &5995845374264356138
 GameObject:
   m_ObjectHideFlags: 0
@@ -27182,6 +27496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 150
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6022652862492497715
 GameObject:
   m_ObjectHideFlags: 0
@@ -27250,6 +27565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 361
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6070578131600991385
 GameObject:
   m_ObjectHideFlags: 0
@@ -27354,6 +27670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 36
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6113241207508088825
 GameObject:
   m_ObjectHideFlags: 0
@@ -27422,6 +27739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 57
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6138690183685442855
 GameObject:
   m_ObjectHideFlags: 0
@@ -27562,6 +27880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 184
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6160684572034830943
 GameObject:
   m_ObjectHideFlags: 0
@@ -27630,6 +27949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 275
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6177087856114047840
 GameObject:
   m_ObjectHideFlags: 0
@@ -27734,6 +28054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 70
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6211182119369412985
 GameObject:
   m_ObjectHideFlags: 0
@@ -27802,6 +28123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 372
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6212574934002700267
 GameObject:
   m_ObjectHideFlags: 0
@@ -27906,6 +28228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 330
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6235312019403372756
 GameObject:
   m_ObjectHideFlags: 0
@@ -28010,6 +28333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 218
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6259105032871043119
 GameObject:
   m_ObjectHideFlags: 0
@@ -28078,6 +28402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 290
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6275666926540069468
 GameObject:
   m_ObjectHideFlags: 0
@@ -28182,6 +28507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 292
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6296659632059720150
 GameObject:
   m_ObjectHideFlags: 0
@@ -28250,6 +28576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 156
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6307405271419052215
 GameObject:
   m_ObjectHideFlags: 0
@@ -28318,6 +28645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 306
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6379398644467783109
 GameObject:
   m_ObjectHideFlags: 0
@@ -28494,6 +28822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 333
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6427671038021712335
 GameObject:
   m_ObjectHideFlags: 0
@@ -28562,6 +28891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 68
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6440101324845178783
 GameObject:
   m_ObjectHideFlags: 0
@@ -28630,6 +28960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 5
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6473669316142935190
 GameObject:
   m_ObjectHideFlags: 0
@@ -28739,6 +29070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 154
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6480311725295367703
 GameObject:
   m_ObjectHideFlags: 0
@@ -28807,6 +29139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 321
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6502648037388444569
 GameObject:
   m_ObjectHideFlags: 0
@@ -28911,6 +29244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 236
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6533742546460920842
 GameObject:
   m_ObjectHideFlags: 0
@@ -29015,6 +29349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 304
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6570096156565132082
 GameObject:
   m_ObjectHideFlags: 0
@@ -29191,6 +29526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 405
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6613599795447976035
 GameObject:
   m_ObjectHideFlags: 0
@@ -29259,6 +29595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 386
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6619952515207162921
 GameObject:
   m_ObjectHideFlags: 0
@@ -29399,6 +29736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 449
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6670929166535465343
 GameObject:
   m_ObjectHideFlags: 0
@@ -29467,6 +29805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 322
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6672710333232626058
 GameObject:
   m_ObjectHideFlags: 0
@@ -29571,6 +29910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 245
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6680076521814457951
 GameObject:
   m_ObjectHideFlags: 0
@@ -29675,6 +30015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 234
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6709627845111131215
 GameObject:
   m_ObjectHideFlags: 0
@@ -29779,6 +30120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 258
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6724003970286582429
 GameObject:
   m_ObjectHideFlags: 0
@@ -29883,6 +30225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 58
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6728047801747672631
 GameObject:
   m_ObjectHideFlags: 0
@@ -29951,6 +30294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 254
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6730048527320847819
 GameObject:
   m_ObjectHideFlags: 0
@@ -30019,6 +30363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 454
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6735808721789705552
 GameObject:
   m_ObjectHideFlags: 0
@@ -30159,6 +30504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 216
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6756095597011166524
 GameObject:
   m_ObjectHideFlags: 0
@@ -30263,6 +30609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 54
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6768813309322853534
 GameObject:
   m_ObjectHideFlags: 0
@@ -30331,6 +30678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 25
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6779157228879717584
 GameObject:
   m_ObjectHideFlags: 0
@@ -30435,6 +30783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 332
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6837592465892139642
 GameObject:
   m_ObjectHideFlags: 0
@@ -30539,6 +30888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 17
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6842950405491919487
 GameObject:
   m_ObjectHideFlags: 0
@@ -30744,6 +31094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 248
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6868627037214734873
 GameObject:
   m_ObjectHideFlags: 0
@@ -30812,6 +31163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 398
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6890259806963227013
 GameObject:
   m_ObjectHideFlags: 0
@@ -30983,6 +31335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 213
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6896943660499676827
 GameObject:
   m_ObjectHideFlags: 0
@@ -31051,6 +31404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 351
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6905376505205722592
 GameObject:
   m_ObjectHideFlags: 0
@@ -31261,6 +31615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 83
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &6980608590511870459
 GameObject:
   m_ObjectHideFlags: 0
@@ -31329,6 +31684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 181
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7018186266950904348
 GameObject:
   m_ObjectHideFlags: 0
@@ -31397,6 +31753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 56
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7085445716311241137
 GameObject:
   m_ObjectHideFlags: 0
@@ -31499,6 +31856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 195
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7135717645216211818
 GameObject:
   m_ObjectHideFlags: 0
@@ -31567,6 +31925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 404
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7139752805504748596
 GameObject:
   m_ObjectHideFlags: 0
@@ -31635,6 +31994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 320
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7168739337783401556
 GameObject:
   m_ObjectHideFlags: 0
@@ -31703,6 +32063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 222
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7169490771914653074
 GameObject:
   m_ObjectHideFlags: 0
@@ -31807,6 +32168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 196
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7206595694117889157
 GameObject:
   m_ObjectHideFlags: 0
@@ -31947,6 +32309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 267
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7265747942392643622
 GameObject:
   m_ObjectHideFlags: 0
@@ -32015,6 +32378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 446
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7302889397265574955
 GameObject:
   m_ObjectHideFlags: 0
@@ -32083,6 +32447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 436
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7303335721520500130
 GameObject:
   m_ObjectHideFlags: 0
@@ -32151,6 +32516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 434
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7306852311113463638
 GameObject:
   m_ObjectHideFlags: 0
@@ -32219,6 +32585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 135
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7309531425412692918
 GameObject:
   m_ObjectHideFlags: 0
@@ -32287,6 +32654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 272
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7317421573613864829
 GameObject:
   m_ObjectHideFlags: 0
@@ -32355,6 +32723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 172
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7342261704097455926
 GameObject:
   m_ObjectHideFlags: 0
@@ -32495,6 +32864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 429
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7424299462863391894
 GameObject:
   m_ObjectHideFlags: 0
@@ -32563,6 +32933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 86
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7428887840701709548
 GameObject:
   m_ObjectHideFlags: 0
@@ -32770,6 +33141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 123
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7519393816074808152
 GameObject:
   m_ObjectHideFlags: 0
@@ -32874,6 +33246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 269
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7568983086298341533
 GameObject:
   m_ObjectHideFlags: 0
@@ -32942,6 +33315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 451
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7587505907425064632
 GameObject:
   m_ObjectHideFlags: 0
@@ -33010,6 +33384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 284
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7616273914202017669
 GameObject:
   m_ObjectHideFlags: 0
@@ -33078,6 +33453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 422
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7619522999323133881
 GameObject:
   m_ObjectHideFlags: 0
@@ -33146,6 +33522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 131
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7620086428364853718
 GameObject:
   m_ObjectHideFlags: 0
@@ -33214,6 +33591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 314
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7626587857381305359
 GameObject:
   m_ObjectHideFlags: 0
@@ -33318,6 +33696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 165
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7667280634981646749
 GameObject:
   m_ObjectHideFlags: 0
@@ -33386,6 +33765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 162
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7667528411151134523
 GameObject:
   m_ObjectHideFlags: 0
@@ -33454,6 +33834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 193
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7672519988746446122
 GameObject:
   m_ObjectHideFlags: 0
@@ -33558,6 +33939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 146
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7687290392089312792
 GameObject:
   m_ObjectHideFlags: 0
@@ -33626,6 +34008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 425
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7694834610753850808
 GameObject:
   m_ObjectHideFlags: 0
@@ -33694,6 +34077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 95
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7698476675380832174
 GameObject:
   m_ObjectHideFlags: 0
@@ -33762,6 +34146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 178
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7702009812412577648
 GameObject:
   m_ObjectHideFlags: 0
@@ -33830,6 +34215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 50
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7710669347551782102
 GameObject:
   m_ObjectHideFlags: 0
@@ -33898,6 +34284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 31
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7739988622553845794
 GameObject:
   m_ObjectHideFlags: 0
@@ -34000,6 +34387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 118
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7768009078061413331
 GameObject:
   m_ObjectHideFlags: 0
@@ -34068,6 +34456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 270
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7785509803957730404
 GameObject:
   m_ObjectHideFlags: 0
@@ -34136,6 +34525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 421
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7797309679964059396
 GameObject:
   m_ObjectHideFlags: 0
@@ -34204,6 +34594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 219
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7824376070560166878
 GameObject:
   m_ObjectHideFlags: 0
@@ -34272,6 +34663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 64
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7829459839539564112
 GameObject:
   m_ObjectHideFlags: 0
@@ -34340,6 +34732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 177
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7838324177971221320
 GameObject:
   m_ObjectHideFlags: 0
@@ -34408,6 +34801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 30
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7841027235761591202
 GameObject:
   m_ObjectHideFlags: 0
@@ -34476,6 +34870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 190
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7844154524505941875
 GameObject:
   m_ObjectHideFlags: 0
@@ -34544,6 +34939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 62
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7888198257543589883
 GameObject:
   m_ObjectHideFlags: 0
@@ -34612,6 +35008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 343
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7895009644766949626
 GameObject:
   m_ObjectHideFlags: 0
@@ -34752,6 +35149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 426
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7921415213716407052
 GameObject:
   m_ObjectHideFlags: 0
@@ -34820,6 +35218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 273
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7936212907960677060
 GameObject:
   m_ObjectHideFlags: 0
@@ -34888,6 +35287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 317
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7941813248652349592
 GameObject:
   m_ObjectHideFlags: 0
@@ -34956,6 +35356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 38
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7944843760799670815
 GameObject:
   m_ObjectHideFlags: 0
@@ -35024,6 +35425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 397
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7987571267055418267
 GameObject:
   m_ObjectHideFlags: 0
@@ -35092,6 +35494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 192
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &7992636454794903803
 GameObject:
   m_ObjectHideFlags: 0
@@ -35160,6 +35563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 456
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8063991820639491685
 GameObject:
   m_ObjectHideFlags: 0
@@ -35228,6 +35632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 89
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8085246337002688911
 GameObject:
   m_ObjectHideFlags: 0
@@ -35332,6 +35737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 163
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8133981583044892018
 GameObject:
   m_ObjectHideFlags: 0
@@ -35400,6 +35806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 233
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8146459196844067120
 GameObject:
   m_ObjectHideFlags: 0
@@ -35540,6 +35947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 69
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8164565691330926900
 GameObject:
   m_ObjectHideFlags: 0
@@ -35608,6 +36016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 301
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8174035160841102238
 GameObject:
   m_ObjectHideFlags: 0
@@ -35676,6 +36085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 138
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8186187159630869156
 GameObject:
   m_ObjectHideFlags: 0
@@ -35744,6 +36154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 437
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8196588821449743845
 GameObject:
   m_ObjectHideFlags: 0
@@ -35812,6 +36223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 289
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8221576165489884011
 GameObject:
   m_ObjectHideFlags: 0
@@ -35916,6 +36328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 78
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8264198127716814526
 GameObject:
   m_ObjectHideFlags: 0
@@ -35984,6 +36397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 231
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8284349265268553529
 GameObject:
   m_ObjectHideFlags: 0
@@ -36088,6 +36502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 307
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8361700036437667645
 GameObject:
   m_ObjectHideFlags: 0
@@ -36192,6 +36607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 256
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8415652033527953610
 GameObject:
   m_ObjectHideFlags: 0
@@ -36260,6 +36676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 368
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8429794843841538198
 GameObject:
   m_ObjectHideFlags: 0
@@ -36328,6 +36745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 276
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8439662495050042186
 GameObject:
   m_ObjectHideFlags: 0
@@ -36396,6 +36814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 369
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8444306560293980779
 GameObject:
   m_ObjectHideFlags: 0
@@ -36500,6 +36919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 244
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8501990976505191673
 GameObject:
   m_ObjectHideFlags: 0
@@ -36568,6 +36988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 280
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8519036210757302629
 GameObject:
   m_ObjectHideFlags: 0
@@ -36706,6 +37127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 435
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8553823047318313870
 GameObject:
   m_ObjectHideFlags: 0
@@ -36774,6 +37196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 381
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8556049800870700795
 GameObject:
   m_ObjectHideFlags: 0
@@ -36842,6 +37265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 153
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8560485869146539139
 GameObject:
   m_ObjectHideFlags: 0
@@ -36946,6 +37370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 44
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8586106221685100063
 GameObject:
   m_ObjectHideFlags: 0
@@ -37014,6 +37439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 349
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8588591160502935177
 GameObject:
   m_ObjectHideFlags: 0
@@ -37082,6 +37508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 277
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8607320255310003285
 GameObject:
   m_ObjectHideFlags: 0
@@ -37150,6 +37577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 433
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8617914179068497100
 GameObject:
   m_ObjectHideFlags: 0
@@ -37218,6 +37646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 34
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8660591406440250520
 GameObject:
   m_ObjectHideFlags: 0
@@ -37320,6 +37749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 4
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8685089785056815254
 GameObject:
   m_ObjectHideFlags: 0
@@ -37460,6 +37890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 223
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8765906623698681641
 GameObject:
   m_ObjectHideFlags: 0
@@ -37564,6 +37995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 291
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8781773271612683382
 GameObject:
   m_ObjectHideFlags: 0
@@ -37632,6 +38064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 161
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8798475248917092255
 GameObject:
   m_ObjectHideFlags: 0
@@ -37700,6 +38133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 215
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8813867626440500482
 GameObject:
   m_ObjectHideFlags: 0
@@ -37768,6 +38202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 143
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8816032827285294817
 GameObject:
   m_ObjectHideFlags: 0
@@ -37836,6 +38271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 450
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8820735324079225639
 GameObject:
   m_ObjectHideFlags: 0
@@ -37904,6 +38340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 247
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8829829434495155266
 GameObject:
   m_ObjectHideFlags: 0
@@ -37972,6 +38409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 335
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8833994902536740811
 GameObject:
   m_ObjectHideFlags: 0
@@ -38040,6 +38478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 75
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8839910625219918408
 GameObject:
   m_ObjectHideFlags: 0
@@ -38180,6 +38619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 49
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8857560082650015044
 GameObject:
   m_ObjectHideFlags: 0
@@ -38248,6 +38688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 379
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8857744679252599710
 GameObject:
   m_ObjectHideFlags: 0
@@ -38316,6 +38757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 409
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8863223887082820143
 GameObject:
   m_ObjectHideFlags: 0
@@ -38384,6 +38826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 124
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8867665520793676003
 GameObject:
   m_ObjectHideFlags: 0
@@ -38452,6 +38895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 41
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8875646512970596291
 GameObject:
   m_ObjectHideFlags: 0
@@ -38520,6 +38964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 229
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8889603933232933248
 GameObject:
   m_ObjectHideFlags: 0
@@ -38624,6 +39069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 334
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8923714904481322224
 GameObject:
   m_ObjectHideFlags: 0
@@ -38692,6 +39138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 331
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8950393628164109188
 GameObject:
   m_ObjectHideFlags: 0
@@ -38796,6 +39243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 114
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &8967246468667201072
 GameObject:
   m_ObjectHideFlags: 0
@@ -38864,6 +39312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 419
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9002014896439581415
 GameObject:
   m_ObjectHideFlags: 0
@@ -38932,6 +39381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 84
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9006650463744809000
 GameObject:
   m_ObjectHideFlags: 0
@@ -39000,6 +39450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 102
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9027794054013482795
 GameObject:
   m_ObjectHideFlags: 0
@@ -39068,6 +39519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 342
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9071423614643471235
 GameObject:
   m_ObjectHideFlags: 0
@@ -39136,6 +39588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 375
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9073097303128893856
 GameObject:
   m_ObjectHideFlags: 0
@@ -39276,6 +39729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 323
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9103838092807543944
 GameObject:
   m_ObjectHideFlags: 0
@@ -39344,6 +39798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 186
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9108640610156050691
 GameObject:
   m_ObjectHideFlags: 0
@@ -39543,6 +39998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 377
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9142308790283907819
 GameObject:
   m_ObjectHideFlags: 0
@@ -39611,6 +40067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 327
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9146877472380211815
 GameObject:
   m_ObjectHideFlags: 0
@@ -39679,6 +40136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 318
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9169201507408496708
 GameObject:
   m_ObjectHideFlags: 0
@@ -39783,6 +40241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 210
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &9191766456077937763
 GameObject:
   m_ObjectHideFlags: 0
@@ -39887,6 +40346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
   holeIndex: 9
   currentPin: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1001 &205613362710900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52171,6 +52631,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd4582f85e30c064f9de25260ac56b57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8046259955693223766}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd4582f85e30c064f9de25260ac56b57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9205247718740128001}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd4582f85e30c064f9de25260ac56b57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5101423584358338168}
   m_SourcePrefab: {fileID: 100100000, guid: cd4582f85e30c064f9de25260ac56b57, type: 3}
 --- !u!4 &2742713021981928774 stripped
 Transform:
@@ -52203,6 +52669,118 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5127914, y: 0.34597033, z: 0.8781978}
   m_Center: {x: 1.1583182e-17, y: -0.011436254, z: 0.0027682185}
+--- !u!82 &9205247718740128001
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268419650125461500}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243485103152924164, guid: a9e5d729576b0a5478cec30207263369, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 468f662ba85278c419ef967f7c33907b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 100
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5101423584358338168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268419650125461500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c96e5f3ed892401dbb50f831a7b25d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoleSoundManager
+  audioSource: {fileID: 9205247718740128001}
+  connectSound: {fileID: 8300000, guid: 468f662ba85278c419ef967f7c33907b, type: 3}
+  disconnectSound: {fileID: 8300000, guid: a6473f5264a14804e992a7a4a29cd744, type: 3}
 --- !u!1001 &2448874036600505515
 PrefabInstance:
   m_ObjectHideFlags: 0

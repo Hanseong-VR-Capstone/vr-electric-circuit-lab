@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 8085371576590046152}
   - component: {fileID: 8591153140624053742}
   - component: {fileID: 3249655185310019732}
+  - component: {fileID: 1868653535137177319}
   m_Layer: 0
   m_Name: '[BuildingBlock] HandGrabInstallationRoutine'
   m_TagString: Untagged
@@ -373,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 4dc40c62-77c7-4f0f-9fee-7c0d10e3e62c
+  instanceId: 00a3730a-9105-4cb5-8bc5-1b170ad0099a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -444,6 +445,67 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
+--- !u!114 &1868653535137177319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771830810479503715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.InteractableUnityEventWrapper
+  _interactableView: {fileID: 8591153140624053742}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591725274071363138}
+        m_TargetAssemblyTypeName: Resistor10KPart, Assembly-CSharp
+        m_MethodName: OnGrabDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591725274071363138}
+        m_TargetAssemblyTypeName: Resistor10KPart, Assembly-CSharp
+        m_MethodName: OnReleaseCheckLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5142214638237143909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1065,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8808333710242394276}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
 --- !u!114 &1591725274071363138
 MonoBehaviour:
@@ -1018,6 +1080,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Resistor10KPart
   partType: 3
+  rb: {fileID: 0}
+  pins: []
+  isLocked: 0
+  isGrabbed: 0
+  lockedPosition: {x: 0, y: 0, z: 0}
+  lockedRotation: {x: 0, y: 0, z: 0, w: 0}
+  distanceGrabInteractable: {fileID: 3101030713138265470}
+  distanceHandGrabInteractable: {fileID: 1100721881058289539}
 --- !u!4 &8853560144676399728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2345c89d5c56ca540943561f0778db6e, type: 3}

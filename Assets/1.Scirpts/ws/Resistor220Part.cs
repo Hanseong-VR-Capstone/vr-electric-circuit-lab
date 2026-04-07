@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Resistor220Part : ResistorPart
 {
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         partType = PartType.Resistor220;
         resistance = 220f;
     }
