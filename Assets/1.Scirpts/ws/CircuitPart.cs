@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CircuitPart : MonoBehaviour
 {
+    [SerializeField] protected Transform VRTableTransform;
     public PartType partType;
     [SerializeField] protected Rigidbody rb;
     protected RigidbodyConstraints defaultConstraints;
@@ -23,6 +24,7 @@ public class CircuitPart : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         defaultConstraints = rb.constraints;
         pins = GetComponentsInChildren<PartPin>();
+        VRTableTransform = GameObject.FindGameObjectWithTag("VRTable").transform;
 
         isLocked = false;
         isGrabbed = false;
@@ -50,7 +52,7 @@ public class CircuitPart : MonoBehaviour
         isGrabbed = false;
         if (HasAnyPinAttached())
         {
-            SnapToAttachedPin();
+            SnapToAttachedPins();
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -70,17 +72,40 @@ public class CircuitPart : MonoBehaviour
         }
     }
 
-    protected void SnapToAttachedPin()
+    protected void SnapToAttachedPins()
     {
-        // 꽂혀있는 핀 중 첫 번째 핀을 기준으로 위치 보정
-        PartPin attachedPin = GetFirstAttachedPin();
-        if (attachedPin == null || attachedPin.currentHole == null)
+        if (VRTableTransform == null) 
+        {
+            Debug.LogWarning("VRTableTransform이 할당되지 않았습니다. 핀 스냅이 작동하지 않습니다.");
             return;
+        }
 
-        Vector3 offset = attachedPin.currentHole.transform.position - attachedPin.transform.position;
-        offset.y = 0f; // Y축은 유지
+        int attachedCount = 0;
+        Vector3 totalOffsetLocal = Vector3.zero;
 
-        transform.position += offset;
+        foreach (PartPin pin in pins)
+        {
+            if (pin.currentHole == null) continue;
+
+            Vector3 pinLocal = VRTableTransform.InverseTransformPoint(pin.transform.position);
+            Vector3 holeLocal = VRTableTransform.InverseTransformPoint(pin.currentHole.transform.position);
+
+            Vector3 offsetLocal = holeLocal - pinLocal;
+            totalOffsetLocal += offsetLocal;
+            attachedCount++;
+        }
+
+        if (attachedCount == 0) return;
+
+        Vector3 averageOffsetLocal = totalOffsetLocal / attachedCount;
+
+        // 보드 두께 방향 이동은 막고, 보드 평면 안에서만 이동
+        averageOffsetLocal.y = 0f;
+
+        Vector3 worldOffset =
+            VRTableTransform.TransformVector(averageOffsetLocal);
+
+        transform.position += worldOffset;
     }
 
     protected PartPin GetFirstAttachedPin()

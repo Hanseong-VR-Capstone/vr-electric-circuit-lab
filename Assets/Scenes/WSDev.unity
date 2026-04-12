@@ -1010,6 +1010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR table
       objectReference: {fileID: 0}
+    - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+      propertyPath: m_TagString
+      value: VR table
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
