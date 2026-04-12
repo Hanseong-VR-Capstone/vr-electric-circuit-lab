@@ -8818,7 +8818,7 @@ MonoBehaviour:
   cameraRig: {fileID: 1919981848}
   workbenchPrefab: {fileID: 1613624461031437019, guid: b990357a2b9a40942bf40dd0dd70c3e0, type: 3}
   heightRatio: 0.65
-  forwardDistance: 0.6
+  forwardDistance: 0.4
 --- !u!1001 &1094543704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13965,7 +13965,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760777716}
   m_LocalRotation: {x: -0, y: 0.37552747, z: -0, w: 0.92681134}
-  m_LocalPosition: {x: 0, y: 0, z: 26.644}
+  m_LocalPosition: {x: 0, y: 0, z: 26.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13976,7 +13976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 44.114, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.673, y: 3.97}
+  m_AnchoredPosition: {x: -1.745, y: 4.386}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760777718
@@ -17132,7 +17132,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137054528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -17193,7 +17193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137054528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2518c50cb3fc6a6458d4b743c2f69c7d, type: 3}
   m_Name: 
