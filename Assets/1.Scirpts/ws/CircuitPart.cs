@@ -77,11 +77,10 @@ public class CircuitPart : MonoBehaviour
         if (attachedPin == null || attachedPin.currentHole == null)
             return;
 
-        Vector3 offset = attachedPin.transform.position - attachedPin.transform.position; // 핀의 로컬 위치
-        Vector3 targetPosition = transform.position + offset;
+        Vector3 offset = attachedPin.currentHole.transform.position - attachedPin.transform.position;
+        offset.y = 0f; // Y축은 유지
 
-        targetPosition.y = transform.position.y; // Y축은 고정
-        transform.position = targetPosition;
+        transform.position += offset;
     }
 
     protected PartPin GetFirstAttachedPin()
