@@ -50,6 +50,7 @@ public class CircuitPart : MonoBehaviour
         isGrabbed = false;
         if (HasAnyPinAttached())
         {
+            SnapToAttachedPin();
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -67,6 +68,30 @@ public class CircuitPart : MonoBehaviour
             SetDistanceGrabEnabled(true);
             Debug.Log(partType + " 놓았는데, 핀이 하나도 안꽂혀있어서 고정 안됨");
         }
+    }
+
+    protected void SnapToAttachedPin()
+    {
+        // 꽂혀있는 핀 중 첫 번째 핀을 기준으로 위치 보정
+        PartPin attachedPin = GetFirstAttachedPin();
+        if (attachedPin == null || attachedPin.currentHole == null)
+            return;
+
+        Transform pinTf = attachedPin.transform;
+        Transform holeTf = attachedPin.currentHole.transform;
+
+        Vector3 targetPosition = holeTf.position - (transform.rotation * pinTf.localPosition);
+        transform.position = targetPosition;
+    }
+
+    protected PartPin GetFirstAttachedPin()
+    {
+        foreach (PartPin pin in pins)
+        {
+            if (pin.currentHole != null)
+                return pin;
+        }
+        return null;
     }
 
     protected bool HasAnyPinAttached()
