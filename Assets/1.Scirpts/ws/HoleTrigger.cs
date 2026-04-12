@@ -4,6 +4,19 @@ public class HoleTrigger : MonoBehaviour
 {
     public int holeIndex;
     public PartPin currentPin;
+    public HoleSoundManager audioManager;
+
+    private void Awake()
+    {
+        if (audioManager == null)
+        {
+            audioManager = GetComponentInParent<HoleSoundManager>();
+            if (audioManager == null)
+            {
+                Debug.LogWarning("HoleSoundManager 컴포넌트를 찾지 못했습니다");
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,6 +72,7 @@ public class HoleTrigger : MonoBehaviour
                 break;
         }
         
+        audioManager.PlayConnectSound();
         Debug.Log(message);
     }
 
@@ -70,6 +84,7 @@ public class HoleTrigger : MonoBehaviour
         if (currentPin == pin)
         {
             Debug.Log($"Hole {holeIndex} 에서 {pin.parentPart.partType} / {pin.pinRole} 제거");
+            audioManager.PlayDisconnectSound();
             currentPin = null;
             pin.ClearHole(this);
         }
