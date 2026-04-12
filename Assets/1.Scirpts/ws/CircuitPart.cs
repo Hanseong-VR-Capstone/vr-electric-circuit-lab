@@ -24,7 +24,7 @@ public class CircuitPart : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         defaultConstraints = rb.constraints;
         pins = GetComponentsInChildren<PartPin>();
-        VRTableTransform = GameObject.FindGameObjectWithTag("VRTable").transform;
+        VRTableTransform = GameObject.FindGameObjectWithTag("VR table").transform;
 
         isLocked = false;
         isGrabbed = false;
