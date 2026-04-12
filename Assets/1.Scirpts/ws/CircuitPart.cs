@@ -77,10 +77,10 @@ public class CircuitPart : MonoBehaviour
         if (attachedPin == null || attachedPin.currentHole == null)
             return;
 
-        Transform pinTf = attachedPin.transform;
-        Transform holeTf = attachedPin.currentHole.transform;
+        Vector3 offset = attachedPin.transform.position - attachedPin.transform.position; // 핀의 로컬 위치
+        Vector3 targetPosition = transform.position + offset;
 
-        Vector3 targetPosition = holeTf.position - (transform.rotation * pinTf.localPosition);
+        targetPosition.y = transform.position.y; // Y축은 고정
         transform.position = targetPosition;
     }
 
