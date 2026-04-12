@@ -20,6 +20,8 @@ namespace VRCircuit.Services
 
         public bool ConnectPinToSocket(string pinId, string socketId)
         {
+            Debug.Log($"[Service] CONNECT request | pinId={pinId} | socketId={socketId}");
+
             if (context == null)
             {
                 Debug.LogWarning("CircuitConnectionService: CircuitContext is null.");
@@ -27,6 +29,7 @@ namespace VRCircuit.Services
             }
 
             CircuitPin pin = context.GetPinById(pinId);
+            Debug.Log($"[Service] pin lookup: {(pin != null ? "OK" : "NULL")}");
             if (pin == null)
             {
                 Debug.LogWarning($"CircuitConnectionService: Pin not found. pinId={pinId}");
@@ -34,6 +37,7 @@ namespace VRCircuit.Services
             }
 
             CircuitSocket socket = context.GetSocketById(socketId);
+            Debug.Log($"[Service] socket lookup: {(socket != null ? "OK" : "NULL")}");
             if (socket == null)
             {
                 Debug.LogWarning($"CircuitConnectionService: Socket not found. socketId={socketId}");
@@ -65,11 +69,15 @@ namespace VRCircuit.Services
             socket.SetConnectedPinId(pin.PinId);
 
             Evaluate();
+            Debug.Log($"[Service] CONNECT success | pinId={pinId} -> socketId={socketId}");
+            Debug.Log($"[Service] CurrentState={CurrentState}");
             return true;
         }
 
         public bool DisconnectPin(string pinId)
         {
+            Debug.Log($"[Service] DISCONNECT request | pinId={pinId}");
+
             if (context == null)
             {
                 Debug.LogWarning("CircuitConnectionService: CircuitContext is null.");
@@ -77,6 +85,7 @@ namespace VRCircuit.Services
             }
 
             CircuitPin pin = context.GetPinById(pinId);
+            Debug.Log($"[Service] pin lookup: {(pin != null ? "OK" : "NULL")}");
             if (pin == null)
             {
                 Debug.LogWarning($"CircuitConnectionService: Pin not found. pinId={pinId}");
@@ -133,7 +142,9 @@ namespace VRCircuit.Services
 
             if (shouldEvaluate)
             {
+                Debug.Log($"[Service] DISCONNECT success | pinId={pin.PinId}");
                 Evaluate();
+                Debug.Log($"[Service] CurrentState={CurrentState}");
             }
 
             return true;
