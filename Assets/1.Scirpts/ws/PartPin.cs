@@ -34,6 +34,12 @@ public class PartPin : MonoBehaviour
     public void SetHole(HoleTrigger hole)
     {
         currentHole = hole;
+        
+        if (parentPart != null)
+        {
+            parentPart.TryLatchPoseWhileGrabbed();
+            Debug.Log(parentPart.partType + "의 " + pinRole + " 핀이 구멍에 꽂혀서 위치 고정 시도");
+        }
     }
 
     public void ClearHole(HoleTrigger hole)

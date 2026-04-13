@@ -1,10 +1,10 @@
+using NUnit.Framework;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
 
 public class CircuitPart : MonoBehaviour
 {
-    [SerializeField] protected Transform VRTableTransform;
     public PartType partType;
     [SerializeField] protected Rigidbody rb;
     protected RigidbodyConstraints defaultConstraints;
@@ -19,19 +19,33 @@ public class CircuitPart : MonoBehaviour
     [SerializeField] protected DistanceGrabInteractable distanceGrabInteractable;
     [SerializeField] protected DistanceHandGrabInteractable distanceHandGrabInteractable;
 
+    [Header("Grab Latch")]
+    [SerializeField] protected bool isPoseLatchedWhileGrabbed;
+    [SerializeField] protected Vector3 latchedPosition;
+    [SerializeField] protected Quaternion latchedRotation;
+
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();
         defaultConstraints = rb.constraints;
         pins = GetComponentsInChildren<PartPin>();
-        VRTableTransform = GameObject.FindGameObjectWithTag("VR table").transform;
 
         isLocked = false;
         isGrabbed = false;
+        isPoseLatchedWhileGrabbed = false;
     }
 
     protected virtual void LateUpdate()
     {
+        // 잡고있는 동안 모든 핀이 연결되면 해당 위치 고정
+        if (isGrabbed && isPoseLatchedWhileGrabbed)
+        {
+            transform.position = latchedPosition;
+            transform.rotation = latchedRotation;
+            return;
+        }
+
+        // 손을 놓고 난 뒤에는 완전 고정 상태 유지
         if (isLocked && !isGrabbed)
         {
             transform.position = lockedPosition;
@@ -43,6 +57,7 @@ public class CircuitPart : MonoBehaviour
     {
         isGrabbed = true;
         isLocked = false;
+        isPoseLatchedWhileGrabbed = false;
         rb.constraints = defaultConstraints;
         Debug.Log(partType + " 잡았다");
     }
@@ -52,14 +67,23 @@ public class CircuitPart : MonoBehaviour
         isGrabbed = false;
         if (HasAnyPinAttached())
         {
-            SnapToAttachedPins();
+            if (isPoseLatchedWhileGrabbed)
+            {
+                lockedPosition = latchedPosition;
+                lockedRotation = latchedRotation;
+            }
+            else
+            {
+                lockedPosition = transform.position;
+                lockedRotation = transform.rotation;
+            }
+
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.constraints = RigidbodyConstraints.FreezeAll;
 
-            lockedPosition = transform.position;
-            lockedRotation = transform.rotation;
             isLocked = true;
+            isPoseLatchedWhileGrabbed = false;
             SetDistanceGrabEnabled(false);
             Debug.Log(partType + " 놓았는데, 핀이 1개 이상 꽂혀있어서 고정됨");
         }
@@ -67,55 +91,36 @@ public class CircuitPart : MonoBehaviour
         {
             rb.constraints = defaultConstraints;
             isLocked = false;
+            isPoseLatchedWhileGrabbed = false;
             SetDistanceGrabEnabled(true);
             Debug.Log(partType + " 놓았는데, 핀이 하나도 안꽂혀있어서 고정 안됨");
         }
     }
 
-    protected void SnapToAttachedPins()
+    // 잡고있는 동안 모든 핀이 꽂히면 현재 위치로 고정
+    public void TryLatchPoseWhileGrabbed()
     {
-        if (VRTableTransform == null) 
-        {
-            Debug.LogWarning("VRTableTransform이 할당되지 않았습니다. 핀 스냅이 작동하지 않습니다.");
-            return;
-        }
+        if (!isGrabbed) return;
+        if (isPoseLatchedWhileGrabbed) return;
+        if (!AreAllPinsAttached()) return;
 
-        int attachedCount = 0;
-        Vector3 totalOffsetLocal = Vector3.zero;
-
-        foreach (PartPin pin in pins)
-        {
-            if (pin.currentHole == null) continue;
-
-            Vector3 pinLocal = VRTableTransform.InverseTransformPoint(pin.transform.position);
-            Vector3 holeLocal = VRTableTransform.InverseTransformPoint(pin.currentHole.transform.position);
-
-            Vector3 offsetLocal = holeLocal - pinLocal;
-            totalOffsetLocal += offsetLocal;
-            attachedCount++;
-        }
-
-        if (attachedCount == 0) return;
-
-        Vector3 averageOffsetLocal = totalOffsetLocal / attachedCount;
-
-        // 보드 두께 방향 이동은 막고, 보드 평면 안에서만 이동
-        averageOffsetLocal.y = 0f;
-
-        Vector3 worldOffset =
-            VRTableTransform.TransformVector(averageOffsetLocal);
-
-        transform.position += worldOffset;
+        latchedPosition = transform.position;
+        latchedRotation = transform.rotation;
+        isPoseLatchedWhileGrabbed = true;
+        Debug.Log(partType + " 잡고있는 동안 모든 핀이 꽂혀서 위치 고정됨, 위치를 옮기고 싶으면 손을 놨다가 다시 잡아야 함");
     }
 
-    protected PartPin GetFirstAttachedPin()
+    protected bool AreAllPinsAttached()
     {
+        if (pins == null || pins.Length == 0)
+            return false;
+
         foreach (PartPin pin in pins)
         {
-            if (pin.currentHole != null)
-                return pin;
+            if (pin.currentHole == null)
+                return false;
         }
-        return null;
+        return true;
     }
 
     protected bool HasAnyPinAttached()
