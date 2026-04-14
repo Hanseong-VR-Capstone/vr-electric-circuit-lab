@@ -11,6 +11,7 @@ public class JumperWirePart : CircuitPart
         partType = PartType.JumperWire;
     }
 
+
     // 고정될 때 enabledValue = flase, 고정 풀릴 때 enabledValue = true
     protected override void SetDistanceGrabEnabled(bool enabledValue)
     {

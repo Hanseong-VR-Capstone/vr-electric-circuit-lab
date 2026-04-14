@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 6433336374728343273}
   - component: {fileID: 3984276160393140964}
   m_Layer: 0
-  m_Name: VR JumperWire(Blue)
+  m_Name: VR JumperWire(Blue-Old)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
