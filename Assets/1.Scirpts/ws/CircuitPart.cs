@@ -6,8 +6,6 @@ using UnityEngine;
 public class CircuitPart : MonoBehaviour
 {
     public PartType partType;
-    [SerializeField] protected Rigidbody rb;
-    protected RigidbodyConstraints defaultConstraints;
     [SerializeField] protected PartPin[] pins;
 
     [SerializeField] protected bool isLocked;
@@ -26,8 +24,6 @@ public class CircuitPart : MonoBehaviour
 
     protected virtual void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        defaultConstraints = rb.constraints;
         pins = GetComponentsInChildren<PartPin>();
 
         isLocked = false;
@@ -58,7 +54,6 @@ public class CircuitPart : MonoBehaviour
         isGrabbed = true;
         isLocked = false;
         isPoseLatchedWhileGrabbed = false;
-        rb.constraints = defaultConstraints;
         Debug.Log(partType + " 잡았다");
     }
 
@@ -78,10 +73,6 @@ public class CircuitPart : MonoBehaviour
                 lockedRotation = transform.rotation;
             }
 
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-
             isLocked = true;
             isPoseLatchedWhileGrabbed = false;
             SetDistanceGrabEnabled(false);
@@ -89,7 +80,6 @@ public class CircuitPart : MonoBehaviour
         }
         else
         {
-            rb.constraints = defaultConstraints;
             isLocked = false;
             isPoseLatchedWhileGrabbed = false;
             SetDistanceGrabEnabled(true);

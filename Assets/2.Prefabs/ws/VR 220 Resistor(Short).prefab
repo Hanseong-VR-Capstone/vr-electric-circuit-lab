@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10323251, y: 0.52251554, z: 0.07778919}
-  m_Center: {x: -0.0032934076, y: -0.2869169, z: 0.2669531}
+  m_Size: {x: 0.08209504, y: 0.20411535, z: 0.059439156}
+  m_Center: {x: 0.0019909458, y: -0.1277168, z: 0.26695308}
 --- !u!114 &6326656299001290044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +258,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10323251, y: 0.52251554, z: 0.07778919}
-  m_Center: {x: -0.0032934076, y: -0.2869169, z: 0.2669531}
+  m_Size: {x: 0.08209504, y: 0.20411535, z: 0.059439156}
+  m_Center: {x: 0.0019909458, y: -0.1277168, z: 0.26695308}
 --- !u!114 &3935313571878958060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 00e6ad13-ed8d-428f-847c-07b5da58ff99
+  instanceId: 3a0c9e01-e17a-4d36-ba28-9634e068d12f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -1085,7 +1085,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Resistor220Part
   partType: 2
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -1093,3 +1092,6 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 3930593343689635885}
   distanceHandGrabInteractable: {fileID: 6919039519065856913}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}

@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.37743255}
-  m_Center: {x: -0.000000104956335, y: -0.0037529988, z: 0.31128398}
+  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.13068438}
+  m_Center: {x: -0.00000013429116, y: -0.0037529967, z: 0.18790905}
 --- !u!114 &7589535841196568948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 96c03b6e-b14d-4f29-9923-f6e2869aadce
+  instanceId: 0c7bc887-6b7c-49a1-ac1d-825f80f9a277
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -301,8 +301,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.37743255}
-  m_Center: {x: -0.000000104956335, y: -0.0037529988, z: 0.31128398}
+  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.13068438}
+  m_Center: {x: -0.00000013429116, y: -0.0037529967, z: 0.18790905}
 --- !u!114 &9152576402365621568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 413e92c5-d6fb-4026-aee4-00d70a13ecde
+  instanceId: e49918ff-73f1-47d7-bea4-765e5f31e27b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -744,7 +744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumperWirePart
   partType: 4
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -752,6 +751,9 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 6642997289211227780}
   distanceHandGrabInteractable: {fileID: 1224794994767944006}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
   otherEnd: {fileID: 1787427237126925282}
 --- !u!1 &6726312538182485190
 GameObject:
@@ -971,7 +973,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumperWirePart
   partType: 4
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -979,6 +980,9 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 6642997289211227780}
   distanceHandGrabInteractable: {fileID: 1224794994767944006}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
   otherEnd: {fileID: 546069218202809223}
 --- !u!1 &7735123500698144705
 GameObject:

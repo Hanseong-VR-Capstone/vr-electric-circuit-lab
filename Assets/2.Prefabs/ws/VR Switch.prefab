@@ -497,8 +497,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14477108, y: 0.3206141, z: 0.12625141}
-  m_Center: {x: -0.01713973, y: -0.11786201, z: 0.29118425}
+  m_Size: {x: 0.13141215, y: 0.13358118, z: 0.12625143}
+  m_Center: {x: -0.023819206, y: -0.024345629, z: 0.29118425}
 --- !u!114 &2411228033323964506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,8 +896,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14477108, y: 0.3206141, z: 0.12625141}
-  m_Center: {x: -0.01713973, y: -0.11786201, z: 0.29118425}
+  m_Size: {x: 0.13141215, y: 0.13358118, z: 0.12625143}
+  m_Center: {x: -0.023819206, y: -0.024345629, z: 0.29118425}
 --- !u!114 &7014096626110935271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 4bf24ee5-2ce6-4259-be6a-5040c07f602a
+  instanceId: 07a21dc4-93f7-4c8f-b9be-b1f1b603bf1c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -1145,8 +1145,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14477108, y: 0.3206141, z: 0.12625141}
-  m_Center: {x: -0.01713973, y: -0.11786201, z: 0.29118425}
+  m_Size: {x: 0.13141215, y: 0.13358118, z: 0.12625143}
+  m_Center: {x: -0.023819206, y: -0.024345629, z: 0.29118425}
 --- !u!114 &3872229657104418730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,8 +1214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14477108, y: 0.3206141, z: 0.12625141}
-  m_Center: {x: -0.01713973, y: -0.11786201, z: 0.29118425}
+  m_Size: {x: 0.13141215, y: 0.13358118, z: 0.12625143}
+  m_Center: {x: -0.023819206, y: -0.024345629, z: 0.29118425}
 --- !u!114 &8177105767468087075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchPart
   partType: 1
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -1694,4 +1693,7 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 4050149877260537970}
   distanceHandGrabInteractable: {fileID: 7643766084115085134}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
   isOn: 0
