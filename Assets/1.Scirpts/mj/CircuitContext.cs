@@ -10,16 +10,16 @@ namespace VRCircuit.Data
         [SerializeField] private List<CircuitPin> pins = new List<CircuitPin>();
         [SerializeField] private List<CircuitSocket> sockets = new List<CircuitSocket>();
         [SerializeField] private List<CircuitWire> wires = new List<CircuitWire>();
-        [SerializeField] private List<CircuitBattery> batteries = new List<CircuitBattery>();
         [SerializeField] private List<CircuitLed> leds = new List<CircuitLed>();
         [SerializeField] private List<CircuitSwitch> switches = new List<CircuitSwitch>();
+        [SerializeField] private List<CircuitResistor> resistors = new List<CircuitResistor>();
 
         public IReadOnlyList<CircuitPin> Pins => pins;
         public IReadOnlyList<CircuitSocket> Sockets => sockets;
         public IReadOnlyList<CircuitWire> Wires => wires;
-        public IReadOnlyList<CircuitBattery> Batteries => batteries;
         public IReadOnlyList<CircuitLed> Leds => leds;
         public IReadOnlyList<CircuitSwitch> Switches => switches;
+        public IReadOnlyList<CircuitResistor> Resistors => resistors;
 
         public CircuitPin GetPinById(string pinId)
         {
@@ -75,24 +75,6 @@ namespace VRCircuit.Data
             return null;
         }
 
-        public CircuitBattery GetBatteryById(string batteryId)
-        {
-            if (string.IsNullOrEmpty(batteryId))
-            {
-                return null;
-            }
-
-            for (int i = 0; i < batteries.Count; i++)
-            {
-                if (batteries[i] != null && batteries[i].BatteryId == batteryId)
-                {
-                    return batteries[i];
-                }
-            }
-
-            return null;
-        }
-
         public CircuitLed GetLedById(string ledId)
         {
             if (string.IsNullOrEmpty(ledId))
@@ -129,15 +111,33 @@ namespace VRCircuit.Data
             return null;
         }
 
+        public CircuitResistor GetResistorById(string resistorId)
+        {
+            if (string.IsNullOrEmpty(resistorId))
+            {
+                return null;
+            }
+
+            for (int i = 0; i < resistors.Count; i++)
+            {
+                if (resistors[i] != null && resistors[i].ResistorId == resistorId)
+                {
+                    return resistors[i];
+                }
+            }
+
+            return null;
+        }
+
         //테스트용 코드
         public void ClearAll()
         {
             pins.Clear();
             sockets.Clear();
             wires.Clear();
-            batteries.Clear();
             leds.Clear();
             switches.Clear();
+            resistors.Clear();
         }
 
         public void AddPin(CircuitPin pin)
@@ -164,14 +164,6 @@ namespace VRCircuit.Data
             }
         }
 
-        public void AddBattery(CircuitBattery battery)
-        {
-            if (battery != null)
-            {
-                batteries.Add(battery);
-            }
-        }
-
         public void AddLed(CircuitLed led)
         {
             if (led != null)
@@ -185,6 +177,14 @@ namespace VRCircuit.Data
             if (circuitSwitch != null)
             {
                 switches.Add(circuitSwitch);
+            }
+        }
+
+        public void AddResistor(CircuitResistor resistor)
+        {
+            if (resistor != null)
+            {
+                resistors.Add(resistor);
             }
         }
     }

@@ -5,6 +5,8 @@ namespace VRCircuit.Evaluation
 {
     public class CircuitEvaluator
     {
+        private const float DefaultRailSupplyVoltage = 3.0f;
+
         private readonly CircuitContext context;
 
         public CircuitEvaluator(CircuitContext context)
@@ -14,27 +16,34 @@ namespace VRCircuit.Evaluation
 
         public CircuitState Evaluate()
         {
-            if (!TryGetBatteryTerminalNodeIds(out string plusNodeId, out string minusNodeId))
+            if (context == null)
             {
                 return CircuitState.Open;
             }
 
-            return EvaluateStateFromResolvedBattery(plusNodeId, minusNodeId);
-        }
+            Dictionary<string, List<string>> graph = BuildNodeGraph();
+            List<string> plusNodes = GetPowerPlusNodes();
+            List<string> minusNodes = GetPowerMinusNodes();
 
-        // Returns the first battery voltage as the educational supply voltage.
-        public float GetPrimaryBatteryVoltage()
-        {
-            CircuitBattery battery = GetPrimaryBattery();
-            if (battery == null)
+            if (!HasRailCircuitPath(plusNodes, minusNodes, graph))
             {
-                return 0f;
+                return CircuitState.Open;
             }
 
-            return battery.Voltage;
+            if (IsValidLedPathFromRails(graph, plusNodes, minusNodes))
+            {
+                return CircuitState.LedOn;
+            }
+
+            return DecideNonLedCircuitState(plusNodes, minusNodes, graph);
         }
 
-        // Uses LED count as the current simplified load unit.
+        // The breadboard is treated as externally powered. No Battery object is required.
+        public float GetRailSupplyVoltage()
+        {
+            return DefaultRailSupplyVoltage;
+        }
+
         public int CountActiveLoads()
         {
             if (context == null)
@@ -64,72 +73,50 @@ namespace VRCircuit.Evaluation
             return loadCount;
         }
 
-        // Educational simplification: divide supply voltage equally across loads.
         public float CalculateSeriesVoltagePerLoad()
         {
-            float batteryVoltage = GetPrimaryBatteryVoltage();
+            float supplyVoltage = GetRailSupplyVoltage();
             int loadCount = CountActiveLoads();
 
-            if (batteryVoltage <= 0f || loadCount <= 0)
+            if (supplyVoltage <= 0f || loadCount <= 0)
             {
                 return 0f;
             }
 
-            return batteryVoltage / loadCount;
+            return supplyVoltage / loadCount;
         }
 
-        // Educational simplification: each parallel branch gets full battery voltage.
         public float CalculateParallelBranchVoltage()
         {
-            return GetPrimaryBatteryVoltage();
+            return GetRailSupplyVoltage();
         }
 
-        // Resolves the current battery terminal nodes from pin -> socket -> nodeId.
-        private bool TryGetBatteryTerminalNodeIds(out string plusNodeId, out string minusNodeId)
+        private List<string> GetPowerPlusNodes()
         {
-            plusNodeId = null;
-            minusNodeId = null;
+            List<string> nodes = new List<string>();
 
-            if (context == null)
+            for (int i = 0; i < 5; i++)
             {
-                return false;
+                nodes.Add($"TopPlus_{i}");
+                nodes.Add($"BottomPlus_{i}");
             }
 
-            CircuitBattery battery = GetPrimaryBattery();
-            if (battery == null)
-            {
-                return false;
-            }
-
-            return TryGetNodeIdFromPin(battery.PositivePinId, out plusNodeId) &&
-                   TryGetNodeIdFromPin(battery.NegativePinId, out minusNodeId);
+            return nodes;
         }
 
-        // Keeps final state decision flow explicit and ready for later extension.
-        private CircuitState EvaluateStateFromResolvedBattery(string plusNodeId, string minusNodeId)
+        private List<string> GetPowerMinusNodes()
         {
-            Dictionary<string, List<string>> graph = BuildNodeGraph();
+            List<string> nodes = new List<string>();
 
-            if (!HasResolvedCircuitPath(plusNodeId, minusNodeId, graph))
+            for (int i = 0; i < 5; i++)
             {
-                return CircuitState.Open;
+                nodes.Add($"TopMinus_{i}");
+                nodes.Add($"BottomMinus_{i}");
             }
 
-            if (IsValidLedPath(graph, plusNodeId, minusNodeId))
-            {
-                return CircuitState.LedOn;
-            }
-
-            return DecideNonLedCircuitState(plusNodeId, minusNodeId, graph);
+            return nodes;
         }
 
-        // Kept intentionally to make the decision flow in Evaluate() explicit.
-        private bool HasResolvedCircuitPath(string plusNodeId, string minusNodeId, Dictionary<string, List<string>> graph)
-        {
-            return HasCircuitPath(plusNodeId, minusNodeId, graph);
-        }
-
-        // Resolves pin -> connected socket -> nodeId.
         private bool TryGetNodeIdFromPin(string pinId, out string nodeId)
         {
             nodeId = null;
@@ -155,7 +142,6 @@ namespace VRCircuit.Evaluation
             return true;
         }
 
-        // Builds a bidirectional graph from wires and active switches only.
         private Dictionary<string, List<string>> BuildNodeGraph()
         {
             Dictionary<string, List<string>> graph = new Dictionary<string, List<string>>();
@@ -241,14 +227,44 @@ namespace VRCircuit.Evaluation
             }
         }
 
-        private bool HasCircuitPath(string batteryPlusNodeId, string batteryMinusNodeId, Dictionary<string, List<string>> graph)
+        private bool HasRailCircuitPath(
+            List<string> plusNodes,
+            List<string> minusNodes,
+            Dictionary<string, List<string>> graph)
         {
-            return HasPath(batteryPlusNodeId, batteryMinusNodeId, graph);
+            return HasPathBetweenAnyNodes(plusNodes, minusNodes, graph);
         }
 
-        private bool IsValidLedPath(Dictionary<string, List<string>> graph, string batteryPlusNodeId, string batteryMinusNodeId)
+        private bool HasPathBetweenAnyNodes(
+            List<string> startNodes,
+            List<string> targetNodes,
+            Dictionary<string, List<string>> graph)
         {
-            if (context == null)
+            if (startNodes == null || targetNodes == null || graph == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < startNodes.Count; i++)
+            {
+                for (int j = 0; j < targetNodes.Count; j++)
+                {
+                    if (HasPath(startNodes[i], targetNodes[j], graph))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private bool IsValidLedPathFromRails(
+            Dictionary<string, List<string>> graph,
+            List<string> plusNodes,
+            List<string> minusNodes)
+        {
+            if (context == null || plusNodes == null || minusNodes == null)
             {
                 return false;
             }
@@ -267,8 +283,8 @@ namespace VRCircuit.Evaluation
                     continue;
                 }
 
-                bool plusToAnode = CanReach(batteryPlusNodeId, anodeNodeId, graph);
-                bool cathodeToMinus = CanReach(cathodeNodeId, batteryMinusNodeId, graph);
+                bool plusToAnode = CanAnyReach(plusNodes, anodeNodeId, graph);
+                bool cathodeToMinus = CanReachAny(cathodeNodeId, minusNodes, graph);
 
                 if (plusToAnode && cathodeToMinus)
                 {
@@ -279,23 +295,46 @@ namespace VRCircuit.Evaluation
             return false;
         }
 
-        private bool CanReach(string startNodeId, string targetNodeId, Dictionary<string, List<string>> graph)
+        private bool CanAnyReach(List<string> startNodes, string targetNodeId, Dictionary<string, List<string>> graph)
         {
-            if (string.IsNullOrEmpty(startNodeId) || string.IsNullOrEmpty(targetNodeId))
+            if (startNodes == null || string.IsNullOrEmpty(targetNodeId))
             {
                 return false;
             }
 
-            if (startNodeId == targetNodeId)
+            for (int i = 0; i < startNodes.Count; i++)
             {
-                return true;
+                if (HasPath(startNodes[i], targetNodeId, graph))
+                {
+                    return true;
+                }
             }
 
-            return HasPath(startNodeId, targetNodeId, graph);
+            return false;
         }
 
-        // Excludes battery endpoints from branching judgment for clearer series/parallel checks.
-        private bool HasBranching(Dictionary<string, List<string>> graph, string startNodeId, string endNodeId)
+        private bool CanReachAny(string startNodeId, List<string> targetNodes, Dictionary<string, List<string>> graph)
+        {
+            if (string.IsNullOrEmpty(startNodeId) || targetNodes == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < targetNodes.Count; i++)
+            {
+                if (HasPath(startNodeId, targetNodes[i], graph))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool HasBranching(
+            Dictionary<string, List<string>> graph,
+            List<string> startNodeIds,
+            List<string> endNodeIds)
         {
             if (graph == null)
             {
@@ -305,7 +344,7 @@ namespace VRCircuit.Evaluation
             foreach (KeyValuePair<string, List<string>> pair in graph)
             {
                 string nodeId = pair.Key;
-                if (nodeId == startNodeId || nodeId == endNodeId)
+                if (ContainsNode(startNodeIds, nodeId) || ContainsNode(endNodeIds, nodeId))
                 {
                     continue;
                 }
@@ -320,7 +359,24 @@ namespace VRCircuit.Evaluation
             return false;
         }
 
-        // Counts distinct simple paths with early exit for lightweight educational checks.
+        private bool ContainsNode(List<string> nodes, string nodeId)
+        {
+            if (nodes == null || string.IsNullOrEmpty(nodeId))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                if (nodes[i] == nodeId)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private int CountPaths(string startNode, string endNode, Dictionary<string, List<string>> graph, int maxSearch = 2)
         {
             if (string.IsNullOrEmpty(startNode) ||
@@ -390,44 +446,77 @@ namespace VRCircuit.Evaluation
             return pathCount;
         }
 
-        private bool IsSeriesCircuit(string startNode, string endNode, Dictionary<string, List<string>> graph)
+        private bool IsSeriesCircuit(
+            List<string> startNodes,
+            List<string> endNodes,
+            Dictionary<string, List<string>> graph)
         {
-            if (!HasPath(startNode, endNode, graph))
+            if (!HasPathBetweenAnyNodes(startNodes, endNodes, graph))
             {
                 return false;
             }
 
-            return !HasBranching(graph, startNode, endNode);
+            return !HasBranching(graph, startNodes, endNodes);
         }
 
-        private bool IsParallelCircuit(string startNode, string endNode, Dictionary<string, List<string>> graph)
+        private bool IsParallelCircuit(
+            List<string> startNodes,
+            List<string> endNodes,
+            Dictionary<string, List<string>> graph)
         {
-            if (!HasPath(startNode, endNode, graph))
+            if (!HasPathBetweenAnyNodes(startNodes, endNodes, graph))
             {
                 return false;
             }
 
-            bool hasBranching = HasBranching(graph, startNode, endNode);
-            if (hasBranching)
+            if (HasBranching(graph, startNodes, endNodes))
             {
                 return true;
             }
 
-            return CountPaths(startNode, endNode, graph, 2) >= 2;
+            return CountRailPaths(startNodes, endNodes, graph, 2) >= 2;
         }
 
-        // Parallel is checked before Series. Short remains the fallback state.
+        private int CountRailPaths(
+            List<string> startNodes,
+            List<string> endNodes,
+            Dictionary<string, List<string>> graph,
+            int maxSearch)
+        {
+            if (startNodes == null || endNodes == null || maxSearch <= 0)
+            {
+                return 0;
+            }
+
+            int pathCount = 0;
+
+            for (int i = 0; i < startNodes.Count; i++)
+            {
+                for (int j = 0; j < endNodes.Count; j++)
+                {
+                    pathCount += CountPaths(startNodes[i], endNodes[j], graph, maxSearch - pathCount);
+
+                    if (pathCount >= maxSearch)
+                    {
+                        return pathCount;
+                    }
+                }
+            }
+
+            return pathCount;
+        }
+
         private CircuitState DecideNonLedCircuitState(
-            string plusNodeId,
-            string minusNodeId,
+            List<string> plusNodes,
+            List<string> minusNodes,
             Dictionary<string, List<string>> graph)
         {
-            if (IsParallelCircuit(plusNodeId, minusNodeId, graph))
+            if (IsParallelCircuit(plusNodes, minusNodes, graph))
             {
                 return CircuitState.Parallel;
             }
 
-            if (IsSeriesCircuit(plusNodeId, minusNodeId, graph))
+            if (IsSeriesCircuit(plusNodes, minusNodes, graph))
             {
                 return CircuitState.Series;
             }
@@ -435,7 +524,6 @@ namespace VRCircuit.Evaluation
             return CircuitState.Short;
         }
 
-        // Uses BFS for safe reachability checks.
         private bool HasPath(string startNodeId, string targetNodeId, Dictionary<string, List<string>> graph)
         {
             if (string.IsNullOrEmpty(startNodeId) ||
@@ -494,16 +582,6 @@ namespace VRCircuit.Evaluation
             }
 
             return false;
-        }
-
-        private CircuitBattery GetPrimaryBattery()
-        {
-            if (context == null || context.Batteries.Count == 0)
-            {
-                return null;
-            }
-
-            return context.Batteries[0];
         }
     }
 }
