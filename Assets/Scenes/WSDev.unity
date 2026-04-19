@@ -251,9 +251,55 @@ MonoBehaviour:
   filter: -65535
   m_SourceCollider: {fileID: 8971993}
   m_DistanceField: {fileID: 0}
+--- !u!1 &335875758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335875760}
+  - component: {fileID: 335875759}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &335875759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335875758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &335875760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335875758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &376649334 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
   m_PrefabInstance: {fileID: 235443451117186652}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &416476136
@@ -409,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 855274394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.565}
+  m_LocalPosition: {x: 0.04418076, y: -0.04, z: 0.562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -419,14 +465,14 @@ Transform:
   - {fileID: 8742681812462346486}
   - {fileID: 2802819446326392461}
   - {fileID: 1408090448}
-  - {fileID: 676543314}
   - {fileID: 744080658}
+  - {fileID: 676543314}
   - {fileID: 1841734597}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &893946723 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
   m_PrefabInstance: {fileID: 3873571460322331583}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1041901490
@@ -708,6 +754,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336457890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8339743377545099703, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+  m_PrefabInstance: {fileID: 235443451117186652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf47f1d717bd4bf1b523951e6e28e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumperWireLight
 --- !u!4 &1408090448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2771670231060498677, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
@@ -715,9 +772,54 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1495175961 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
   m_PrefabInstance: {fileID: 4326109368151726422}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1505714753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505714755}
+  - component: {fileID: 1505714754}
+  m_Layer: 0
+  m_Name: LightTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1505714754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505714753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42811ef1a7b84ad2934dfee1a294d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestJumperWireLight
+  jumperWireLight: {fileID: 1336457890}
+--- !u!4 &1505714755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505714753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1841734597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9011189297133001190, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
@@ -789,12 +891,12 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -912,52 +1014,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &2054514918
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2054514920}
-  - component: {fileID: 2054514919}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2054514919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054514918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &2054514920
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054514918}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &186985968803074153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1011,6 +1067,10 @@ PrefabInstance:
       value: VR table
       objectReference: {fileID: 0}
     - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
       propertyPath: m_TagString
       value: VR table
       objectReference: {fileID: 0}
@@ -1027,55 +1087,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 855274395}
     m_Modifications:
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.558
+    - target: {fileID: 1713315762915290926, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+      propertyPath: m_Name
+      value: VR JumperWire (Red)
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.15
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0276
+      value: -0.045
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 713205626378577171, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+    - target: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3944170368863163391, guid: 877ef067323db496ba230cdf177f029a, type: 3}
-      propertyPath: m_Name
-      value: VR JumperWire(Red)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
 --- !u!1001 &470364573048702993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,13 +1148,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR 10K Resistor(Long)
       objectReference: {fileID: 0}
+    - target: {fileID: 8522495224794727260, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9011189297133001190, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2547
       objectReference: {fileID: 0}
     - target: {fileID: 9011189297133001190, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.153
       objectReference: {fileID: 0}
     - target: {fileID: 9011189297133001190, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1145,13 +1209,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR 10K Resistor(Short)
       objectReference: {fileID: 0}
+    - target: {fileID: 8184723495235514570, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8853560144676399728, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.239
+      value: 0.2332
       objectReference: {fileID: 0}
     - target: {fileID: 8853560144676399728, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.1519
       objectReference: {fileID: 0}
     - target: {fileID: 8853560144676399728, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1209,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1430519718010076481, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.1544
       objectReference: {fileID: 0}
     - target: {fileID: 1430519718010076481, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1260,55 +1328,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 855274395}
     m_Modifications:
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.558
+    - target: {fileID: 6121905837558883634, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
+      propertyPath: m_Name
+      value: VR JumperWire (Green)
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.15
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.01699999
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5773533450171848922, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+    - target: {fileID: 8362205219372266897, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7735123500698144705, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
-      propertyPath: m_Name
-      value: VR JumperWire(Green)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ca06e714991594e44999a0422e8ecf94, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
 --- !u!1001 &4326109368151726422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1317,55 +1385,111 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 855274395}
     m_Modifications:
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.558
-      objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0324
-      objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 4321100803034502856, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 4321100803034502856, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 4321100803034502856, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 4321100803034502856, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 4321100803034502856, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 4417970311028328779, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: instanceId
+      value: 6fe61a97-7e41-461b-8737-52df1a7817f6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865232301589940757, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: instanceId
+      value: c36e79d7-bc11-4dd1-81cc-262839945233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122018790024252750, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_Name
+      value: VR JumperWire(Blue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122018790024252750, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000485361165892921, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000485361165892921, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000485361165892921, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000485361165892921, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000485361165892921, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7406694921825409019, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: solverIndices.serializedContents.Array.size
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1531
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 610086767957604383, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+    - target: {fileID: 7488629972878892525, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2417927319036690899, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
-      propertyPath: m_Name
-      value: VR JumperWire(Blue)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aae507ce470f04671bd4712cf0e688d8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
 --- !u!1001 &5139846925348295265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1378,13 +1502,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR 220 Resistor(Long)
       objectReference: {fileID: 0}
+    - target: {fileID: 1256080302014231844, guid: a1393861268bf45cf825d458260c6519, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1884104217440563102, guid: a1393861268bf45cf825d458260c6519, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.058
+      value: 0.0648
       objectReference: {fileID: 0}
     - target: {fileID: 1884104217440563102, guid: a1393861268bf45cf825d458260c6519, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.1535
       objectReference: {fileID: 0}
     - target: {fileID: 1884104217440563102, guid: a1393861268bf45cf825d458260c6519, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1437,7 +1565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2771670231060498677, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.1518
       objectReference: {fileID: 0}
     - target: {fileID: 2771670231060498677, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1475,6 +1603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR 220 Resistor(Short)
       objectReference: {fileID: 0}
+    - target: {fileID: 3259801079370650191, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1488,17 +1620,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 855274395}
     m_Modifications:
+    - target: {fileID: 3844898115281339541, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5315058351436688160, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1944311504}
+    - target: {fileID: 6598852849093149359, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8574581043347138968, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: -0.1012
       objectReference: {fileID: 0}
     - target: {fileID: 8574581043347138968, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.1482
       objectReference: {fileID: 0}
     - target: {fileID: 8574581043347138968, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1536,6 +1676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VR Switch
       objectReference: {fileID: 0}
+    - target: {fileID: 9114161009449268502, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1557,4 +1701,5 @@ SceneRoots:
   - {fileID: 855274395}
   - {fileID: 186985968803074153}
   - {fileID: 1244613956}
-  - {fileID: 2054514920}
+  - {fileID: 1505714755}
+  - {fileID: 335875760}

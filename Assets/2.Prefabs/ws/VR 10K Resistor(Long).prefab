@@ -155,8 +155,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10323251, y: 0.719848, z: 0.14356832}
-  m_Center: {x: -0.0032934076, y: -0.1882507, z: 0.29984266}
+  m_Size: {x: 0.07405722, y: 0.42226037, z: 0.12022785}
+  m_Center: {x: -0.00037593214, y: -0.03945709, z: 0.31442958}
 --- !u!114 &220270589627058728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 4542811877934153072}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.653}
+  m_LocalPosition: {x: 0, y: 0, z: 0.642}
   m_LocalScale: {x: 0.62119997, y: 0.62119997, z: 0.62119997}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -224,8 +224,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10323251, y: 0.719848, z: 0.14356832}
-  m_Center: {x: -0.0032934076, y: -0.1882507, z: 0.29984266}
+  m_Size: {x: 0.07405722, y: 0.42226037, z: 0.12022785}
+  m_Center: {x: -0.00037593214, y: -0.03945709, z: 0.31442958}
 --- !u!114 &5764559047227216932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 4922f515-45d1-4dae-bed6-b69f54894e20
+  instanceId: 810df4f4-9e4b-4f9d-9b40-b54064268294
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -1080,7 +1080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Resistor10KPart
   partType: 3
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -1088,6 +1087,9 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 8343472250715007367}
   distanceHandGrabInteractable: {fileID: 6309862814028549704}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &9011189297133001190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2345c89d5c56ca540943561f0778db6e, type: 3}

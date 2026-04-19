@@ -353,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 1135291527875087892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -1.032}
+  m_LocalPosition: {x: -0, y: 0, z: -1.015}
   m_LocalScale: {x: 0.6211998, y: 0.62119997, z: 0.6211998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,8 +378,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10323251, y: 0.719848, z: 0.14356832}
-  m_Center: {x: -0.0032934076, y: -0.1882507, z: 0.29984266}
+  m_Size: {x: 0.07791535, y: 0.43091518, z: 0.12385623}
+  m_Center: {x: 0.0021316737, y: -0.043784454, z: 0.2893691}
 --- !u!114 &2174324866456554971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,8 +584,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10323251, y: 0.719848, z: 0.14356832}
-  m_Center: {x: -0.0032934076, y: -0.1882507, z: 0.29984266}
+  m_Size: {x: 0.07791535, y: 0.43091518, z: 0.12385623}
+  m_Center: {x: 0.0021316737, y: -0.043784454, z: 0.2893691}
 --- !u!114 &5893571759770848248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 7ece08bd-ee64-4930-bf6e-afa027d615b3
+  instanceId: dde9a63c-492a-4b04-b85d-b0b60df2776d
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -1075,7 +1075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Resistor220Part
   partType: 2
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -1083,6 +1082,9 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 8290218619121203443}
   distanceHandGrabInteractable: {fileID: 3346216478347497052}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &1884104217440563102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2345c89d5c56ca540943561f0778db6e, type: 3}

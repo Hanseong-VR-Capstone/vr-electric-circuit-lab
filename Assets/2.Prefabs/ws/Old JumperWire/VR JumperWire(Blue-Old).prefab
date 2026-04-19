@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: d9f65b32-ccf5-4161-9e7e-ae1337df4a9d
+  instanceId: db4492c9-3dd9-4609-8108-050b1eec0888
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -550,7 +550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumperWirePart
   partType: 4
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -558,6 +557,9 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 4563884097213885957}
   distanceHandGrabInteractable: {fileID: 5170028227226020349}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
   otherEnd: {fileID: 1259683545570940779}
 --- !u!1 &2417927319036690899
 GameObject:
@@ -571,7 +573,7 @@ GameObject:
   - component: {fileID: 6433336374728343273}
   - component: {fileID: 3984276160393140964}
   m_Layer: 0
-  m_Name: VR JumperWire(Blue)
+  m_Name: VR JumperWire(Blue-Old)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,8 +700,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.37743255}
-  m_Center: {x: -0.000000104956335, y: -0.0037529988, z: 0.31128398}
+  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.13068438}
+  m_Center: {x: -0.00000013429116, y: -0.0037529967, z: 0.18790905}
 --- !u!114 &1501075982764197866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 75803c80-562b-4d92-a193-55ee075ae810
+  instanceId: 5a6c52a8-dbf6-44e4-96af-78d968565027
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -978,8 +980,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.37743255}
-  m_Center: {x: -0.000000104956335, y: -0.0037529988, z: 0.31128398}
+  m_Size: {x: 0.110492386, y: 0.092396125, z: 0.13068438}
+  m_Center: {x: -0.00000013429116, y: -0.0037529967, z: 0.18790905}
 --- !u!114 &9026359551528080712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,7 +1432,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumperWirePart
   partType: 4
-  rb: {fileID: 0}
   pins: []
   isLocked: 0
   isGrabbed: 0
@@ -1438,6 +1439,9 @@ MonoBehaviour:
   lockedRotation: {x: 0, y: 0, z: 0, w: 0}
   distanceGrabInteractable: {fileID: 4563884097213885957}
   distanceHandGrabInteractable: {fileID: 5170028227226020349}
+  isPoseLatchedWhileGrabbed: 0
+  latchedPosition: {x: 0, y: 0, z: 0}
+  latchedRotation: {x: 0, y: 0, z: 0, w: 0}
   otherEnd: {fileID: 4749829843521618229}
 --- !u!1 &8274652436514433899
 GameObject:
