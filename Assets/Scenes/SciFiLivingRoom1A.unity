@@ -8816,7 +8816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorkbenchSpawner
   cameraRig: {fileID: 1919981848}
-  workbenchPrefab: {fileID: 1621527263822746202, guid: 5309a3cf83de5b24fabf79b7976f3759, type: 3}
+  workbenchPrefab: {fileID: 7766511773584532553, guid: 6a434457529adc940ae278eeb471a9e1, type: 3}
+  prologue2Controller: {fileID: 569160961521675956, guid: 6a434457529adc940ae278eeb471a9e1, type: 3}
   heightRatio: 0.65
   forwardDistance: 0.4
 --- !u!1001 &1094543704
@@ -10127,6 +10128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 0}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!4 &1322191436
 Transform:
   m_ObjectHideFlags: 0
@@ -17132,7 +17138,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137054528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
@@ -17193,7 +17199,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137054528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2518c50cb3fc6a6458d4b743c2f69c7d, type: 3}
   m_Name: 
