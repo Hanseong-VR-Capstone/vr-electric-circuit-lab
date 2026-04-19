@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spawnEntries:
-  - prefab: {fileID: 3944170368863163391, guid: 877ef067323db496ba230cdf177f029a, type: 3}
+  - prefab: {fileID: 6121905837558883634, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
     spawnPoint: {fileID: 5930766853290381499}
   - prefab: {fileID: 8184723495235514570, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
     spawnPoint: {fileID: 5930766853290381499}

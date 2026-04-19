@@ -982,6 +982,9 @@ PrefabInstance:
       addedObject: {fileID: 8231473028867620444}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2345c89d5c56ca540943561f0778db6e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1601862798570206720}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2345c89d5c56ca540943561f0778db6e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1591725274071363138}
   m_SourcePrefab: {fileID: 100100000, guid: 2345c89d5c56ca540943561f0778db6e, type: 3}
 --- !u!33 &6519296249505587810 stripped
@@ -1067,6 +1070,23 @@ MonoBehaviour:
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
   _forceKinematicDisabled: 0
+--- !u!114 &1601862798570206720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8184723495235514570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb010c3f406bcbb43aeb1f9f3a507fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Registration.CircuitResistorRegistrar
+  runtimeRoot: {fileID: 0}
+  resistorPart: {fileID: 0}
+  pinA: {fileID: 0}
+  pinB: {fileID: 0}
+  resistorIdOverride: 
 --- !u!114 &1591725274071363138
 MonoBehaviour:
   m_ObjectHideFlags: 0
