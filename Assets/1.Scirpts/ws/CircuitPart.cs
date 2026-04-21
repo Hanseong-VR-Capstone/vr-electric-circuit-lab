@@ -104,6 +104,7 @@ public class CircuitPart : MonoBehaviour
         if (grabbable != null)
         {
             grabbable.enabled = false;
+            OnReleaseCheckLock();                       // 핀이 모두 꽂힌 상태로 강제로 놓는 로직 실행해서 위치 고정
             grabbable.enabled = true;
             logMessage = "Grabbable 컴포넌트 리셋 / ";
         }
