@@ -14,10 +14,10 @@ namespace VRCircuit.Runtime
 
         private void Awake()
         {
-            InitializeRuntimeCore();
+            EnsureInitialized();
         }
 
-        private void InitializeRuntimeCore()
+        public void EnsureInitialized()
         {
             if (context == null)
             {

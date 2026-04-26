@@ -17,7 +17,12 @@ namespace VRCircuit.Board
         public CircuitConnectionService ConnectionService => connectionService;
         public bool IsInitialized => isInitialized;
 
-        private void Awake()
+        private void Start()
+        {
+            InitializeBootstrap();
+        }
+
+        private void InitializeBootstrap()
         {
             if (runtimeRoot == null)
             {
@@ -25,22 +30,21 @@ namespace VRCircuit.Board
                 return;
             }
 
+            runtimeRoot.EnsureInitialized();
+
             context = runtimeRoot.Context;
             connectionService = runtimeRoot.ConnectionService;
 
-            if (context == null)
+            if (context == null || connectionService == null)
             {
-                Debug.LogWarning("BreadboardSocketBootstrap: Shared CircuitContext is null.");
-                return;
-            }
-
-            if (connectionService == null)
-            {
-                Debug.LogWarning("BreadboardSocketBootstrap: Shared CircuitConnectionService is null.");
+                Debug.LogWarning("BreadboardSocketBootstrap: Context or Service is still null after EnsureInitialized.");
                 return;
             }
 
             RegisterBreadboardSockets();
+
+            Debug.Log($"[Bootstrap] Socket registration complete. Count={context.Sockets.Count}");
+
             isInitialized = true;
         }
 

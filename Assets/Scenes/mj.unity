@@ -552,7 +552,7 @@ Transform:
   m_GameObject: {fileID: 66151382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.012}
+  m_LocalPosition: {x: 0, y: 0, z: 7.971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1612,6 +1612,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2759554319318066706, guid: 82e18a90540ac474ca7e51b34cb5e0e1, type: 3}
   m_PrefabInstance: {fileID: 223817728}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &229817111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229817113}
+  - component: {fileID: 229817112}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &229817112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229817111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &229817113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229817111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &244821719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2013,52 +2059,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6191594903221984975, guid: 9586f51a75ea0e547a21f11bde9de2af, type: 3}
   m_PrefabInstance: {fileID: 282824304}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &293503915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 293503917}
-  - component: {fileID: 293503916}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &293503916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293503915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &293503917
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293503915}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &294383694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5953,6 +5953,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2018092006764229682, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 2771670231060498677, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.445
@@ -5996,6 +6000,10 @@ PrefabInstance:
     - target: {fileID: 3259801079370650191, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
       propertyPath: m_Name
       value: VR 220 Resistor(Short)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259801079370650191, guid: 1a7c0c7bca2ac481b8b21b3d5a37e79c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7290,6 +7298,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5483082614149393243, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 8522495224794727260, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
       propertyPath: m_Name
       value: VR 10K Resistor(Long)
@@ -8080,6 +8092,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1202160072085535089, guid: 4837031fcb0ca0545a06ff2595d3d217, type: 3}
   m_PrefabInstance: {fileID: 1111789860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1115139148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5122018790024252750, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+  m_PrefabInstance: {fileID: 1355581345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1115139154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115139148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8738b0b08d5585741970d548f16167ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Registration.CircuitWireRegistrar
+  runtimeRoot: {fileID: 1294188638}
+  pinA: {fileID: 0}
+  pinB: {fileID: 0}
+  wireIdOverride: 
+  enableDebugLogs: 1
 --- !u!1001 &1143244218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8283,8 +8317,22 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1713315762915290926, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1890677753}
   m_SourcePrefab: {fileID: 100100000, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+--- !u!114 &1182890721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8339743377545099703, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+  m_PrefabInstance: {fileID: 1182890720}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890677747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf47f1d717bd4bf1b523951e6e28e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumperWireLight
 --- !u!1001 &1184572688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9119,7 +9167,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
   m_PrefabInstance: {fileID: 8056206723387707818}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8056206723387707819}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0af5a29b5a8ecb54c84c93a768df0c40, type: 3}
@@ -9784,8 +9832,22 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5122018790024252750, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1115139154}
   m_SourcePrefab: {fileID: 100100000, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+--- !u!114 &1355581346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2553333193581059031, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+  m_PrefabInstance: {fileID: 1355581345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115139148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf47f1d717bd4bf1b523951e6e28e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumperWireLight
 --- !u!1001 &1367144717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9860,6 +9922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1601862798570206720, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 8184723495235514570, guid: 5ad06b169a1b7426581dcb019eaca88e, type: 3}
       propertyPath: m_Name
       value: VR 10K Resistor(Short)
@@ -10598,7 +10664,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6121905837558883634, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1806982180}
   m_SourcePrefab: {fileID: 100100000, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
 --- !u!1001 &1442155799
 PrefabInstance:
@@ -11311,7 +11380,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3499071638640473003, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
   m_PrefabInstance: {fileID: 1441183936}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1806982175}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcf47f1d717bd4bf1b523951e6e28e73, type: 3}
@@ -13389,6 +13458,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1621120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1806982175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6121905837558883634, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
+  m_PrefabInstance: {fileID: 1441183936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1806982180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806982175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8738b0b08d5585741970d548f16167ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Registration.CircuitWireRegistrar
+  runtimeRoot: {fileID: 1294188638}
+  pinA: {fileID: 0}
+  pinB: {fileID: 0}
+  wireIdOverride: 
+  enableDebugLogs: 1
 --- !u!1001 &1810897635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14075,6 +14166,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8250988675654089390, guid: 4953d757922e2634688a82e6c352b4b9, type: 3}
   m_PrefabInstance: {fileID: 1874448086}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1890677747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1713315762915290926, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+  m_PrefabInstance: {fileID: 1182890720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1890677753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890677747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8738b0b08d5585741970d548f16167ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Registration.CircuitWireRegistrar
+  runtimeRoot: {fileID: 1294188638}
+  pinA: {fileID: 0}
+  pinB: {fileID: 0}
+  wireIdOverride: 
+  enableDebugLogs: 1
 --- !u!1001 &1909775313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14683,9 +14796,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6453580478269756288, guid: a1393861268bf45cf825d458260c6519, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 1256080302014231844, guid: a1393861268bf45cf825d458260c6519, type: 3}
       propertyPath: m_Name
       value: VR 220 Resistor(Long)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256080302014231844, guid: a1393861268bf45cf825d458260c6519, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1884104217440563102, guid: a1393861268bf45cf825d458260c6519, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15644,8 +15765,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8056206723387707820}
   m_SourcePrefab: {fileID: 100100000, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+--- !u!1 &8056206723387707819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  m_PrefabInstance: {fileID: 8056206723387707818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8056206723387707820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056206723387707819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1faf734969a34841b8edac8d1f11603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Effects.CircuitWireEffectController
+  runtimeRoot: {fileID: 1294188638}
+  wireBindings:
+  - wireId: VR JumperWire (Blue)
+    jumperWireLight: {fileID: 1355581346}
+  - wireId: VR JumperWire (Green)
+    jumperWireLight: {fileID: 1511370905}
+  - wireId: VR JumperWire (Red)
+    jumperWireLight: {fileID: 1182890721}
+  updateEveryFrame: 1
+  enableDebugLogs: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -15666,7 +15817,7 @@ SceneRoots:
   - {fileID: 986954802}
   - {fileID: 11732405}
   - {fileID: 1598322219}
-  - {fileID: 293503917}
   - {fileID: 1355581345}
   - {fileID: 1441183936}
   - {fileID: 1182890720}
+  - {fileID: 229817113}

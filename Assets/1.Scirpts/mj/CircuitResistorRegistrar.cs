@@ -12,6 +12,7 @@ namespace VRCircuit.Registration
         [SerializeField] private PartPin pinA;
         [SerializeField] private PartPin pinB;
         [SerializeField] private string resistorIdOverride;
+        [SerializeField] private bool enableDebugLogs = true;
 
         private void Awake()
         {
@@ -35,7 +36,9 @@ namespace VRCircuit.Registration
 
         public void RegisterResistor()
         {
-            if (runtimeRoot == null || runtimeRoot.Context == null)
+            CircuitContext context = runtimeRoot != null ? runtimeRoot.Context : null;
+
+            if (context == null)
             {
                 Debug.LogWarning("CircuitResistorRegistrar: CircuitRuntimeRoot or Context is missing.");
                 return;
@@ -59,15 +62,37 @@ namespace VRCircuit.Registration
                 return;
             }
 
-            if (runtimeRoot.Context.GetResistorById(resistorId) != null)
-            {
-                return;
-            }
+            bool resistorAlreadyExists = context.GetResistorById(resistorId) != null;
 
             if (!TryResolvePinId(pinA, out string pinAId) ||
                 !TryResolvePinId(pinB, out string pinBId))
             {
                 Debug.LogWarning($"CircuitResistorRegistrar: Failed to resolve resistor pin IDs. resistorId={resistorId}");
+                return;
+            }
+
+            bool pinAExistsAtRegistration = context.GetPinById(pinAId) != null;
+            bool pinBExistsAtRegistration = context.GetPinById(pinBId) != null;
+
+            if (enableDebugLogs)
+            {
+                Debug.Log(
+                    $"[ResistorRegistrarDebug] register attempt | object={name} | resistorId={resistorId} | " +
+                    $"resistanceOhms={resistorPart.resistance} | pinAId={pinAId} | pinBId={pinBId} | " +
+                    $"contextExists={(context != null)} | pinsCount={context.Pins.Count} | " +
+                    $"pinAExistsAtRegistration={pinAExistsAtRegistration} | pinBExistsAtRegistration={pinBExistsAtRegistration} | " +
+                    $"resistorAlreadyExists={resistorAlreadyExists}");
+            }
+
+            if (resistorAlreadyExists)
+            {
+                if (enableDebugLogs)
+                {
+                    Debug.Log(
+                        $"[ResistorRegistrarDebug] register skipped | object={name} | resistorId={resistorId} already exists | " +
+                        $"resistorsCount={context.Resistors.Count}");
+                }
+
                 return;
             }
 
@@ -83,8 +108,16 @@ namespace VRCircuit.Registration
                 pinBId,
                 resistorPart.resistance);
 
-            runtimeRoot.Context.AddResistor(resistor);
-            Debug.Log($"[Circuit] Registered resistor | resistorId={resistorId} | pinA={pinAId} | pinB={pinBId} | resistance={resistorPart.resistance}");
+            context.AddResistor(resistor);
+
+            bool finalRegistered = context.GetResistorById(resistorId) != null;
+
+            if (enableDebugLogs)
+            {
+                Debug.Log(
+                    $"[ResistorRegistrarDebug] register result | object={name} | resistorId={resistorId} | " +
+                    $"finalRegistered={finalRegistered} | resistorsCount={context.Resistors.Count}");
+            }
         }
 
         private void ResolvePinsIfNeeded()
