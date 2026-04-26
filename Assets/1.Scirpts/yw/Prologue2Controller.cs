@@ -12,11 +12,12 @@ public class Prologue2Controller : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject ariaScreen;
-    [SerializeField] private GameObject prologueRoot;  // Interface/Prologue
-    [SerializeField] private GameObject mainRoot;      // Interface/Main
 
     [Header("TTS")]
     [SerializeField] private VideoPlayer ttsVideoPlayer;
+
+    [Header("Manager")]
+    [SerializeField] private UIScreenManager uiScreenManager;
 
     public void StartPrologue2()
     {
@@ -24,12 +25,11 @@ public class Prologue2Controller : MonoBehaviour
         StartCoroutine(TtsPlayCoroutine());
     }
 
-    // 스킵 버튼 OnClick에 연결
     public void SkipPrologue()
     {
         StopAllCoroutines();
         if (ttsVideoPlayer != null) ttsVideoPlayer.Stop();
-        GoToMain();
+        uiScreenManager.ShowMain();
     }
 
     private IEnumerator Prologue2Sequence()
@@ -39,20 +39,11 @@ public class Prologue2Controller : MonoBehaviour
         yield return new WaitForSeconds(loadingDuration);
         loadingScreen.SetActive(false);
         ariaScreen.SetActive(true);
-
-        // 프롤로그 정상 종료 후 메인으로
-        // 필요하면 여기서 추가 대기 후 GoToMain() 호출
     }
 
     private IEnumerator TtsPlayCoroutine()
     {
         yield return new WaitForSeconds(ttsDelay);
         ttsVideoPlayer.Play();
-    }
-
-    private void GoToMain()
-    {
-        prologueRoot.SetActive(false);
-        mainRoot.SetActive(true);
     }
 }
