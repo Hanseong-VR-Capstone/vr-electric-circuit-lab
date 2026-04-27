@@ -3,18 +3,66 @@ using VRCircuit.Data;
 
 namespace VRCircuit.Analysis
 {
+    public class CurrentFlowWireDirection
+    {
+        private readonly string wireId;
+        private readonly string fromNodeId;
+        private readonly string toNodeId;
+        private readonly string fromPinId;
+        private readonly string toPinId;
+        private readonly string fromSocketId;
+        private readonly string toSocketId;
+
+        public string WireId => wireId;
+        public string FromNodeId => fromNodeId;
+        public string ToNodeId => toNodeId;
+        public string FromPinId => fromPinId;
+        public string ToPinId => toPinId;
+        public string FromSocketId => fromSocketId;
+        public string ToSocketId => toSocketId;
+
+        public CurrentFlowWireDirection(
+            string wireId,
+            string fromNodeId,
+            string toNodeId,
+            string fromPinId,
+            string toPinId,
+            string fromSocketId,
+            string toSocketId)
+        {
+            this.wireId = wireId;
+            this.fromNodeId = fromNodeId;
+            this.toNodeId = toNodeId;
+            this.fromPinId = fromPinId;
+            this.toPinId = toPinId;
+            this.fromSocketId = fromSocketId;
+            this.toSocketId = toSocketId;
+        }
+    }
+
     public class CircuitCurrentFlowResult
     {
         private readonly bool isFlowing;
         private readonly List<string> activeWireIds;
+        private readonly List<CurrentFlowWireDirection> wireDirections;
 
         public bool IsFlowing => isFlowing;
         public IReadOnlyList<string> ActiveWireIds => activeWireIds;
+        public IReadOnlyList<CurrentFlowWireDirection> WireDirections => wireDirections;
 
         public CircuitCurrentFlowResult(bool isFlowing, List<string> activeWireIds)
+            : this(isFlowing, activeWireIds, new List<CurrentFlowWireDirection>())
+        {
+        }
+
+        public CircuitCurrentFlowResult(
+            bool isFlowing,
+            List<string> activeWireIds,
+            List<CurrentFlowWireDirection> wireDirections)
         {
             this.isFlowing = isFlowing;
             this.activeWireIds = activeWireIds ?? new List<string>();
+            this.wireDirections = wireDirections ?? new List<CurrentFlowWireDirection>();
         }
     }
 
@@ -31,7 +79,10 @@ namespace VRCircuit.Analysis
         {
             if (context == null)
             {
-                return new CircuitCurrentFlowResult(false, new List<string>());
+                return new CircuitCurrentFlowResult(
+                    false,
+                    new List<string>(),
+                    new List<CurrentFlowWireDirection>());
             }
 
             Dictionary<string, List<string>> graph = BuildNodeGraph();
@@ -40,11 +91,16 @@ namespace VRCircuit.Analysis
 
             if (!TryFindRailPath(plusNodes, minusNodes, graph, out List<string> nodePath))
             {
-                return new CircuitCurrentFlowResult(false, new List<string>());
+                return new CircuitCurrentFlowResult(
+                    false,
+                    new List<string>(),
+                    new List<CurrentFlowWireDirection>());
             }
 
             List<string> activeWireIds = GetWireIdsFromNodePath(nodePath);
-            return new CircuitCurrentFlowResult(activeWireIds.Count > 0, activeWireIds);
+            List<CurrentFlowWireDirection> wireDirections = GetWireDirectionsFromNodePath(nodePath);
+
+            return new CircuitCurrentFlowResult(true, activeWireIds, wireDirections);
         }
 
         private List<string> GetPowerPlusNodes()
@@ -79,6 +135,7 @@ namespace VRCircuit.Analysis
 
             AddWireEdges(graph);
             AddSwitchEdges(graph);
+            AddResistorEdges(graph);
 
             return graph;
         }
@@ -115,6 +172,36 @@ namespace VRCircuit.Analysis
 
                 if (!TryGetNodeIdFromPin(circuitSwitch.PinAId, out string nodeA) ||
                     !TryGetNodeIdFromPin(circuitSwitch.PinBId, out string nodeB))
+                {
+                    continue;
+                }
+
+                AddBidirectionalEdge(graph, nodeA, nodeB);
+            }
+        }
+
+        private void AddResistorEdges(Dictionary<string, List<string>> graph)
+        {
+            if (context.Resistors == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < context.Resistors.Count; i++)
+            {
+                CircuitResistor resistor = context.Resistors[i];
+                if (resistor == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(resistor.PinAId, out string nodeA) ||
+                    !TryGetNodeIdFromPin(resistor.PinBId, out string nodeB))
+                {
+                    continue;
+                }
+
+                if (nodeA == nodeB)
                 {
                     continue;
                 }
@@ -169,6 +256,36 @@ namespace VRCircuit.Analysis
                 return false;
             }
 
+            nodeId = socket.NodeId;
+            return true;
+        }
+
+        private bool TryGetPinSocketNode(
+            string pinId,
+            out string socketId,
+            out string nodeId)
+        {
+            socketId = null;
+            nodeId = null;
+
+            if (string.IsNullOrEmpty(pinId))
+            {
+                return false;
+            }
+
+            CircuitPin pin = context.GetPinById(pinId);
+            if (pin == null || string.IsNullOrEmpty(pin.CurrentSocketId))
+            {
+                return false;
+            }
+
+            CircuitSocket socket = context.GetSocketById(pin.CurrentSocketId);
+            if (socket == null || string.IsNullOrEmpty(socket.NodeId))
+            {
+                return false;
+            }
+
+            socketId = pin.CurrentSocketId;
             nodeId = socket.NodeId;
             return true;
         }
@@ -340,6 +457,87 @@ namespace VRCircuit.Analysis
                     wireIds.Add(wire.WireId);
                 }
             }
+        }
+
+        private List<CurrentFlowWireDirection> GetWireDirectionsFromNodePath(List<string> nodePath)
+        {
+            List<CurrentFlowWireDirection> wireDirections = new List<CurrentFlowWireDirection>();
+
+            if (nodePath == null || nodePath.Count < 2)
+            {
+                return wireDirections;
+            }
+
+            for (int i = 0; i < nodePath.Count - 1; i++)
+            {
+                string fromNodeId = nodePath[i];
+                string toNodeId = nodePath[i + 1];
+
+                if (TryGetWireDirectionBetweenNodes(fromNodeId, toNodeId, out CurrentFlowWireDirection wireDirection))
+                {
+                    wireDirections.Add(wireDirection);
+                }
+            }
+
+            return wireDirections;
+        }
+
+        private bool TryGetWireDirectionBetweenNodes(
+            string fromNodeId,
+            string toNodeId,
+            out CurrentFlowWireDirection wireDirection)
+        {
+            wireDirection = null;
+
+            if (string.IsNullOrEmpty(fromNodeId) || string.IsNullOrEmpty(toNodeId))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < context.Wires.Count; i++)
+            {
+                CircuitWire wire = context.Wires[i];
+                if (wire == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetPinSocketNode(wire.PinAId, out string socketAId, out string wireNodeA) ||
+                    !TryGetPinSocketNode(wire.PinBId, out string socketBId, out string wireNodeB))
+                {
+                    continue;
+                }
+
+                if (wireNodeA == fromNodeId && wireNodeB == toNodeId)
+                {
+                    wireDirection = new CurrentFlowWireDirection(
+                        wire.WireId,
+                        fromNodeId,
+                        toNodeId,
+                        wire.PinAId,
+                        wire.PinBId,
+                        socketAId,
+                        socketBId);
+
+                    return true;
+                }
+
+                if (wireNodeA == toNodeId && wireNodeB == fromNodeId)
+                {
+                    wireDirection = new CurrentFlowWireDirection(
+                        wire.WireId,
+                        fromNodeId,
+                        toNodeId,
+                        wire.PinBId,
+                        wire.PinAId,
+                        socketBId,
+                        socketAId);
+
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

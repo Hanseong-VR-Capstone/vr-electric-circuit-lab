@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
 using VRCircuit.Data;
 
 namespace VRCircuit.Evaluation
@@ -6,6 +8,7 @@ namespace VRCircuit.Evaluation
     public class CircuitEvaluator
     {
         private const float DefaultRailSupplyVoltage = 3.0f;
+        private const bool EnableGraphDebugLogs = false;
 
         private readonly CircuitContext context;
 
@@ -25,6 +28,11 @@ namespace VRCircuit.Evaluation
             List<string> plusNodes = GetPowerPlusNodes();
             List<string> minusNodes = GetPowerMinusNodes();
 
+            if (EnableGraphDebugLogs)
+            {
+                DebugGraph(graph, plusNodes, minusNodes);
+            }
+
             if (!HasRailCircuitPath(plusNodes, minusNodes, graph))
             {
                 return CircuitState.Open;
@@ -38,7 +46,6 @@ namespace VRCircuit.Evaluation
             return DecideNonLedCircuitState(plusNodes, minusNodes, graph);
         }
 
-        // The breadboard is treated as externally powered. No Battery object is required.
         public float GetRailSupplyVoltage()
         {
             return DefaultRailSupplyVoltage;
@@ -148,6 +155,7 @@ namespace VRCircuit.Evaluation
 
             AddWireEdges(graph);
             AddSwitchEdges(graph);
+            AddResistorEdges(graph);
 
             return graph;
         }
@@ -194,6 +202,36 @@ namespace VRCircuit.Evaluation
 
                 if (!TryGetNodeIdFromPin(circuitSwitch.PinAId, out string nodeA) ||
                     !TryGetNodeIdFromPin(circuitSwitch.PinBId, out string nodeB))
+                {
+                    continue;
+                }
+
+                AddBidirectionalEdge(graph, nodeA, nodeB);
+            }
+        }
+
+        private void AddResistorEdges(Dictionary<string, List<string>> graph)
+        {
+            if (context == null || context.Resistors == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < context.Resistors.Count; i++)
+            {
+                CircuitResistor resistor = context.Resistors[i];
+                if (resistor == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(resistor.PinAId, out string nodeA) ||
+                    !TryGetNodeIdFromPin(resistor.PinBId, out string nodeB))
+                {
+                    continue;
+                }
+
+                if (nodeA == nodeB)
                 {
                     continue;
                 }
@@ -582,6 +620,144 @@ namespace VRCircuit.Evaluation
             }
 
             return false;
+        }
+
+        private void DebugGraph(
+            Dictionary<string, List<string>> graph,
+            List<string> plusNodes,
+            List<string> minusNodes)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.AppendLine("[CircuitEvaluator Graph Debug]");
+            builder.AppendLine($"Pins.Count={context?.Pins.Count ?? 0}");
+            builder.AppendLine($"Sockets.Count={context?.Sockets.Count ?? 0}");
+            builder.AppendLine($"Wires.Count={context?.Wires.Count ?? 0}");
+            builder.AppendLine($"Resistors.Count={context?.Resistors.Count ?? 0}");
+
+            builder.AppendLine();
+            builder.AppendLine("[Wire Edge Attempts]");
+            AppendWireEdgeAttempts(builder);
+
+            builder.AppendLine();
+            builder.AppendLine("[Resistor Edge Attempts]");
+            AppendResistorEdgeAttempts(builder);
+
+            builder.AppendLine();
+            builder.AppendLine("[Important Node Neighbors]");
+            AppendNeighbors(builder, graph, "BottomPlus_2");
+            AppendNeighbors(builder, graph, "LowerRow_17");
+            AppendNeighbors(builder, graph, "LowerRow_18");
+            AppendNeighbors(builder, graph, "LowerRow_19");
+            AppendNeighbors(builder, graph, "BottomMinus_2");
+
+            builder.AppendLine();
+            builder.AppendLine("[Rail Path Test]");
+            builder.AppendLine($"HasPath(BottomPlus_2, BottomMinus_2)={HasPath("BottomPlus_2", "BottomMinus_2", graph)}");
+            builder.AppendLine($"HasRailCircuitPath(plusNodes, minusNodes, graph)={HasRailCircuitPath(plusNodes, minusNodes, graph)}");
+
+            Debug.Log(builder.ToString());
+        }
+
+        private void AppendWireEdgeAttempts(StringBuilder builder)
+        {
+            if (context == null || context.Wires == null || context.Wires.Count == 0)
+            {
+                builder.AppendLine("- none");
+                return;
+            }
+
+            for (int i = 0; i < context.Wires.Count; i++)
+            {
+                CircuitWire wire = context.Wires[i];
+                if (wire == null)
+                {
+                    builder.AppendLine("- wire=NULL | edgeAdded=false | reason=wire is null");
+                    continue;
+                }
+
+                bool pinANodeValid = TryGetNodeIdFromPin(wire.PinAId, out string nodeA);
+                bool pinBNodeValid = TryGetNodeIdFromPin(wire.PinBId, out string nodeB);
+
+                bool edgeAdded = pinANodeValid && pinBNodeValid && nodeA != nodeB;
+                string failureReason = edgeAdded ? "none" : GetEdgeFailureReason(pinANodeValid, pinBNodeValid, nodeA, nodeB);
+
+                builder.AppendLine(
+                    $"- wireId={wire.WireId} | pinAId={wire.PinAId} | pinANode={ValueOrNone(nodeA)} | " +
+                    $"pinBId={wire.PinBId} | pinBNode={ValueOrNone(nodeB)} | edgeAdded={edgeAdded} | reason={failureReason}");
+            }
+        }
+
+        private void AppendResistorEdgeAttempts(StringBuilder builder)
+        {
+            if (context == null || context.Resistors == null || context.Resistors.Count == 0)
+            {
+                builder.AppendLine("- none");
+                return;
+            }
+
+            for (int i = 0; i < context.Resistors.Count; i++)
+            {
+                CircuitResistor resistor = context.Resistors[i];
+                if (resistor == null)
+                {
+                    builder.AppendLine("- resistor=NULL | edgeAdded=false | reason=resistor is null");
+                    continue;
+                }
+
+                bool pinANodeValid = TryGetNodeIdFromPin(resistor.PinAId, out string nodeA);
+                bool pinBNodeValid = TryGetNodeIdFromPin(resistor.PinBId, out string nodeB);
+
+                bool edgeAdded = pinANodeValid && pinBNodeValid && nodeA != nodeB;
+                string failureReason = edgeAdded ? "none" : GetEdgeFailureReason(pinANodeValid, pinBNodeValid, nodeA, nodeB);
+
+                builder.AppendLine(
+                    $"- resistorId={resistor.ResistorId} | pinAId={resistor.PinAId} | pinANode={ValueOrNone(nodeA)} | " +
+                    $"pinBId={resistor.PinBId} | pinBNode={ValueOrNone(nodeB)} | edgeAdded={edgeAdded} | reason={failureReason}");
+            }
+        }
+
+        private void AppendNeighbors(StringBuilder builder, Dictionary<string, List<string>> graph, string nodeId)
+        {
+            builder.Append($"- {nodeId} neighbors: ");
+
+            if (graph == null || string.IsNullOrEmpty(nodeId) || !graph.TryGetValue(nodeId, out List<string> neighbors) || neighbors == null || neighbors.Count == 0)
+            {
+                builder.AppendLine("none");
+                return;
+            }
+
+            builder.AppendLine(string.Join(", ", neighbors));
+        }
+
+        private string GetEdgeFailureReason(bool pinANodeValid, bool pinBNodeValid, string nodeA, string nodeB)
+        {
+            if (!pinANodeValid && !pinBNodeValid)
+            {
+                return "pinA and pinB node resolution failed";
+            }
+
+            if (!pinANodeValid)
+            {
+                return "pinA node resolution failed";
+            }
+
+            if (!pinBNodeValid)
+            {
+                return "pinB node resolution failed";
+            }
+
+            if (nodeA == nodeB)
+            {
+                return "pinA and pinB resolve to same node";
+            }
+
+            return "unknown";
+        }
+
+        private string ValueOrNone(string value)
+        {
+            return string.IsNullOrEmpty(value) ? "none" : value;
         }
     }
 }
