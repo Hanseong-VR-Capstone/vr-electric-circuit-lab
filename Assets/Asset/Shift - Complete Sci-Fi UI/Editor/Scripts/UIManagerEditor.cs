@@ -89,6 +89,7 @@ namespace Michsky.UI.Shift
             var primaryReversed = serializedObject.FindProperty("primaryReversed");
             var negativeColor = serializedObject.FindProperty("negativeColor");
             var backgroundColor = serializedObject.FindProperty("backgroundColor");
+            var yellowColor = serializedObject.FindProperty("yellowColor");
 
             GUILayout.Space(foldoutTopSpace);
             GUILayout.BeginHorizontal();
@@ -104,6 +105,7 @@ namespace Michsky.UI.Shift
                 ShiftUIEditorHandler.DrawProperty(primaryReversed, customSkin, "Primary Reversed");
                 ShiftUIEditorHandler.DrawProperty(negativeColor, customSkin, "Negative");
                 ShiftUIEditorHandler.DrawProperty(backgroundColor, customSkin, "Background");
+                ShiftUIEditorHandler.DrawProperty(yellowColor, customSkin, "Yellow");
             }
 
             GUILayout.EndVertical();

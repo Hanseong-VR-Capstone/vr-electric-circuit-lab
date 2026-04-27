@@ -23,7 +23,8 @@ namespace Michsky.UI.Shift
             Secondary,
             PrimaryReversed,
             Negative,
-            Background
+            Background,
+            Yellow
         }
 
         void OnEnable()
@@ -77,6 +78,8 @@ namespace Michsky.UI.Shift
                             imageObject.color = UIManagerAsset.negativeColor;
                         else if (colorType == ColorType.Background)
                             imageObject.color = UIManagerAsset.backgroundColor;
+                        else if (colorType == ColorType.Yellow)
+                            imageObject.color = UIManagerAsset.yellowColor;
                     }
 
                     else
@@ -91,6 +94,8 @@ namespace Michsky.UI.Shift
                             imageObject.color = new Color(UIManagerAsset.negativeColor.r, UIManagerAsset.negativeColor.g, UIManagerAsset.negativeColor.b, imageObject.color.a);
                         else if (colorType == ColorType.Background)
                             imageObject.color = new Color(UIManagerAsset.backgroundColor.r, UIManagerAsset.backgroundColor.g, UIManagerAsset.backgroundColor.b, imageObject.color.a);
+                        else if (colorType == ColorType.Yellow)
+                            imageObject.color = new Color(UIManagerAsset.yellowColor.r, UIManagerAsset.yellowColor.g, UIManagerAsset.yellowColor.b, imageObject.color.a);
                     }
                 }
             }
