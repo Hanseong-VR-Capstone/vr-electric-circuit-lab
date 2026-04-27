@@ -67,5 +67,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8426484832066424235, guid: 0e891795afee943de81ca1b2d9fe242d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1703695942651156173}
   m_SourcePrefab: {fileID: 100100000, guid: 0e891795afee943de81ca1b2d9fe242d, type: 3}
+--- !u!1 &6121905837558883634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8426484832066424235, guid: 0e891795afee943de81ca1b2d9fe242d, type: 3}
+  m_PrefabInstance: {fileID: 2307395123364702361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1703695942651156173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121905837558883634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8738b0b08d5585741970d548f16167ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Registration.CircuitWireRegistrar
+  runtimeRoot: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  pinA: {fileID: 0}
+  pinB: {fileID: 0}
+  wireIdOverride: 
+  enableDebugLogs: 1

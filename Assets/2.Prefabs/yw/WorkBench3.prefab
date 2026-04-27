@@ -6111,7 +6111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf2a74d69b1c1e41916d2a7afdff5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _facing: 0
+  _facing: 1
   _doubleSided: 0
 --- !u!114 &4053776617076994070
 MonoBehaviour:
@@ -7039,6 +7039,7 @@ Transform:
   - {fileID: 8054495907190092416}
   - {fileID: 7232179038590799235}
   - {fileID: 7280795728074951444}
+  - {fileID: 7512954726427760171}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &6001724222957395939
@@ -7254,6 +7255,91 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1001 &776708090328362672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1178218876199254220}
+    m_Modifications:
+    - target: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_Name
+      value: CircuitRuntimeRootObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: wireBindings.Array.data[0].jumperWireLight
+      value: 
+      objectReference: {fileID: 2553333193581059031, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
+    - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: wireBindings.Array.data[1].jumperWireLight
+      value: 
+      objectReference: {fileID: 3499071638640473003, guid: 8fe4912a3292e4afa881b7c940d2ee02, type: 3}
+    - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: wireBindings.Array.data[2].jumperWireLight
+      value: 
+      objectReference: {fileID: 8339743377545099703, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.46151006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12561
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.06797993
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+--- !u!114 &4512088146811910396 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  m_PrefabInstance: {fileID: 776708090328362672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af5a29b5a8ecb54c84c93a768df0c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Runtime.CircuitRuntimeRoot
+--- !u!4 &7512954726427760171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  m_PrefabInstance: {fileID: 776708090328362672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &871148551046710937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7880,10 +7966,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2834422951820294858, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+      propertyPath: bootstrap
+      value: 
+      objectReference: {fileID: 7191851238739507832}
     - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
       propertyPath: m_Name
       value: VR table
       objectReference: {fileID: 0}
+    - target: {fileID: 8928756851751782776, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 4512088146811910396}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7894,6 +7988,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2742713021981928774, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
   m_PrefabInstance: {fileID: 1740579220142519040}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7191851238739507832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8928756851751782776, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 1740579220142519040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146845c78ce0eba44b31a1b84fdd22d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Board.BreadboardSocketBootstrap
 --- !u!1001 &2008197094600223915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11654,18 +11759,18 @@ PrefabInstance:
     - target: {fileID: 114835938403400192, guid: e667a8f81bf8ebb4e8e15073ee7d697d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2096441420065035084}
+      objectReference: {fileID: 234860976928620076}
     - target: {fileID: 114835938403400192, guid: e667a8f81bf8ebb4e8e15073ee7d697d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114835938403400192, guid: e667a8f81bf8ebb4e8e15073ee7d697d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowMain
+      value: SkipPrologue
       objectReference: {fileID: 0}
     - target: {fileID: 114835938403400192, guid: e667a8f81bf8ebb4e8e15073ee7d697d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIScreenManager, Assembly-CSharp
+      value: Prologue2Controller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 114835938403400192, guid: e667a8f81bf8ebb4e8e15073ee7d697d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

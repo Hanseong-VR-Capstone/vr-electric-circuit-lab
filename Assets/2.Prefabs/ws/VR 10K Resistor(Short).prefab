@@ -1082,11 +1082,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb010c3f406bcbb43aeb1f9f3a507fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Registration.CircuitResistorRegistrar
-  runtimeRoot: {fileID: 0}
+  runtimeRoot: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
   resistorPart: {fileID: 0}
   pinA: {fileID: 0}
   pinB: {fileID: 0}
   resistorIdOverride: 
+  enableDebugLogs: 1
 --- !u!114 &1591725274071363138
 MonoBehaviour:
   m_ObjectHideFlags: 0
