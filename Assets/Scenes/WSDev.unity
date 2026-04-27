@@ -251,52 +251,28 @@ MonoBehaviour:
   filter: -65535
   m_SourceCollider: {fileID: 8971993}
   m_DistanceField: {fileID: 0}
---- !u!1 &335875758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 335875760}
-  - component: {fileID: 335875759}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &335875759
+--- !u!114 &148428579 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1253998320440903864, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 186985968803074153}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335875758}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Script: {fileID: 11500000, guid: fd7d5f9932040481586a90f551c6d7d5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &335875760
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
+--- !u!114 &271263415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5969950950443126560, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 186985968803074153}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335875758}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7d5f9932040481586a90f551c6d7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
 --- !u!4 &376649334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3980916129562050445, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
@@ -420,6 +396,28 @@ MonoBehaviour:
     _installationVariants:
     - _memberName: mode
       _value: '{"value__":0}'
+--- !u!114 &529851244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5200724082218258474, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 186985968803074153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7d5f9932040481586a90f551c6d7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
+--- !u!114 &637485665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3071571108823258394, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 186985968803074153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7d5f9932040481586a90f551c6d7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
 --- !u!4 &676543314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1884104217440563102, guid: a1393861268bf45cf825d458260c6519, type: 3}
@@ -785,6 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505714755}
   - component: {fileID: 1505714754}
+  - component: {fileID: 1505714756}
   m_Layer: 0
   m_Name: LightTest
   m_TagString: Untagged
@@ -820,6 +819,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1505714756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505714753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ecef5ef85b14d289b7c17e759e4b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestHoleLight
+  holeTriggers:
+  - {fileID: 1805514247}
+  - {fileID: 148428579}
+  - {fileID: 529851244}
+  - {fileID: 637485665}
+  - {fileID: 271263415}
+  index: 0
+--- !u!114 &1805514247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2031179945768173943, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 186985968803074153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7d5f9932040481586a90f551c6d7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoleTrigger
 --- !u!4 &1841734597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9011189297133001190, guid: 4c070d0a4563244b68b5c81e47594277, type: 3}
@@ -1014,6 +1043,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &2009816057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009816059}
+  - component: {fileID: 2009816058}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009816058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009816057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &2009816059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009816057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &186985968803074153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1064,14 +1139,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
       propertyPath: m_Name
-      value: VR table
-      objectReference: {fileID: 0}
-    - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3268419650125461500, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
-      propertyPath: m_TagString
       value: VR table
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1702,4 +1769,4 @@ SceneRoots:
   - {fileID: 186985968803074153}
   - {fileID: 1244613956}
   - {fileID: 1505714755}
-  - {fileID: 335875760}
+  - {fileID: 2009816059}

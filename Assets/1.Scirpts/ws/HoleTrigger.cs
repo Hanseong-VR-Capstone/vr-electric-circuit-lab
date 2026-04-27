@@ -5,9 +5,12 @@ public class HoleTrigger : MonoBehaviour
     public int holeIndex;
     public PartPin currentPin;
     public HoleSoundManager audioManager;
+    [SerializeField] private HoleGroup holeGroup;
 
     private void Awake()
     {
+        holeGroup = GetComponentInParent<HoleGroup>();
+        
         if (audioManager == null)
         {
             audioManager = GetComponentInParent<HoleSoundManager>();
@@ -88,5 +91,15 @@ public class HoleTrigger : MonoBehaviour
             currentPin = null;
             pin.ClearHole(this);
         }
+    }
+
+    public void HoleLightOn()
+    {
+        holeGroup?.UpdateEffect();
+    }
+
+    public void HoleLightOff()
+    {
+        holeGroup?.UpdateEffect(false);
     }
 }

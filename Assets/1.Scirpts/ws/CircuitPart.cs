@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
@@ -97,7 +98,17 @@ public class CircuitPart : MonoBehaviour
         latchedPosition = transform.position;
         latchedRotation = transform.rotation;
         isPoseLatchedWhileGrabbed = true;
-        Debug.Log(partType + " 잡고있는 동안 모든 핀이 꽂혀서 위치 고정됨, 위치를 옮기고 싶으면 손을 놨다가 다시 잡아야 함");
+        string logMessage = "";
+        
+        Grabbable grabbable = GetComponent<Grabbable>();
+        if (grabbable != null)
+        {
+            grabbable.enabled = false;
+            OnReleaseCheckLock();                       // 핀이 모두 꽂힌 상태로 강제로 놓는 로직 실행해서 위치 고정
+            grabbable.enabled = true;
+            logMessage = "Grabbable 컴포넌트 리셋 / ";
+        }
+        Debug.Log("[Grab]" + logMessage + partType + " 잡고있는 동안 모든 핀이 꽂혀서 위치 고정됨, 위치를 옮기고 싶으면 손을 놨다가 다시 잡아야 함");
     }
 
     protected bool AreAllPinsAttached()
