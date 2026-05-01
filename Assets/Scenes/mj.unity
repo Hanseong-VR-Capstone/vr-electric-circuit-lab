@@ -1612,52 +1612,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2759554319318066706, guid: 82e18a90540ac474ca7e51b34cb5e0e1, type: 3}
   m_PrefabInstance: {fileID: 223817728}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &229817111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 229817113}
-  - component: {fileID: 229817112}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &229817112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229817111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &229817113
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229817111}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &244821719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4277,6 +4231,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4839208804354717288, guid: 7514c8de31de17f4db4cefe084727b87, type: 3}
   m_PrefabInstance: {fileID: 584961129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &586403090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586403092}
+  - component: {fileID: 586403091}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &586403091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586403090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &586403092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586403090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &589123843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9146,7 +9146,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
   m_PrefabInstance: {fileID: 8056206723387707818}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8056206723387707819}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0af5a29b5a8ecb54c84c93a768df0c40, type: 3}
@@ -11957,11 +11957,20 @@ PrefabInstance:
       propertyPath: runtimeRoot
       value: 
       objectReference: {fileID: 1294188638}
+    - target: {fileID: 8988213318161912811, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+--- !u!4 &1598966529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2742713021981928774, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 1598966528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1603639232
 GameObject:
   m_ObjectHideFlags: 0
@@ -15714,8 +15723,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8056206723387707820}
   m_SourcePrefab: {fileID: 100100000, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+--- !u!1 &8056206723387707819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  m_PrefabInstance: {fileID: 8056206723387707818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8056206723387707820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056206723387707819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408b83acdf98c4342a7f004f5954b17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Effects.BreadboardCurrentVisualController
+  runtimeRoot: {fileID: 1294188638}
+  nodeBindings: []
+  autoBindHoleGroups: 1
+  autoBindRoot: {fileID: 1598966529}
+  updateEveryFrame: 1
+  enableDebugLogs: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -15738,5 +15773,5 @@ SceneRoots:
   - {fileID: 1355581345}
   - {fileID: 1441183936}
   - {fileID: 1182890720}
-  - {fileID: 229817113}
   - {fileID: 8056206723387707818}
+  - {fileID: 586403092}
