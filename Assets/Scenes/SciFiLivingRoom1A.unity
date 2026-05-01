@@ -8816,8 +8816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorkbenchSpawner
   cameraRig: {fileID: 1919981848}
-  workbenchPrefab: {fileID: 9010642748204141289, guid: a599e47284ce256459cadb7c5098c114, type: 3}
-  prologue2Controller: {fileID: 234860976928620076, guid: a599e47284ce256459cadb7c5098c114, type: 3}
+  workbenchPrefab: {fileID: 2117463888924439707, guid: 1f4927a05ced31c418c8b873148ca371, type: 3}
+  prologue2Controller: {fileID: 2298139323195130670, guid: 1f4927a05ced31c418c8b873148ca371, type: 3}
   heightRatio: 0.65
   forwardDistance: 0.4
 --- !u!1001 &1094543704
