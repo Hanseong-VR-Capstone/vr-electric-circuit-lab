@@ -304,6 +304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7863097446571486007, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 8574581043347138968, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.723
@@ -4231,52 +4235,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4839208804354717288, guid: 7514c8de31de17f4db4cefe084727b87, type: 3}
   m_PrefabInstance: {fileID: 584961129}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &586403090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 586403092}
-  - component: {fileID: 586403091}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &586403091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586403090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &586403092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586403090}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &589123843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7448,6 +7406,52 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1024946619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024946621}
+  - component: {fileID: 1024946620}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1024946620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024946619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &1024946621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024946619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1041706511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7586,6 +7590,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2865748878946613013, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 7424047873022727057, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
       propertyPath: m_Name
       value: VR Led
@@ -7595,6 +7603,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
+--- !u!114 &1050274399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5497697698513215484, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
+  m_PrefabInstance: {fileID: 1050274395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ca66aabc14447b98eb0fd693ef49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LedPart
 --- !u!1001 &1051742803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9146,7 +9165,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
   m_PrefabInstance: {fileID: 8056206723387707818}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8056206723387707819}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0af5a29b5a8ecb54c84c93a768df0c40, type: 3}
@@ -15668,6 +15687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CircuitRuntimeRootObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5284313187062429730, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: autoBindRoot
+      value: 
+      objectReference: {fileID: 1598966529}
     - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
       propertyPath: wireBindings.Array.data[0].jumperWireLight
       value: 
@@ -15680,6 +15703,10 @@ PrefabInstance:
       propertyPath: wireBindings.Array.data[2].jumperWireLight
       value: 
       objectReference: {fileID: 1182890721}
+    - target: {fileID: 6919231224767889957, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: ledBindings.Array.data[0].ledPart
+      value: 
+      objectReference: {fileID: 1050274399}
     - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.24404
@@ -15723,34 +15750,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8056206723387707820}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
---- !u!1 &8056206723387707819 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
-  m_PrefabInstance: {fileID: 8056206723387707818}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8056206723387707820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8056206723387707819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408b83acdf98c4342a7f004f5954b17c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Effects.BreadboardCurrentVisualController
-  runtimeRoot: {fileID: 1294188638}
-  nodeBindings: []
-  autoBindHoleGroups: 1
-  autoBindRoot: {fileID: 1598966529}
-  updateEveryFrame: 1
-  enableDebugLogs: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -15774,4 +15775,4 @@ SceneRoots:
   - {fileID: 1441183936}
   - {fileID: 1182890720}
   - {fileID: 8056206723387707818}
-  - {fileID: 586403092}
+  - {fileID: 1024946621}

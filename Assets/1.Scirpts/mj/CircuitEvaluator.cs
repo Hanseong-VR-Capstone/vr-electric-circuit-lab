@@ -7,7 +7,7 @@ namespace VRCircuit.Evaluation
 {
     public class CircuitEvaluator
     {
-        private const float DefaultRailSupplyVoltage = 3.0f;
+        private const float DefaultRailSupplyVoltage = 5.0f;
         private const bool EnableGraphDebugLogs = false;
 
         private readonly CircuitContext context;
