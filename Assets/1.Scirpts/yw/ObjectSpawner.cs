@@ -43,4 +43,14 @@ public class ObjectSpawner : MonoBehaviour
 
         Instantiate(selected, entry.spawnPoint.position, entry.spawnPoint.rotation);
     }
+
+    public void DeleteAllVRObjects()
+    {
+        GameObject[] vrObjects = GameObject.FindGameObjectsWithTag("VR object");
+        foreach (GameObject obj in vrObjects)
+        {
+            Destroy(obj);
+        }
+        Debug.Log($"VR object 태그 오브젝트 {vrObjects.Length}개 삭제됨");
+    }
 }

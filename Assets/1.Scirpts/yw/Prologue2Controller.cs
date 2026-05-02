@@ -31,7 +31,7 @@ public class Prologue2Controller : MonoBehaviour
         if (ttsVideoPlayer != null) ttsVideoPlayer.Stop();
 
         loadingScreen.SetActive(false);
-        ariaScreen.SetActive(false);
+        ariaScreen.SetActive(true);
 
         uiScreenManager.ShowMain();
     }
