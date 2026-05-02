@@ -25,6 +25,7 @@ namespace Michsky.UI.Shift
         public Color primaryReversed = new Color(255, 255, 255, 255);
         public Color negativeColor = new Color(255, 255, 255, 255);
         public Color backgroundColor = new Color(255, 255, 255, 255);
+        public Color yellowColor = new Color(255, 255, 255, 255);
 
         // [Header("FONTS")]
         public TMP_FontAsset lightFont;
