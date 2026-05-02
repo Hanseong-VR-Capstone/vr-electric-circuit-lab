@@ -29,6 +29,10 @@ public class Prologue2Controller : MonoBehaviour
     {
         StopAllCoroutines();
         if (ttsVideoPlayer != null) ttsVideoPlayer.Stop();
+
+        loadingScreen.SetActive(false);
+        ariaScreen.SetActive(false);
+
         uiScreenManager.ShowMain();
     }
 
@@ -39,6 +43,23 @@ public class Prologue2Controller : MonoBehaviour
         yield return new WaitForSeconds(loadingDuration);
         loadingScreen.SetActive(false);
         ariaScreen.SetActive(true);
+    }
+
+    private void OnTtsFinished(VideoPlayer vp)
+    {
+        uiScreenManager.ShowMain();
+    }
+
+    private void OnEnable()
+    {
+        if (ttsVideoPlayer != null)
+            ttsVideoPlayer.loopPointReached += OnTtsFinished;
+    }
+
+    private void OnDisable()
+    {
+        if (ttsVideoPlayer != null)
+            ttsVideoPlayer.loopPointReached -= OnTtsFinished;
     }
 
     private IEnumerator TtsPlayCoroutine()
