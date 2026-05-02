@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 2865748878946613013}
   m_Layer: 0
   m_Name: VR Led
-  m_TagString: Untagged
+  m_TagString: VR object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
