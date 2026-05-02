@@ -643,7 +643,7 @@ MonoBehaviour:
   isPoseLatchedWhileGrabbed: 0
   latchedPosition: {x: 0, y: 0, z: 0}
   latchedRotation: {x: 0, y: 0, z: 0, w: 0}
-  lightEffect: {fileID: 3690694086559742928}
+  lightEffect: {fileID: 2660496849783612708}
 --- !u!114 &2865748878946613013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,9 +735,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17ec6180e2fd06c448ecd75d6ebef9c9, type: 3}
---- !u!198 &3690694086559742928 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3220580318672070478, guid: 17ec6180e2fd06c448ecd75d6ebef9c9, type: 3}
+--- !u!1 &2660496849783612708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4282305057102428602, guid: 17ec6180e2fd06c448ecd75d6ebef9c9, type: 3}
   m_PrefabInstance: {fileID: 2271562483952458910}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7357533909675257173 stripped

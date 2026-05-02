@@ -7674,10 +7674,6 @@ PrefabInstance:
       propertyPath: runtimeRoot
       value: 
       objectReference: {fileID: 1294188638}
-    - target: {fileID: 5497697698513215484, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
-      propertyPath: lightEffect
-      value: 
-      objectReference: {fileID: 1050274396}
     - target: {fileID: 7424047873022727057, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
       propertyPath: m_Name
       value: VR Led
@@ -7687,11 +7683,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
---- !u!1 &1050274396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2660496849783612708, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
-  m_PrefabInstance: {fileID: 1050274395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1050274399 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5497697698513215484, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
@@ -11687,10 +11678,6 @@ PrefabInstance:
       propertyPath: instanceId
       value: 95c6388f-e74b-4ff6-a0b4-7cfe51606e51
       objectReference: {fileID: 0}
-    - target: {fileID: 5497697698513215484, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
-      propertyPath: lightEffect
-      value: 
-      objectReference: {fileID: 1551512621}
     - target: {fileID: 7424047873022727057, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
       propertyPath: m_Name
       value: VR Led (1)
@@ -11700,11 +11687,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
---- !u!1 &1551512621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2660496849783612708, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
-  m_PrefabInstance: {fileID: 1551512620}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1558923516
 PrefabInstance:
   m_ObjectHideFlags: 0

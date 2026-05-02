@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LedPart : CircuitPart
 {
-    public ParticleSystem lightEffect;
+    public GameObject lightEffect;
     protected override void Awake()
     {
         base.Awake();
@@ -15,11 +15,11 @@ public class LedPart : CircuitPart
     {
         if (isOn)
         {
-            lightEffect.Play();
+            lightEffect.SetActive(true);
         }
         else
         {
-            lightEffect.Stop();
+            lightEffect.SetActive(false);
         }
     }
 }
