@@ -304,6 +304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7863097446571486007, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 8574581043347138968, guid: 5a098f36c506e4fec9f54382d13fa890, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.723
@@ -1612,52 +1616,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2759554319318066706, guid: 82e18a90540ac474ca7e51b34cb5e0e1, type: 3}
   m_PrefabInstance: {fileID: 223817728}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &229817111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 229817113}
-  - component: {fileID: 229817112}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &229817112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229817111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &229817113
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229817111}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &244821719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7448,6 +7406,52 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1024946619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024946621}
+  - component: {fileID: 1024946620}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1024946620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024946619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Obi::Obi.BurstColliderWorld
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &1024946621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024946619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1041706511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7586,6 +7590,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2865748878946613013, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
+      propertyPath: runtimeRoot
+      value: 
+      objectReference: {fileID: 1294188638}
     - target: {fileID: 7424047873022727057, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
       propertyPath: m_Name
       value: VR Led
@@ -7595,6 +7603,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
+--- !u!114 &1050274399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5497697698513215484, guid: faccfc11fe1ef4037aa39b757362479a, type: 3}
+  m_PrefabInstance: {fileID: 1050274395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ca66aabc14447b98eb0fd693ef49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LedPart
 --- !u!1001 &1051742803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11957,11 +11976,20 @@ PrefabInstance:
       propertyPath: runtimeRoot
       value: 
       objectReference: {fileID: 1294188638}
+    - target: {fileID: 8988213318161912811, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+--- !u!4 &1598966529 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2742713021981928774, guid: 49b28311d851f45e1aaa3ecc847b906f, type: 3}
+  m_PrefabInstance: {fileID: 1598966528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1603639232
 GameObject:
   m_ObjectHideFlags: 0
@@ -15659,6 +15687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CircuitRuntimeRootObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5284313187062429730, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: autoBindRoot
+      value: 
+      objectReference: {fileID: 1598966529}
     - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
       propertyPath: wireBindings.Array.data[0].jumperWireLight
       value: 
@@ -15671,6 +15703,10 @@ PrefabInstance:
       propertyPath: wireBindings.Array.data[2].jumperWireLight
       value: 
       objectReference: {fileID: 1182890721}
+    - target: {fileID: 6919231224767889957, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: ledBindings.Array.data[0].ledPart
+      value: 
+      objectReference: {fileID: 1050274399}
     - target: {fileID: 7098811420264904859, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.24404
@@ -15738,5 +15774,5 @@ SceneRoots:
   - {fileID: 1355581345}
   - {fileID: 1441183936}
   - {fileID: 1182890720}
-  - {fileID: 229817113}
   - {fileID: 8056206723387707818}
+  - {fileID: 1024946621}

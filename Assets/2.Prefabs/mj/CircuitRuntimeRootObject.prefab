@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7098811420264904859}
   - component: {fileID: 3772120551393908300}
   - component: {fileID: 5556310458000212234}
+  - component: {fileID: 5284313187062429730}
+  - component: {fileID: 6919231224767889957}
   m_Layer: 0
   m_Name: CircuitRuntimeRootObject
   m_TagString: Untagged
@@ -65,5 +67,41 @@ MonoBehaviour:
     jumperWireLight: {fileID: 0}
   - wireId: VR JumperWire (Red)
     jumperWireLight: {fileID: 0}
+  updateEveryFrame: 1
+  enableDebugLogs: 0
+--- !u!114 &5284313187062429730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5240646163465970989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408b83acdf98c4342a7f004f5954b17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Effects.BreadboardCurrentVisualController
+  runtimeRoot: {fileID: 3772120551393908300}
+  nodeBindings: []
+  autoBindHoleGroups: 1
+  autoBindRoot: {fileID: 0}
+  updateEveryFrame: 1
+  enableDebugLogs: 0
+--- !u!114 &6919231224767889957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5240646163465970989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34e240185b4b114ca3eb0f319aa5797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Effects.CircuitLedEffectController
+  runtimeRoot: {fileID: 3772120551393908300}
+  ledBindings:
+  - ledId: VR Led
+    ledPart: {fileID: 0}
   updateEveryFrame: 1
   enableDebugLogs: 0
