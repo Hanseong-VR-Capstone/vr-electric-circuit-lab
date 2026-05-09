@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -129,11 +129,28 @@ namespace VRCircuit.Data
             return null;
         }
 
-        //Å×½ºÆ®¿ë ÄÚµå
+        //í…ŒìŠ¤íŠ¸ìš© ì½”ë“œ
         public void ClearAll()
         {
             pins.Clear();
             sockets.Clear();
+            wires.Clear();
+            leds.Clear();
+            switches.Clear();
+            resistors.Clear();
+        }
+
+        public void ClearDynamicCircuitData()
+        {
+            for (int i = 0; i < sockets.Count; i++)
+            {
+                if (sockets[i] != null)
+                {
+                    sockets[i].SetConnectedPinId(null);
+                }
+            }
+
+            pins.Clear();
             wires.Clear();
             leds.Clear();
             switches.Clear();
@@ -189,3 +206,4 @@ namespace VRCircuit.Data
         }
     }
 }
+

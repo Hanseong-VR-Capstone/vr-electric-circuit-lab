@@ -1786,6 +1786,7 @@ MonoBehaviour:
   - prefab: {fileID: 1256080302014231844, guid: a1393861268bf45cf825d458260c6519, type: 3}
     spawnPoint: {fileID: 3856987669003920579}
     variants: []
+  runtimeRoot: {fileID: 0}
 --- !u!114 &2298139323195130670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5741,6 +5742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8945271330693117076}
   - component: {fileID: 6103829762059756250}
+  - component: {fileID: 4765912194624085697}
   - component: {fileID: 2459065381788372075}
   - component: {fileID: 6735875591977901038}
   m_Layer: 5
@@ -5777,6 +5779,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6504174942644867055}
   m_CullTransparentMesh: 0
+--- !u!114 &4765912194624085697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504174942644867055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81549467d60280840b5a95c09a36e13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.UIBridge.CircuitCalculationUITextBinder
+  queryService: {fileID: 0}
+  tmpText: {fileID: 0}
+  uiText: {fileID: 0}
+  displayMode: 1
+  updateEveryFrame: 1
+  enableDebugLogs: 0
 --- !u!114 &2459065381788372075
 MonoBehaviour:
   m_ObjectHideFlags: 0

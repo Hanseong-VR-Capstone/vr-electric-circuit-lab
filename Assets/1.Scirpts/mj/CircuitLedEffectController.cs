@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using VRCircuit.Evaluation;
@@ -40,6 +40,32 @@ namespace VRCircuit.Effects
             RefreshLedEffects();
         }
 
+        public void RegisterLedBinding(string ledId, LedPart ledPart)
+        {
+            if (string.IsNullOrEmpty(ledId) || ledPart == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < ledBindings.Count; i++)
+            {
+                LedEffectBinding binding = ledBindings[i];
+                if (binding == null || binding.ledId != ledId)
+                {
+                    continue;
+                }
+
+                binding.ledPart = ledPart;
+                return;
+            }
+
+            ledBindings.Add(new LedEffectBinding
+            {
+                ledId = ledId,
+                ledPart = ledPart
+            });
+        }
+
         public void RefreshLedEffects()
         {
             if (runtimeRoot == null)
@@ -68,9 +94,6 @@ namespace VRCircuit.Effects
             }
 
             CircuitEvaluator evaluator = new CircuitEvaluator(context);
-            CircuitState state = evaluator.Evaluate();
-
-            bool shouldTurnOn = state == CircuitState.LedOn;
 
             for (int i = 0; i < ledBindings.Count; i++)
             {
@@ -80,7 +103,8 @@ namespace VRCircuit.Effects
                     continue;
                 }
 
-                ApplyLedState(binding, shouldTurnOn);
+                bool isActive = evaluator.IsLedActive(binding.ledId);
+                ApplyLedState(binding, isActive);
             }
         }
 
@@ -121,3 +145,4 @@ namespace VRCircuit.Effects
         }
     }
 }
+

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VRCircuit.Data;
 
 namespace VRCircuit.Analysis
@@ -89,7 +89,7 @@ namespace VRCircuit.Analysis
             List<string> plusNodes = GetPowerPlusNodes();
             List<string> minusNodes = GetPowerMinusNodes();
 
-            if (!TryFindRailPath(plusNodes, minusNodes, graph, out List<string> nodePath))
+            if (!IsLedPolarityFlowAllowed(plusNodes, minusNodes))
             {
                 return new CircuitCurrentFlowResult(
                     false,
@@ -97,8 +97,17 @@ namespace VRCircuit.Analysis
                     new List<CurrentFlowWireDirection>());
             }
 
-            List<string> activeWireIds = GetWireIdsFromNodePath(nodePath);
-            List<CurrentFlowWireDirection> wireDirections = GetWireDirectionsFromNodePath(nodePath);
+            List<List<string>> nodePaths = FindAllRailPaths(plusNodes, minusNodes, graph);
+            if (nodePaths.Count == 0)
+            {
+                return new CircuitCurrentFlowResult(
+                    false,
+                    new List<string>(),
+                    new List<CurrentFlowWireDirection>());
+            }
+
+            List<string> activeWireIds = GetWireIdsFromNodePaths(nodePaths);
+            List<CurrentFlowWireDirection> wireDirections = GetWireDirectionsFromNodePaths(nodePaths);
 
             return new CircuitCurrentFlowResult(true, activeWireIds, wireDirections);
         }
@@ -136,6 +145,18 @@ namespace VRCircuit.Analysis
             AddWireEdges(graph);
             AddSwitchEdges(graph);
             AddResistorEdges(graph);
+            AddLedEdges(graph);
+
+            return graph;
+        }
+
+        private Dictionary<string, List<string>> BuildPolarityValidationGraph()
+        {
+            Dictionary<string, List<string>> graph = new Dictionary<string, List<string>>();
+
+            AddWireEdges(graph);
+            AddSwitchEdges(graph);
+            AddResistorEdges(graph);
 
             return graph;
         }
@@ -165,18 +186,38 @@ namespace VRCircuit.Analysis
             for (int i = 0; i < context.Switches.Count; i++)
             {
                 CircuitSwitch circuitSwitch = context.Switches[i];
-                if (circuitSwitch == null || !circuitSwitch.IsOn)
+                if (circuitSwitch == null)
                 {
                     continue;
                 }
 
-                if (!TryGetNodeIdFromPin(circuitSwitch.PinAId, out string nodeA) ||
-                    !TryGetNodeIdFromPin(circuitSwitch.PinBId, out string nodeB))
+                IReadOnlyList<CircuitSwitchContactPair> contactPairs = circuitSwitch.GetActiveConnectedPairs();
+                if (contactPairs == null)
                 {
                     continue;
                 }
 
-                AddBidirectionalEdge(graph, nodeA, nodeB);
+                for (int j = 0; j < contactPairs.Count; j++)
+                {
+                    CircuitSwitchContactPair pair = contactPairs[j];
+                    if (pair == null)
+                    {
+                        continue;
+                    }
+
+                    if (!TryGetNodeIdFromPin(pair.PinAId, out string nodeA) ||
+                        !TryGetNodeIdFromPin(pair.PinBId, out string nodeB))
+                    {
+                        continue;
+                    }
+
+                    if (nodeA == nodeB)
+                    {
+                        continue;
+                    }
+
+                    AddBidirectionalEdge(graph, nodeA, nodeB);
+                }
             }
         }
 
@@ -209,6 +250,37 @@ namespace VRCircuit.Analysis
                 AddBidirectionalEdge(graph, nodeA, nodeB);
             }
         }
+
+        private void AddLedEdges(Dictionary<string, List<string>> graph)
+        {
+            if (context == null || context.Leds == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < context.Leds.Count; i++)
+            {
+                CircuitLed led = context.Leds[i];
+                if (led == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNode) ||
+                    !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNode))
+                {
+                    continue;
+                }
+
+                if (anodeNode == cathodeNode)
+                {
+                    continue;
+                }
+
+                AddBidirectionalEdge(graph, anodeNode, cathodeNode);
+            }
+        }
+
 
         private void AddBidirectionalEdge(Dictionary<string, List<string>> graph, string nodeA, string nodeB)
         {
@@ -290,6 +362,169 @@ namespace VRCircuit.Analysis
             return true;
         }
 
+        private bool IsLedPolarityFlowAllowed(List<string> plusNodes, List<string> minusNodes)
+        {
+            if (context == null || context.Leds == null || context.Leds.Count == 0)
+            {
+                return true;
+            }
+
+            Dictionary<string, List<string>> polarityGraph = BuildPolarityValidationGraph();
+
+            for (int i = 0; i < context.Leds.Count; i++)
+            {
+                CircuitLed led = context.Leds[i];
+                if (led == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNodeId) ||
+                    !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNodeId))
+                {
+                    continue;
+                }
+
+                bool hasReversedPolarity =
+                    CanAnyReach(plusNodes, cathodeNodeId, polarityGraph) &&
+                    CanReachAny(anodeNodeId, minusNodes, polarityGraph);
+
+                if (hasReversedPolarity)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private bool CanAnyReach(
+            List<string> startNodes,
+            string targetNodeId,
+            Dictionary<string, List<string>> graph)
+        {
+            if (startNodes == null || string.IsNullOrEmpty(targetNodeId) || graph == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < startNodes.Count; i++)
+            {
+                if (TryFindPath(startNodes[i], targetNodeId, graph, out _))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool CanReachAny(
+            string startNodeId,
+            List<string> targetNodes,
+            Dictionary<string, List<string>> graph)
+        {
+            if (string.IsNullOrEmpty(startNodeId) || targetNodes == null || graph == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < targetNodes.Count; i++)
+            {
+                if (TryFindPath(startNodeId, targetNodes[i], graph, out _))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private List<List<string>> FindAllRailPaths(
+            List<string> plusNodes,
+            List<string> minusNodes,
+            Dictionary<string, List<string>> graph)
+        {
+            List<List<string>> paths = new List<List<string>>();
+
+            if (plusNodes == null || minusNodes == null || graph == null)
+            {
+                return paths;
+            }
+
+            HashSet<string> minusNodeSet = new HashSet<string>(minusNodes);
+            HashSet<string> pathKeys = new HashSet<string>();
+
+            for (int i = 0; i < plusNodes.Count; i++)
+            {
+                string startNode = plusNodes[i];
+                if (string.IsNullOrEmpty(startNode) || !graph.ContainsKey(startNode))
+                {
+                    continue;
+                }
+
+                List<string> currentPath = new List<string>();
+                HashSet<string> visited = new HashSet<string>();
+                CollectRailPathsDepthFirst(startNode, minusNodeSet, graph, visited, currentPath, paths, pathKeys);
+            }
+
+            return paths;
+        }
+
+        private void CollectRailPathsDepthFirst(
+            string currentNode,
+            HashSet<string> minusNodeSet,
+            Dictionary<string, List<string>> graph,
+            HashSet<string> visited,
+            List<string> currentPath,
+            List<List<string>> paths,
+            HashSet<string> pathKeys)
+        {
+            if (string.IsNullOrEmpty(currentNode) ||
+                minusNodeSet == null ||
+                graph == null ||
+                visited == null ||
+                currentPath == null ||
+                paths == null ||
+                pathKeys == null)
+            {
+                return;
+            }
+
+            visited.Add(currentNode);
+            currentPath.Add(currentNode);
+
+            if (minusNodeSet.Contains(currentNode))
+            {
+                string pathKey = string.Join("|", currentPath);
+                if (!pathKeys.Contains(pathKey))
+                {
+                    paths.Add(new List<string>(currentPath));
+                    pathKeys.Add(pathKey);
+                }
+
+                currentPath.RemoveAt(currentPath.Count - 1);
+                visited.Remove(currentNode);
+                return;
+            }
+
+            if (graph.TryGetValue(currentNode, out List<string> neighbors) && neighbors != null)
+            {
+                for (int i = 0; i < neighbors.Count; i++)
+                {
+                    string nextNode = neighbors[i];
+                    if (string.IsNullOrEmpty(nextNode) || visited.Contains(nextNode))
+                    {
+                        continue;
+                    }
+
+                    CollectRailPathsDepthFirst(nextNode, minusNodeSet, graph, visited, currentPath, paths, pathKeys);
+                }
+            }
+
+            currentPath.RemoveAt(currentPath.Count - 1);
+            visited.Remove(currentNode);
+        }
         private bool TryFindRailPath(
             List<string> plusNodes,
             List<string> minusNodes,
@@ -408,6 +643,30 @@ namespace VRCircuit.Analysis
             return path;
         }
 
+        private List<string> GetWireIdsFromNodePaths(List<List<string>> nodePaths)
+        {
+            List<string> wireIds = new List<string>();
+
+            if (nodePaths == null || nodePaths.Count == 0)
+            {
+                return wireIds;
+            }
+
+            for (int i = 0; i < nodePaths.Count; i++)
+            {
+                List<string> pathWireIds = GetWireIdsFromNodePath(nodePaths[i]);
+                for (int j = 0; j < pathWireIds.Count; j++)
+                {
+                    string wireId = pathWireIds[j];
+                    if (!string.IsNullOrEmpty(wireId) && !wireIds.Contains(wireId))
+                    {
+                        wireIds.Add(wireId);
+                    }
+                }
+            }
+
+            return wireIds;
+        }
         private List<string> GetWireIdsFromNodePath(List<string> nodePath)
         {
             List<string> wireIds = new List<string>();
@@ -459,6 +718,40 @@ namespace VRCircuit.Analysis
             }
         }
 
+        private List<CurrentFlowWireDirection> GetWireDirectionsFromNodePaths(List<List<string>> nodePaths)
+        {
+            List<CurrentFlowWireDirection> wireDirections = new List<CurrentFlowWireDirection>();
+            HashSet<string> directionKeys = new HashSet<string>();
+
+            if (nodePaths == null || nodePaths.Count == 0)
+            {
+                return wireDirections;
+            }
+
+            for (int i = 0; i < nodePaths.Count; i++)
+            {
+                List<CurrentFlowWireDirection> pathDirections = GetWireDirectionsFromNodePath(nodePaths[i]);
+                for (int j = 0; j < pathDirections.Count; j++)
+                {
+                    CurrentFlowWireDirection direction = pathDirections[j];
+                    if (direction == null)
+                    {
+                        continue;
+                    }
+
+                    string directionKey = $"{direction.WireId}|{direction.FromNodeId}|{direction.ToNodeId}";
+                    if (directionKeys.Contains(directionKey))
+                    {
+                        continue;
+                    }
+
+                    wireDirections.Add(direction);
+                    directionKeys.Add(directionKey);
+                }
+            }
+
+            return wireDirections;
+        }
         private List<CurrentFlowWireDirection> GetWireDirectionsFromNodePath(List<string> nodePath)
         {
             List<CurrentFlowWireDirection> wireDirections = new List<CurrentFlowWireDirection>();
@@ -541,3 +834,9 @@ namespace VRCircuit.Analysis
         }
     }
 }
+
+
+
+
+
+

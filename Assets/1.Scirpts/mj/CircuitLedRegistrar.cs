@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using VRCircuit.Board;
 using VRCircuit.Data;
 using VRCircuit.Runtime;
@@ -34,8 +34,35 @@ namespace VRCircuit.Registration
             RegisterLed();
         }
 
+        public void InitializeForSpawnedPart(CircuitRuntimeRoot injectedRuntimeRoot, string idOverride)
+        {
+            if (injectedRuntimeRoot != null)
+            {
+                runtimeRoot = injectedRuntimeRoot;
+                runtimeRoot.EnsureInitialized();
+            }
+
+            if (!string.IsNullOrEmpty(idOverride))
+            {
+                ledIdOverride = idOverride;
+            }
+
+            if (ledPart == null)
+            {
+                ledPart = GetComponent<LedPart>();
+            }
+
+            ResolvePinsIfNeeded();
+            RegisterLed();
+        }
+
         public void RegisterLed()
         {
+            if (runtimeRoot != null)
+            {
+                runtimeRoot.EnsureInitialized();
+            }
+
             CircuitContext context = runtimeRoot != null ? runtimeRoot.Context : null;
 
             if (context == null)
@@ -64,8 +91,8 @@ namespace VRCircuit.Registration
 
             bool ledAlreadyExists = context.GetLedById(ledId) != null;
 
-            if (!TryResolvePinId(anodePin, out string anodePinId) ||
-                !TryResolvePinId(cathodePin, out string cathodePinId))
+            if (!TryResolvePinId(anodePin, ledId, out string anodePinId) ||
+                !TryResolvePinId(cathodePin, ledId, out string cathodePinId))
             {
                 Debug.LogWarning($"CircuitLedRegistrar: Failed to resolve LED pin IDs. ledId={ledId}");
                 return;
@@ -176,7 +203,7 @@ namespace VRCircuit.Registration
             return true;
         }
 
-        private bool TryResolvePinId(PartPin partPin, out string pinId)
+        private bool TryResolvePinId(PartPin partPin, string ownerId, out string pinId)
         {
             pinId = null;
 
@@ -194,6 +221,12 @@ namespace VRCircuit.Registration
             if (adapter != null && !string.IsNullOrEmpty(adapter.CircuitPinId))
             {
                 pinId = adapter.CircuitPinId;
+                return true;
+            }
+
+            if (!string.IsNullOrEmpty(ownerId))
+            {
+                pinId = $"{ownerId}_{partPin.pinRole}";
                 return true;
             }
 

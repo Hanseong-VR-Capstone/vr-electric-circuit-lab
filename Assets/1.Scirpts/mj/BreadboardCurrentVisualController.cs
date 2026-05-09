@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using VRCircuit.Analysis;
@@ -54,6 +54,8 @@ namespace VRCircuit.Effects
 
         public void RefreshVisuals()
         {
+            EnsureAutoBindingsIfNeeded();
+
             if (runtimeRoot == null)
             {
                 if (enableDebugLogs)
@@ -103,10 +105,9 @@ namespace VRCircuit.Effects
         public void AutoBindHoleGroups()
         {
             holeGroupsByNodeId.Clear();
+            lastIsOnByNodeId.Clear();
 
-            Transform searchRoot = autoBindRoot != null ? autoBindRoot : transform;
-            HoleTrigger[] holeTriggers = searchRoot.GetComponentsInChildren<HoleTrigger>(true);
-
+            HoleTrigger[] holeTriggers = FindHoleTriggersForAutoBinding();
             int bindingCount = 0;
 
             for (int i = 0; i < holeTriggers.Length; i++)
@@ -149,6 +150,26 @@ namespace VRCircuit.Effects
                 Debug.Log(
                     $"[BreadboardCurrentVisual] Auto bind complete. nodeCount={holeGroupsByNodeId.Count}, bindingCount={bindingCount}");
             }
+        }
+
+        private void EnsureAutoBindingsIfNeeded()
+        {
+            if (!autoBindHoleGroups || holeGroupsByNodeId.Count > 0)
+            {
+                return;
+            }
+
+            AutoBindHoleGroups();
+        }
+
+        private HoleTrigger[] FindHoleTriggersForAutoBinding()
+        {
+            if (autoBindRoot != null)
+            {
+                return autoBindRoot.GetComponentsInChildren<HoleTrigger>(true);
+            }
+
+            return FindObjectsByType<HoleTrigger>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         }
 
         private HashSet<string> CollectActiveNodeIds(CircuitCurrentFlowResult flowResult)
@@ -269,6 +290,33 @@ namespace VRCircuit.Effects
             }
         }
 
+        public void ForceTurnOffAll()
+        {
+            EnsureAutoBindingsIfNeeded();
+
+            Dictionary<string, List<HoleGroup>> allBindingsByNodeId = BuildCombinedBindingsByNodeId();
+
+            foreach (KeyValuePair<string, List<HoleGroup>> pair in allBindingsByNodeId)
+            {
+                List<HoleGroup> holeGroups = pair.Value;
+                if (holeGroups == null)
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < holeGroups.Count; i++)
+                {
+                    HoleGroup holeGroup = holeGroups[i];
+                    if (holeGroup != null)
+                    {
+                        holeGroup.UpdateEffect(false);
+                    }
+                }
+            }
+
+            lastIsOnByNodeId.Clear();
+        }
+
         private void TurnOffAll()
         {
             Dictionary<string, List<HoleGroup>> allBindingsByNodeId = BuildCombinedBindingsByNodeId();
@@ -280,3 +328,4 @@ namespace VRCircuit.Effects
         }
     }
 }
+

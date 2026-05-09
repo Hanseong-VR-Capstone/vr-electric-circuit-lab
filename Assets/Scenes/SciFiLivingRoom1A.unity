@@ -2443,6 +2443,53 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &222365266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222365268}
+  - component: {fileID: 222365267}
+  m_Layer: 0
+  m_Name: debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &222365267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222365266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137feac5de6905a459be9203e7b7eb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Debugging.CircuitCalculationDebugRunner
+  runtimeRoot: {fileID: 1860604103}
+  runOnStart: 0
+  runKey: 99
+--- !u!4 &222365268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222365266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.74165, y: 5.58112, z: 25.77002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &225658242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7178,6 +7225,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 952044976968806272, guid: 7979587fc3d2dbc4884503e5b8162edf, type: 3}
   m_PrefabInstance: {fileID: 912733958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &913210639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  m_PrefabInstance: {fileID: 1860604102}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &915935334
 PrefabInstance:
@@ -14027,7 +14079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 44.114, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.745, y: 3.93}
+  m_AnchoredPosition: {x: -1.745, y: 5.046}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760777718
@@ -14971,6 +15023,10 @@ PrefabInstance:
       value: CircuitRuntimeRootObject
       objectReference: {fileID: 0}
     - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: wireBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556310458000212234, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
       propertyPath: wireBindings.Array.data[0].jumperWireLight
       value: 
       objectReference: {fileID: 2553333193581059031, guid: f367d34aa69e4455bb44d5eb84e93df0, type: 3}
@@ -14982,6 +15038,14 @@ PrefabInstance:
       propertyPath: wireBindings.Array.data[2].jumperWireLight
       value: 
       objectReference: {fileID: 8339743377545099703, guid: a9bed9e780a754c5f913b03f5a995bfe, type: 3}
+    - target: {fileID: 6919231224767889957, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: ledBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6919231224767889957, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      propertyPath: ledBindings.Array.data[0].ledId
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6919231224767889957, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
       propertyPath: ledBindings.Array.data[0].ledPart
       value: 
@@ -15029,8 +15093,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5240646163465970989, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1860604108}
   m_SourcePrefab: {fileID: 100100000, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+--- !u!114 &1860604103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3772120551393908300, guid: e3b317b937521cf4098daf60fc23afb7, type: 3}
+  m_PrefabInstance: {fileID: 1860604102}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913210639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af5a29b5a8ecb54c84c93a768df0c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Runtime.CircuitRuntimeRoot
+--- !u!114 &1860604108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913210639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d58dc80cc71a7540afb0d4131c49f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRCircuit.Query.CircuitQueryService
+  runtimeRoot: {fileID: 1860604103}
+  enableDebugLogs: 0
 --- !u!1001 &1860971841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17317,7 +17409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137054528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2518c50cb3fc6a6458d4b743c2f69c7d, type: 3}
   m_Name: 
@@ -17406,3 +17498,4 @@ SceneRoots:
   - {fileID: 2137054531}
   - {fileID: 1697978758}
   - {fileID: 1860604102}
+  - {fileID: 222365268}

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using VRCircuit.Board;
 using VRCircuit.Data;
 using VRCircuit.Runtime;
@@ -10,17 +10,10 @@ namespace VRCircuit.Registration
     {
         [SerializeField] private CircuitRuntimeRoot runtimeRoot;
         [SerializeField] private SwitchPart switchPart;
-
-        [Header("Physical Switch Pins")]
         [SerializeField] private PartPin pin0;
         [SerializeField] private PartPin pin1;
         [SerializeField] private PartPin pin2;
         [SerializeField] private PartPin pin3;
-
-        [Header("Circuit Edge Pins")]
-        [SerializeField] private PartPin connectedPinA;
-        [SerializeField] private PartPin connectedPinB;
-
         [SerializeField] private string switchIdOverride;
         [SerializeField] private bool enableDebugLogs = true;
         [SerializeField] private bool syncSwitchStateEveryFrame = true;
@@ -42,7 +35,6 @@ namespace VRCircuit.Registration
             }
 
             ResolvePinsIfNeeded();
-            ResolveConnectedPinsIfNeeded();
         }
 
         private void Start()
@@ -60,8 +52,35 @@ namespace VRCircuit.Registration
             SyncSwitchStateIfChanged();
         }
 
+        public void InitializeForSpawnedPart(CircuitRuntimeRoot injectedRuntimeRoot, string idOverride)
+        {
+            if (injectedRuntimeRoot != null)
+            {
+                runtimeRoot = injectedRuntimeRoot;
+                runtimeRoot.EnsureInitialized();
+            }
+
+            if (!string.IsNullOrEmpty(idOverride))
+            {
+                switchIdOverride = idOverride;
+            }
+
+            if (switchPart == null)
+            {
+                switchPart = GetComponent<SwitchPart>();
+            }
+
+            ResolvePinsIfNeeded();
+            RegisterSwitch();
+        }
+
         public void RegisterSwitch()
         {
+            if (runtimeRoot != null)
+            {
+                runtimeRoot.EnsureInitialized();
+            }
+
             CircuitContext context = runtimeRoot != null ? runtimeRoot.Context : null;
             CircuitConnectionService connectionService = runtimeRoot != null ? runtimeRoot.ConnectionService : null;
 
@@ -77,9 +96,9 @@ namespace VRCircuit.Registration
                 return;
             }
 
-            if (connectedPinA == null || connectedPinB == null)
+            if (pin0 == null || pin1 == null || pin2 == null || pin3 == null)
             {
-                Debug.LogWarning("CircuitSwitchRegistrar: Switch requires two connected circuit pins.");
+                Debug.LogWarning("CircuitSwitchRegistrar: 4-pin switch requires pin0, pin1, pin2, and pin3 references.");
                 return;
             }
 
@@ -91,23 +110,28 @@ namespace VRCircuit.Registration
 
             bool switchAlreadyExists = context.GetSwitchById(switchId) != null;
 
-            if (!TryResolvePinId(connectedPinA, out string pinAId) ||
-                !TryResolvePinId(connectedPinB, out string pinBId))
+            if (!TryResolvePinId(pin0, switchId, out string pin0Id) ||
+                !TryResolvePinId(pin1, switchId, out string pin1Id) ||
+                !TryResolvePinId(pin2, switchId, out string pin2Id) ||
+                !TryResolvePinId(pin3, switchId, out string pin3Id))
             {
                 Debug.LogWarning($"CircuitSwitchRegistrar: Failed to resolve switch pin IDs. switchId={switchId}");
                 return;
             }
 
-            bool pinAExistsAtRegistration = context.GetPinById(pinAId) != null;
-            bool pinBExistsAtRegistration = context.GetPinById(pinBId) != null;
+            bool pin0ExistsAtRegistration = context.GetPinById(pin0Id) != null;
+            bool pin1ExistsAtRegistration = context.GetPinById(pin1Id) != null;
+            bool pin2ExistsAtRegistration = context.GetPinById(pin2Id) != null;
+            bool pin3ExistsAtRegistration = context.GetPinById(pin3Id) != null;
 
             if (enableDebugLogs)
             {
                 Debug.Log(
                     $"[SwitchRegistrarDebug] register attempt | object={name} | switchId={switchId} | " +
-                    $"connectedPinAId={pinAId} | connectedPinBId={pinBId} | initialIsOn={switchPart.isOn} | " +
-                    $"contextExists={(context != null)} | pinsCount={context.Pins.Count} | " +
-                    $"pinAExistsAtRegistration={pinAExistsAtRegistration} | pinBExistsAtRegistration={pinBExistsAtRegistration} | " +
+                    $"pin0Id={pin0Id} | pin1Id={pin1Id} | pin2Id={pin2Id} | pin3Id={pin3Id} | " +
+                    $"initialIsOn={switchPart.isOn} | contextExists={(context != null)} | pinsCount={context.Pins.Count} | " +
+                    $"pin0ExistsAtRegistration={pin0ExistsAtRegistration} | pin1ExistsAtRegistration={pin1ExistsAtRegistration} | " +
+                    $"pin2ExistsAtRegistration={pin2ExistsAtRegistration} | pin3ExistsAtRegistration={pin3ExistsAtRegistration} | " +
                     $"switchAlreadyExists={switchAlreadyExists}");
             }
 
@@ -131,8 +155,10 @@ namespace VRCircuit.Registration
 
             CircuitSwitch circuitSwitch = new CircuitSwitch(
                 switchId,
-                pinAId,
-                pinBId,
+                pin0Id,
+                pin1Id,
+                pin2Id,
+                pin3Id,
                 switchPart.isOn);
 
             context.AddSwitch(circuitSwitch);
@@ -254,19 +280,6 @@ namespace VRCircuit.Registration
             }
         }
 
-        private void ResolveConnectedPinsIfNeeded()
-        {
-            if (connectedPinA == null)
-            {
-                connectedPinA = pin0;
-            }
-
-            if (connectedPinB == null)
-            {
-                connectedPinB = pin1;
-            }
-        }
-
         private bool TryResolveSwitchId(out string switchId)
         {
             switchId = null;
@@ -286,7 +299,7 @@ namespace VRCircuit.Registration
             return true;
         }
 
-        private bool TryResolvePinId(PartPin partPin, out string pinId)
+        private bool TryResolvePinId(PartPin partPin, string ownerId, out string pinId)
         {
             pinId = null;
 
@@ -304,6 +317,12 @@ namespace VRCircuit.Registration
             if (adapter != null && !string.IsNullOrEmpty(adapter.CircuitPinId))
             {
                 pinId = adapter.CircuitPinId;
+                return true;
+            }
+
+            if (!string.IsNullOrEmpty(ownerId))
+            {
+                pinId = $"{ownerId}_{partPin.pinRole}";
                 return true;
             }
 
