@@ -1,5 +1,8 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using UnityEngine;
+using VRCircuit.Effects;
+using VRCircuit.Registration;
+using VRCircuit.Runtime;
 
 [System.Serializable]
 public class SpawnEntry
@@ -12,6 +15,7 @@ public class SpawnEntry
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private List<SpawnEntry> spawnEntries = new List<SpawnEntry>();
+    [SerializeField] private CircuitRuntimeRoot runtimeRoot;
 
     public void SpawnObject(int index)
     {
@@ -24,14 +28,14 @@ public class ObjectSpawner : MonoBehaviour
         SpawnEntry entry = spawnEntries[index];
         if (entry.prefab == null || entry.spawnPoint == null)
         {
-            Debug.LogWarning($"SpawnEntry[{index}]: prefab ∂«¥¬ spawnPoint∞° ∫ÒæÓ¿÷Ω¿¥œ¥Ÿ.");
+            Debug.LogWarning($"SpawnEntry[{index}]: prefab ÎòêÎäî spawnPointÍ∞Ä ÎπÑÏñ¥ÏûàÏäµÎãàÎã§.");
             return;
         }
 
         Collider[] colliders = Physics.OverlapSphere(entry.spawnPoint.position, 0.2f);
         if (colliders.Length > 0)
         {
-            Debug.Log($"SpawnEntry[{index}]: Ω∫∆˘ ∆˜¿Œ∆Æø° ¿ÃπÃ ø¿∫Í¡ß∆Æ∞° ¿÷Ω¿¥œ¥Ÿ.");
+            Debug.Log($"SpawnEntry[{index}]: Ïä§Ìè∞ Ìè¨Ïù∏Ìä∏Ïóê Ïù¥ÎØ∏ Ïò§Î∏åÏ†ùÌä∏Í∞Ä ÏûàÏäµÎãàÎã§.");
             return;
         }
 
@@ -41,7 +45,8 @@ public class ObjectSpawner : MonoBehaviour
             selected = entry.variants[Random.Range(0, entry.variants.Count)];
         }
 
-        Instantiate(selected, entry.spawnPoint.position, entry.spawnPoint.rotation);
+        GameObject spawnedObject = Instantiate(selected, entry.spawnPoint.position, entry.spawnPoint.rotation);
+        InitializeCircuitPartIfNeeded(spawnedObject, selected.name);
     }
 
     public void DeleteAllVRObjects()
@@ -51,6 +56,67 @@ public class ObjectSpawner : MonoBehaviour
         {
             Destroy(obj);
         }
-        Debug.Log($"VR object ≈¬±◊ ø¿∫Í¡ß∆Æ {vrObjects.Length}∞≥ ªË¡¶µ ");
+
+        ClearRuntimeCircuitData();
+        ForceBreadboardCurrentVisualsOff();
+
+        Debug.Log($"VR object ÌÉúÍ∑∏ Ïò§Î∏åÏ†ùÌä∏ {vrObjects.Length}Í∞ú ÏÇ≠Ï†úÎê®");
+    }
+
+    private void InitializeCircuitPartIfNeeded(GameObject spawnedObject, string basePrefabName)
+    {
+        if (spawnedObject == null)
+        {
+            return;
+        }
+
+        if (!CircuitSpawnedPartInitializer.ContainsCircuitRegistrar(spawnedObject))
+        {
+            return;
+        }
+
+        if (runtimeRoot == null)
+        {
+            runtimeRoot = FindFirstObjectByType<CircuitRuntimeRoot>();
+        }
+
+        CircuitSpawnedPartInitializer initializer = spawnedObject.GetComponent<CircuitSpawnedPartInitializer>();
+        if (initializer == null)
+        {
+            initializer = spawnedObject.AddComponent<CircuitSpawnedPartInitializer>();
+        }
+
+        initializer.InitializeSpawnedPart(runtimeRoot, basePrefabName);
+    }
+
+    private void ClearRuntimeCircuitData()
+    {
+        if (runtimeRoot == null)
+        {
+            runtimeRoot = FindFirstObjectByType<CircuitRuntimeRoot>();
+        }
+
+        if (runtimeRoot == null)
+        {
+            return;
+        }
+
+        runtimeRoot.EnsureInitialized();
+        runtimeRoot.Context?.ClearDynamicCircuitData();
+    }
+
+    private void ForceBreadboardCurrentVisualsOff()
+    {
+        BreadboardCurrentVisualController[] visualControllers =
+            FindObjectsByType<BreadboardCurrentVisualController>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        for (int i = 0; i < visualControllers.Length; i++)
+        {
+            BreadboardCurrentVisualController visualController = visualControllers[i];
+            if (visualController != null)
+            {
+                visualController.ForceTurnOffAll();
+            }
+        }
     }
 }

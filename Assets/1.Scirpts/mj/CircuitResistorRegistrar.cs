@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using VRCircuit.Board;
 using VRCircuit.Data;
 using VRCircuit.Runtime;
@@ -34,8 +34,35 @@ namespace VRCircuit.Registration
             RegisterResistor();
         }
 
+        public void InitializeForSpawnedPart(CircuitRuntimeRoot injectedRuntimeRoot, string idOverride)
+        {
+            if (injectedRuntimeRoot != null)
+            {
+                runtimeRoot = injectedRuntimeRoot;
+                runtimeRoot.EnsureInitialized();
+            }
+
+            if (!string.IsNullOrEmpty(idOverride))
+            {
+                resistorIdOverride = idOverride;
+            }
+
+            if (resistorPart == null)
+            {
+                resistorPart = GetComponent<ResistorPart>();
+            }
+
+            ResolvePinsIfNeeded();
+            RegisterResistor();
+        }
+
         public void RegisterResistor()
         {
+            if (runtimeRoot != null)
+            {
+                runtimeRoot.EnsureInitialized();
+            }
+
             CircuitContext context = runtimeRoot != null ? runtimeRoot.Context : null;
 
             if (context == null)
@@ -64,8 +91,8 @@ namespace VRCircuit.Registration
 
             bool resistorAlreadyExists = context.GetResistorById(resistorId) != null;
 
-            if (!TryResolvePinId(pinA, out string pinAId) ||
-                !TryResolvePinId(pinB, out string pinBId))
+            if (!TryResolvePinId(pinA, resistorId, out string pinAId) ||
+                !TryResolvePinId(pinB, resistorId, out string pinBId))
             {
                 Debug.LogWarning($"CircuitResistorRegistrar: Failed to resolve resistor pin IDs. resistorId={resistorId}");
                 return;
@@ -163,7 +190,7 @@ namespace VRCircuit.Registration
             return true;
         }
 
-        private bool TryResolvePinId(PartPin partPin, out string pinId)
+        private bool TryResolvePinId(PartPin partPin, string ownerId, out string pinId)
         {
             pinId = null;
 
@@ -181,6 +208,12 @@ namespace VRCircuit.Registration
             if (adapter != null && !string.IsNullOrEmpty(adapter.CircuitPinId))
             {
                 pinId = adapter.CircuitPinId;
+                return true;
+            }
+
+            if (!string.IsNullOrEmpty(ownerId))
+            {
+                pinId = $"{ownerId}_{partPin.pinRole}";
                 return true;
             }
 

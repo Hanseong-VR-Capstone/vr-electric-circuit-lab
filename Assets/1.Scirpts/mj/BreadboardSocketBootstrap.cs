@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using VRCircuit.Data;
 using VRCircuit.Services;
 using VRCircuit.Runtime;
@@ -26,7 +26,12 @@ namespace VRCircuit.Board
         {
             if (runtimeRoot == null)
             {
-                Debug.LogWarning("BreadboardSocketBootstrap: CircuitRuntimeRoot is not assigned.");
+                runtimeRoot = FindFirstObjectByType<CircuitRuntimeRoot>();
+            }
+
+            if (runtimeRoot == null)
+            {
+                Debug.LogWarning("BreadboardSocketBootstrap: CircuitRuntimeRoot is not assigned and could not be found in scene.");
                 return;
             }
 

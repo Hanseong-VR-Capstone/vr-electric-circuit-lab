@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using VRCircuit.Analysis;
@@ -39,6 +39,32 @@ namespace VRCircuit.Effects
             }
 
             RefreshEffects();
+        }
+
+        public void RegisterWireBinding(string wireId, JumperWireLight light)
+        {
+            if (string.IsNullOrEmpty(wireId) || light == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < wireBindings.Count; i++)
+            {
+                WireLightBinding binding = wireBindings[i];
+                if (binding == null || binding.wireId != wireId)
+                {
+                    continue;
+                }
+
+                binding.jumperWireLight = light;
+                return;
+            }
+
+            wireBindings.Add(new WireLightBinding
+            {
+                wireId = wireId,
+                jumperWireLight = light
+            });
         }
 
         public void RefreshEffects()

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using VRCircuit.Data;
@@ -49,6 +49,41 @@ namespace VRCircuit.Evaluation
         public float GetRailSupplyVoltage()
         {
             return DefaultRailSupplyVoltage;
+        }
+
+        public bool IsLedActive(string ledId)
+        {
+            if (context == null || string.IsNullOrEmpty(ledId))
+            {
+                return false;
+            }
+
+            CircuitLed led = context.GetLedById(ledId);
+            if (led == null)
+            {
+                return false;
+            }
+
+            if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNodeId) ||
+                !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNodeId))
+            {
+                return false;
+            }
+
+            List<string> plusNodes = GetPowerPlusNodes();
+            List<string> minusNodes = GetPowerMinusNodes();
+            Dictionary<string, List<string>> polarityGraph = BuildPolarityValidationGraph();
+
+            bool plusToAnode = CanAnyReach(plusNodes, anodeNodeId, polarityGraph);
+            bool cathodeToMinus = CanReachAny(cathodeNodeId, minusNodes, polarityGraph);
+
+            bool plusToCathode = CanAnyReach(plusNodes, cathodeNodeId, polarityGraph);
+            bool anodeToMinus = CanReachAny(anodeNodeId, minusNodes, polarityGraph);
+
+            bool hasCorrectPolarity = plusToAnode && cathodeToMinus;
+            bool hasReversedPolarity = plusToCathode && anodeToMinus;
+
+            return hasCorrectPolarity && !hasReversedPolarity;
         }
 
         public int CountActiveLoads()
@@ -156,9 +191,22 @@ namespace VRCircuit.Evaluation
             AddWireEdges(graph);
             AddSwitchEdges(graph);
             AddResistorEdges(graph);
+            AddLedEdges(graph);
 
             return graph;
         }
+
+        private Dictionary<string, List<string>> BuildPolarityValidationGraph()
+        {
+            Dictionary<string, List<string>> graph = new Dictionary<string, List<string>>();
+
+            AddWireEdges(graph);
+            AddSwitchEdges(graph);
+            AddResistorEdges(graph);
+
+            return graph;
+        }
+
 
         private void AddWireEdges(Dictionary<string, List<string>> graph)
         {
@@ -195,20 +243,70 @@ namespace VRCircuit.Evaluation
             for (int i = 0; i < context.Switches.Count; i++)
             {
                 CircuitSwitch circuitSwitch = context.Switches[i];
-                if (circuitSwitch == null || !circuitSwitch.IsOn)
+                if (circuitSwitch == null)
                 {
                     continue;
                 }
 
-                if (!TryGetNodeIdFromPin(circuitSwitch.PinAId, out string nodeA) ||
-                    !TryGetNodeIdFromPin(circuitSwitch.PinBId, out string nodeB))
+                IReadOnlyList<CircuitSwitchContactPair> contactPairs = circuitSwitch.GetActiveConnectedPairs();
+                if (contactPairs == null)
                 {
                     continue;
                 }
 
-                AddBidirectionalEdge(graph, nodeA, nodeB);
+                for (int j = 0; j < contactPairs.Count; j++)
+                {
+                    CircuitSwitchContactPair pair = contactPairs[j];
+                    if (pair == null)
+                    {
+                        continue;
+                    }
+
+                    if (!TryGetNodeIdFromPin(pair.PinAId, out string nodeA) ||
+                        !TryGetNodeIdFromPin(pair.PinBId, out string nodeB))
+                    {
+                        continue;
+                    }
+
+                    if (nodeA == nodeB)
+                    {
+                        continue;
+                    }
+
+                    AddBidirectionalEdge(graph, nodeA, nodeB);
+                }
             }
         }
+        private void AddLedEdges(Dictionary<string, List<string>> graph)
+        {
+            if (context == null || context.Leds == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < context.Leds.Count; i++)
+            {
+                CircuitLed led = context.Leds[i];
+                if (led == null)
+                {
+                    continue;
+                }
+
+                if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNode) ||
+                    !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNode))
+                {
+                    continue;
+                }
+
+                if (anodeNode == cathodeNode)
+                {
+                    continue;
+                }
+
+                AddBidirectionalEdge(graph, anodeNode, cathodeNode);
+            }
+        }
+
 
         private void AddResistorEdges(Dictionary<string, List<string>> graph)
         {
@@ -307,6 +405,8 @@ namespace VRCircuit.Evaluation
                 return false;
             }
 
+            Dictionary<string, List<string>> polarityGraph = BuildPolarityValidationGraph();
+
             for (int i = 0; i < context.Leds.Count; i++)
             {
                 CircuitLed led = context.Leds[i];
@@ -321,10 +421,16 @@ namespace VRCircuit.Evaluation
                     continue;
                 }
 
-                bool plusToAnode = CanAnyReach(plusNodes, anodeNodeId, graph);
-                bool cathodeToMinus = CanReachAny(cathodeNodeId, minusNodes, graph);
+                bool plusToAnode = CanAnyReach(plusNodes, anodeNodeId, polarityGraph);
+                bool cathodeToMinus = CanReachAny(cathodeNodeId, minusNodes, polarityGraph);
 
-                if (plusToAnode && cathodeToMinus)
+                bool plusToCathode = CanAnyReach(plusNodes, cathodeNodeId, polarityGraph);
+                bool anodeToMinus = CanReachAny(anodeNodeId, minusNodes, polarityGraph);
+
+                bool hasCorrectPolarity = plusToAnode && cathodeToMinus;
+                bool hasReversedPolarity = plusToCathode && anodeToMinus;
+
+                if (hasCorrectPolarity && !hasReversedPolarity)
                 {
                     return true;
                 }
@@ -332,6 +438,7 @@ namespace VRCircuit.Evaluation
 
             return false;
         }
+
 
         private bool CanAnyReach(List<string> startNodes, string targetNodeId, Dictionary<string, List<string>> graph)
         {
@@ -761,3 +868,5 @@ namespace VRCircuit.Evaluation
         }
     }
 }
+
+

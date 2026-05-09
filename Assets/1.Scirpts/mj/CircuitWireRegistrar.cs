@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using VRCircuit.Board;
 using VRCircuit.Data;
 using VRCircuit.Runtime;
@@ -28,8 +28,30 @@ namespace VRCircuit.Registration
             RegisterWire();
         }
 
+        public void InitializeForSpawnedPart(CircuitRuntimeRoot injectedRuntimeRoot, string idOverride)
+        {
+            if (injectedRuntimeRoot != null)
+            {
+                runtimeRoot = injectedRuntimeRoot;
+                runtimeRoot.EnsureInitialized();
+            }
+
+            if (!string.IsNullOrEmpty(idOverride))
+            {
+                wireIdOverride = idOverride;
+            }
+
+            ResolvePinsIfNeeded();
+            RegisterWire();
+        }
+
         public void RegisterWire()
         {
+            if (runtimeRoot != null)
+            {
+                runtimeRoot.EnsureInitialized();
+            }
+
             CircuitContext context = runtimeRoot != null ? runtimeRoot.Context : null;
 
             if (context == null)
