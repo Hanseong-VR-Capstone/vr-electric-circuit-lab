@@ -70,20 +70,11 @@ namespace VRCircuit.Evaluation
                 return false;
             }
 
+            Dictionary<string, List<string>> graph = BuildNodeGraph();
             List<string> plusNodes = GetPowerPlusNodes();
             List<string> minusNodes = GetPowerMinusNodes();
-            Dictionary<string, List<string>> polarityGraph = BuildPolarityValidationGraph();
 
-            bool plusToAnode = CanAnyReach(plusNodes, anodeNodeId, polarityGraph);
-            bool cathodeToMinus = CanReachAny(cathodeNodeId, minusNodes, polarityGraph);
-
-            bool plusToCathode = CanAnyReach(plusNodes, cathodeNodeId, polarityGraph);
-            bool anodeToMinus = CanReachAny(anodeNodeId, minusNodes, polarityGraph);
-
-            bool hasCorrectPolarity = plusToAnode && cathodeToMinus;
-            bool hasReversedPolarity = plusToCathode && anodeToMinus;
-
-            return hasCorrectPolarity && !hasReversedPolarity;
+            return HasRailPathThroughLedSegment(plusNodes, minusNodes, graph, anodeNodeId, cathodeNodeId);
         }
 
         public int CountActiveLoads()
@@ -400,37 +391,15 @@ namespace VRCircuit.Evaluation
             List<string> plusNodes,
             List<string> minusNodes)
         {
-            if (context == null || plusNodes == null || minusNodes == null)
+            if (context == null || context.Leds == null)
             {
                 return false;
             }
 
-            Dictionary<string, List<string>> polarityGraph = BuildPolarityValidationGraph();
-
             for (int i = 0; i < context.Leds.Count; i++)
             {
                 CircuitLed led = context.Leds[i];
-                if (led == null)
-                {
-                    continue;
-                }
-
-                if (!TryGetNodeIdFromPin(led.AnodePinId, out string anodeNodeId) ||
-                    !TryGetNodeIdFromPin(led.CathodePinId, out string cathodeNodeId))
-                {
-                    continue;
-                }
-
-                bool plusToAnode = CanAnyReach(plusNodes, anodeNodeId, polarityGraph);
-                bool cathodeToMinus = CanReachAny(cathodeNodeId, minusNodes, polarityGraph);
-
-                bool plusToCathode = CanAnyReach(plusNodes, cathodeNodeId, polarityGraph);
-                bool anodeToMinus = CanReachAny(anodeNodeId, minusNodes, polarityGraph);
-
-                bool hasCorrectPolarity = plusToAnode && cathodeToMinus;
-                bool hasReversedPolarity = plusToCathode && anodeToMinus;
-
-                if (hasCorrectPolarity && !hasReversedPolarity)
+                if (led != null && IsLedActive(led.LedId))
                 {
                     return true;
                 }
@@ -440,6 +409,110 @@ namespace VRCircuit.Evaluation
         }
 
 
+        private bool HasRailPathThroughLedSegment(
+            List<string> plusNodes,
+            List<string> minusNodes,
+            Dictionary<string, List<string>> graph,
+            string anodeNodeId,
+            string cathodeNodeId)
+        {
+            if (plusNodes == null ||
+                minusNodes == null ||
+                graph == null ||
+                string.IsNullOrEmpty(anodeNodeId) ||
+                string.IsNullOrEmpty(cathodeNodeId))
+            {
+                return false;
+            }
+
+            HashSet<string> minusNodeSet = new HashSet<string>(minusNodes);
+
+            for (int i = 0; i < plusNodes.Count; i++)
+            {
+                string plusNode = plusNodes[i];
+                if (string.IsNullOrEmpty(plusNode) || !graph.ContainsKey(plusNode))
+                {
+                    continue;
+                }
+
+                HashSet<string> visited = new HashSet<string>();
+                if (HasRailPathThroughLedSegmentDepthFirst(
+                        plusNode,
+                        minusNodeSet,
+                        graph,
+                        anodeNodeId,
+                        cathodeNodeId,
+                        false,
+                        visited))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool HasRailPathThroughLedSegmentDepthFirst(
+            string currentNode,
+            HashSet<string> minusNodeSet,
+            Dictionary<string, List<string>> graph,
+            string anodeNodeId,
+            string cathodeNodeId,
+            bool hasPassedLedForward,
+            HashSet<string> visited)
+        {
+            if (string.IsNullOrEmpty(currentNode) ||
+                minusNodeSet == null ||
+                graph == null ||
+                visited == null)
+            {
+                return false;
+            }
+
+            if (minusNodeSet.Contains(currentNode) && hasPassedLedForward)
+            {
+                return true;
+            }
+
+            visited.Add(currentNode);
+
+            if (graph.TryGetValue(currentNode, out List<string> neighbors) && neighbors != null)
+            {
+                for (int i = 0; i < neighbors.Count; i++)
+                {
+                    string nextNode = neighbors[i];
+                    if (string.IsNullOrEmpty(nextNode) || visited.Contains(nextNode))
+                    {
+                        continue;
+                    }
+
+                    if (currentNode == cathodeNodeId && nextNode == anodeNodeId)
+                    {
+                        continue;
+                    }
+
+                    bool nextHasPassedLedForward =
+                        hasPassedLedForward ||
+                        (currentNode == anodeNodeId && nextNode == cathodeNodeId);
+
+                    if (HasRailPathThroughLedSegmentDepthFirst(
+                            nextNode,
+                            minusNodeSet,
+                            graph,
+                            anodeNodeId,
+                            cathodeNodeId,
+                            nextHasPassedLedForward,
+                            visited))
+                    {
+                        visited.Remove(currentNode);
+                        return true;
+                    }
+                }
+            }
+
+            visited.Remove(currentNode);
+            return false;
+        }
         private bool CanAnyReach(List<string> startNodes, string targetNodeId, Dictionary<string, List<string>> graph)
         {
             if (startNodes == null || string.IsNullOrEmpty(targetNodeId))
@@ -669,6 +742,96 @@ namespace VRCircuit.Evaluation
             return CircuitState.Short;
         }
 
+        private bool TryFindPath(
+            string startNodeId,
+            string targetNodeId,
+            Dictionary<string, List<string>> graph,
+            out List<string> nodePath)
+        {
+            nodePath = null;
+
+            if (string.IsNullOrEmpty(startNodeId) ||
+                string.IsNullOrEmpty(targetNodeId) ||
+                graph == null)
+            {
+                return false;
+            }
+
+            if (startNodeId == targetNodeId)
+            {
+                nodePath = new List<string> { startNodeId };
+                return true;
+            }
+
+            if (!graph.ContainsKey(startNodeId))
+            {
+                return false;
+            }
+
+            Queue<string> queue = new Queue<string>();
+            HashSet<string> visited = new HashSet<string>();
+            Dictionary<string, string> previousNodeByNode = new Dictionary<string, string>();
+
+            queue.Enqueue(startNodeId);
+            visited.Add(startNodeId);
+
+            while (queue.Count > 0)
+            {
+                string currentNodeId = queue.Dequeue();
+
+                if (!graph.TryGetValue(currentNodeId, out List<string> neighbors) || neighbors == null)
+                {
+                    continue;
+                }
+
+                for (int i = 0; i < neighbors.Count; i++)
+                {
+                    string nextNodeId = neighbors[i];
+                    if (string.IsNullOrEmpty(nextNodeId) || visited.Contains(nextNodeId))
+                    {
+                        continue;
+                    }
+
+                    visited.Add(nextNodeId);
+                    previousNodeByNode[nextNodeId] = currentNodeId;
+
+                    if (nextNodeId == targetNodeId)
+                    {
+                        nodePath = ReconstructPath(startNodeId, targetNodeId, previousNodeByNode);
+                        return nodePath.Count > 0;
+                    }
+
+                    queue.Enqueue(nextNodeId);
+                }
+            }
+
+            return false;
+        }
+
+        private List<string> ReconstructPath(
+            string startNodeId,
+            string targetNodeId,
+            Dictionary<string, string> previousNodeByNode)
+        {
+            List<string> path = new List<string>();
+            string currentNodeId = targetNodeId;
+
+            path.Add(currentNodeId);
+
+            while (currentNodeId != startNodeId)
+            {
+                if (!previousNodeByNode.TryGetValue(currentNodeId, out string previousNodeId))
+                {
+                    return new List<string>();
+                }
+
+                currentNodeId = previousNodeId;
+                path.Add(currentNodeId);
+            }
+
+            path.Reverse();
+            return path;
+        }
         private bool HasPath(string startNodeId, string targetNodeId, Dictionary<string, List<string>> graph)
         {
             if (string.IsNullOrEmpty(startNodeId) ||
@@ -868,5 +1031,10 @@ namespace VRCircuit.Evaluation
         }
     }
 }
+
+
+
+
+
 
 

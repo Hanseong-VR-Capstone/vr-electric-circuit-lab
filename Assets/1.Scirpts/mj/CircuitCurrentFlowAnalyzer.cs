@@ -89,15 +89,9 @@ namespace VRCircuit.Analysis
             List<string> plusNodes = GetPowerPlusNodes();
             List<string> minusNodes = GetPowerMinusNodes();
 
-            if (!IsLedPolarityFlowAllowed(plusNodes, minusNodes))
-            {
-                return new CircuitCurrentFlowResult(
-                    false,
-                    new List<string>(),
-                    new List<CurrentFlowWireDirection>());
-            }
-
             List<List<string>> nodePaths = FindAllRailPaths(plusNodes, minusNodes, graph);
+            nodePaths = FilterLedPolarityValidPaths(nodePaths);
+
             if (nodePaths.Count == 0)
             {
                 return new CircuitCurrentFlowResult(
@@ -362,14 +356,54 @@ namespace VRCircuit.Analysis
             return true;
         }
 
-        private bool IsLedPolarityFlowAllowed(List<string> plusNodes, List<string> minusNodes)
+        private List<List<string>> FilterLedPolarityValidPaths(List<List<string>> nodePaths)
         {
-            if (context == null || context.Leds == null || context.Leds.Count == 0)
+            List<List<string>> validPaths = new List<List<string>>();
+
+            if (nodePaths == null || nodePaths.Count == 0)
+            {
+                return validPaths;
+            }
+
+            for (int i = 0; i < nodePaths.Count; i++)
+            {
+                List<string> nodePath = nodePaths[i];
+                if (IsLedPolarityValidForPath(nodePath))
+                {
+                    validPaths.Add(nodePath);
+                }
+            }
+
+            return validPaths;
+        }
+
+        private bool IsLedPolarityValidForPath(List<string> nodePath)
+        {
+            if (nodePath == null || nodePath.Count < 2 || context == null || context.Leds == null)
             {
                 return true;
             }
 
-            Dictionary<string, List<string>> polarityGraph = BuildPolarityValidationGraph();
+            for (int i = 0; i < nodePath.Count - 1; i++)
+            {
+                string fromNode = nodePath[i];
+                string toNode = nodePath[i + 1];
+
+                if (IsReversedLedSegment(fromNode, toNode))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private bool IsReversedLedSegment(string fromNode, string toNode)
+        {
+            if (string.IsNullOrEmpty(fromNode) || string.IsNullOrEmpty(toNode) || context == null || context.Leds == null)
+            {
+                return false;
+            }
 
             for (int i = 0; i < context.Leds.Count; i++)
             {
@@ -385,17 +419,13 @@ namespace VRCircuit.Analysis
                     continue;
                 }
 
-                bool hasReversedPolarity =
-                    CanAnyReach(plusNodes, cathodeNodeId, polarityGraph) &&
-                    CanReachAny(anodeNodeId, minusNodes, polarityGraph);
-
-                if (hasReversedPolarity)
+                if (fromNode == cathodeNodeId && toNode == anodeNodeId)
                 {
-                    return false;
+                    return true;
                 }
             }
 
-            return true;
+            return false;
         }
 
         private bool CanAnyReach(
@@ -834,6 +864,8 @@ namespace VRCircuit.Analysis
         }
     }
 }
+
+
 
 
 
