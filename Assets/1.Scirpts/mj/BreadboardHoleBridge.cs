@@ -26,9 +26,8 @@ namespace VRCircuit.Board
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void ConnectPartPin(PartPin partPin, string colliderName = null)
         {
-            PartPin partPin = ResolvePartPin(other, out bool foundOnParent);
             if (partPin == null)
             {
                 return;
@@ -42,7 +41,7 @@ namespace VRCircuit.Board
                 {
                     Debug.LogWarning(
                         $"[BridgeDebug] CONNECT blocked | bridge={name} | holeIndex={GetHoleIndexOrInvalid()} | " +
-                        $"collider={GetColliderName(other)} | runtimeRootExists={(runtimeRoot != null)} | " +
+                        $"collider={ValueOrNone(colliderName)} | runtimeRootExists={(runtimeRoot != null)} | " +
                         $"bootstrapExists={(bootstrap != null)} | holeTriggerExists={(holeTrigger != null)}");
                 }
 
@@ -53,7 +52,7 @@ namespace VRCircuit.Board
             {
                 Debug.Log(
                     $"[BridgeDebug] CONNECT event | bridge={name} | holeIndex={GetHoleIndexOrInvalid()} | " +
-                    $"collider={GetColliderName(other)} | partPinFound=True | partPinFoundOnParent={foundOnParent}");
+                    $"collider={ValueOrNone(colliderName)} | partPinFound=True | source=HoleTrigger");
             }
 
             if (!TryResolvePinId(partPin, out string pinId))
@@ -115,9 +114,8 @@ namespace VRCircuit.Board
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        public void DisconnectPartPin(PartPin partPin, string colliderName = null)
         {
-            PartPin partPin = ResolvePartPin(other, out bool foundOnParent);
             if (partPin == null)
             {
                 return;
@@ -132,7 +130,7 @@ namespace VRCircuit.Board
             {
                 Debug.Log(
                     $"[BridgeDebug] DISCONNECT event | bridge={name} | holeIndex={GetHoleIndexOrInvalid()} | " +
-                    $"collider={GetColliderName(other)} | partPinFound=True | partPinFoundOnParent={foundOnParent}");
+                    $"collider={ValueOrNone(colliderName)} | partPinFound=True | source=HoleTrigger");
             }
 
             if (!TryResolvePinId(partPin, out string pinId))
@@ -205,10 +203,55 @@ namespace VRCircuit.Board
             {
                 Debug.Log(
                     $"[BridgeDebug] DISCONNECT result | bridge={name} | holeIndex={GetHoleIndexOrInvalid()} | " +
-                    $"collider={GetColliderName(other)} | pinId={pinId} | socketId={socketId} | result={disconnectResult} | " +
+                    $"collider={ValueOrNone(colliderName)} | pinId={pinId} | socketId={socketId} | result={disconnectResult} | " +
                     $"pinCurrentSocketId={ValueOrNone(pinAfterDisconnect?.CurrentSocketId)} | " +
                     $"socketConnectedPinId={ValueOrNone(socketAfterDisconnect?.ConnectedPinId)}");
             }
+        }
+
+        public void EnsurePartPinConnected(PartPin partPin, string colliderName = null)
+        {
+            if (partPin == null)
+            {
+                return;
+            }
+
+            if (!TryGetDependencies(out CircuitContext context, out _))
+            {
+                return;
+            }
+
+            if (!TryResolvePinId(partPin, out string pinId) || string.IsNullOrEmpty(pinId))
+            {
+                return;
+            }
+
+            if (!TryResolveSocketId(out string socketId) || string.IsNullOrEmpty(socketId))
+            {
+                return;
+            }
+
+            CircuitPin pin = context.GetPinById(pinId);
+            CircuitSocket socket = context.GetSocketById(socketId);
+
+            bool pinConnectedToThisSocket = pin != null && pin.CurrentSocketId == socketId;
+            bool socketConnectedToThisPin = socket != null && socket.ConnectedPinId == pinId;
+
+            if (pinConnectedToThisSocket && socketConnectedToThisPin)
+            {
+                return;
+            }
+
+            if (enableDebugLogs)
+            {
+                Debug.Log(
+                    $"[BridgeDebug] CONNECT repair | bridge={name} | holeIndex={GetHoleIndexOrInvalid()} | " +
+                    $"collider={ValueOrNone(colliderName)} | pinId={pinId} | socketId={socketId} | " +
+                    $"pinCurrentSocketId={ValueOrNone(pin?.CurrentSocketId)} | " +
+                    $"socketConnectedPinId={ValueOrNone(socket?.ConnectedPinId)}");
+            }
+
+            ConnectPartPin(partPin, colliderName);
         }
 
         private bool TryGetDependencies(out CircuitContext context, out CircuitConnectionService connectionService)

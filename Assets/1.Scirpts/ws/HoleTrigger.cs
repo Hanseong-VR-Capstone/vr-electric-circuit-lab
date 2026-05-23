@@ -1,30 +1,41 @@
 using UnityEngine;
+using VRCircuit.Board;
 
 public class HoleTrigger : MonoBehaviour
 {
     public int holeIndex;
     public PartPin currentPin;
     public HoleSoundManager audioManager;
+
     [SerializeField] private HoleGroup holeGroup;
+    [SerializeField] private BreadboardHoleBridge breadboardHoleBridge;
 
     private void Awake()
     {
         holeGroup = GetComponentInParent<HoleGroup>();
-        
+
+        if (breadboardHoleBridge == null)
+        {
+            breadboardHoleBridge = GetComponent<BreadboardHoleBridge>();
+        }
+
         if (audioManager == null)
         {
             audioManager = GetComponentInParent<HoleSoundManager>();
             if (audioManager == null)
             {
-                Debug.LogWarning("HoleSoundManager 컴포넌트를 찾지 못했습니다");
+                Debug.LogWarning("HoleTrigger: HoleSoundManager was not found.");
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        PartPin pin = other.GetComponent<PartPin>();
-        if (pin == null) return;
+        PartPin pin = ResolvePartPin(other);
+        if (pin == null)
+        {
+            return;
+        }
 
         if (currentPin != null && currentPin != pin)
         {
@@ -33,13 +44,15 @@ public class HoleTrigger : MonoBehaviour
         }
 
         CircuitPart part = pin.parentPart;
-        if (part == null) {
-            Debug.Log($"Pin {pin.pinRole}은 부모 파트가 없습니다.");
+        if (part == null)
+        {
+            Debug.Log($"HoleTrigger: Pin {pin.pinRole} has no parent CircuitPart.");
             return;
         }
 
         currentPin = pin;
         pin.SetHole(this);
+        breadboardHoleBridge?.ConnectPartPin(pin, GetColliderName(other));
 
         string message = $"Hole {holeIndex} <- {part.partType} / {pin.pinRole}";
 
@@ -67,30 +80,45 @@ public class HoleTrigger : MonoBehaviour
                 break;
 
             case PartType.JumperWire:
-                message += $" / JumperWire";
+                message += " / JumperWire";
                 break;
-            
+
             default:
-                message += $" / Unknown Part";
+                message += " / Unknown Part";
                 break;
         }
-        
-        audioManager.PlayConnectSound();
+
+        audioManager?.PlayConnectSound();
         Debug.Log(message);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        PartPin pin = other.GetComponent<PartPin>();
-        if (pin == null) return;
+        PartPin pin = ResolvePartPin(other);
+        if (pin == null)
+        {
+            return;
+        }
 
         if (currentPin == pin)
         {
-            Debug.Log($"Hole {holeIndex} 에서 {pin.parentPart.partType} / {pin.pinRole} 제거");
-            audioManager.PlayDisconnectSound();
+            Debug.Log($"Hole {holeIndex} removed {pin.parentPart.partType} / {pin.pinRole}");
+            audioManager?.PlayDisconnectSound();
+            breadboardHoleBridge?.DisconnectPartPin(pin, GetColliderName(other));
             currentPin = null;
             pin.ClearHole(this);
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        PartPin pin = ResolvePartPin(other);
+        if (pin == null || currentPin != pin)
+        {
+            return;
+        }
+
+        breadboardHoleBridge?.EnsurePartPinConnected(pin, GetColliderName(other));
     }
 
     public void HoleLightOn()
@@ -101,5 +129,26 @@ public class HoleTrigger : MonoBehaviour
     public void HoleLightOff()
     {
         holeGroup?.UpdateEffect(false);
+    }
+
+    private PartPin ResolvePartPin(Collider other)
+    {
+        if (other == null)
+        {
+            return null;
+        }
+
+        PartPin pin = other.GetComponent<PartPin>();
+        if (pin != null)
+        {
+            return pin;
+        }
+
+        return other.GetComponentInParent<PartPin>();
+    }
+
+    private string GetColliderName(Collider other)
+    {
+        return other != null ? other.name : "NULL";
     }
 }
